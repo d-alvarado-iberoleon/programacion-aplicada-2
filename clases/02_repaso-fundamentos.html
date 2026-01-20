@@ -227,11 +227,7 @@ Dra. Dora Alvarado
 </ul>
 </div><div class="column" style="width:50%;">
 <div class="fragment">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><a href="https://www.youtube.com/watch?v=mrmqRoRDrFg"><img data-src="https://img.youtube.com/vi/mrmqRoRDrFg/0.jpg" class="quarto-figure quarto-figure-center" style="width:90.0%"></a></p>
-</figure>
-</div>
+<!--[![](https://img.youtube.com/vi/mrmqRoRDrFg/0.jpg){width="90%" fig-align="center"}](https://www.youtube.com/watch?v=mrmqRoRDrFg)-->
 </div>
 <!--
 https://www.youtube.com/watch?v=mrmqRoRDrFg
@@ -572,17 +568,575 @@ https://www.youtube.com/watch?v=mrmqRoRDrFg
 </ul>
 </div></div>
 </section>
+<section id="enteros-int" class="slide level2">
+<h2>🔴 Enteros (<code>int</code>)</h2>
+<p>Los enteros son un tipo de dato que permite representar números enteros, positivos o negativos, sin decimales.</p>
+<p><strong>Sistemas de numeración</strong>:</p>
+<ul>
+<li><strong>Binario</strong>: Prefijo <code>0b</code> (ej., <code>0b101</code>).</li>
+<li><strong>Hexadecimal</strong>: Prefijo <code>0x</code> (ej., <code>0xA1</code>).</li>
+<li><strong>Octal</strong>: Prefijo <code>0o</code> (ej., <code>0o17</code>).</li>
+<li>Al imprimir, el número se convierte a decimal.</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a></a>num_decimal <span class="op">=</span> <span class="dv">42</span></span>
+<span id="cb11-2"><a></a>num_binario <span class="op">=</span> <span class="bn">0b101</span></span>
+<span id="cb11-3"><a></a>num_hexadecimal <span class="op">=</span> <span class="bn">0xA1</span></span>
+<span id="cb11-4"><a></a>num_octal <span class="op">=</span> <span class="bn">0o17</span></span>
+<span id="cb11-5"><a></a></span>
+<span id="cb11-6"><a></a><span class="bu">print</span>(num_decimal, num_binario, num_hexadecimal, num_octal)</span>
+<span id="cb11-7"><a></a><span class="co"># Esto imprime: 42 5 161 15</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="enteros---recordatorio" class="slide level2">
+<h2>🔴 Enteros - Recordatorio</h2>
+<p><strong>📌 Recordatorio</strong>:</p>
+<ul>
+<li>Python asigna bits según el valor del número. Puedes usar <code>sys.getsizeof()</code> para conocer el tamaño en memoria.</li>
+<li>Puedes convertir otros tipos a <code>int</code>. Los decimales se truncan al convertir a <code>int</code>.</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a></a><span class="co"># ¿Cuál es la salida de este código?</span></span>
+<span id="cb12-2"><a></a><span class="im">import</span> sys</span>
+<span id="cb12-3"><a></a></span>
+<span id="cb12-4"><a></a>num <span class="op">=</span> <span class="dv">4</span></span>
+<span id="cb12-5"><a></a><span class="bu">print</span>(sys.getsizeof(num))</span>
+<span id="cb12-6"><a></a></span>
+<span id="cb12-7"><a></a>num_decimal <span class="op">=</span> <span class="fl">3.7</span></span>
+<span id="cb12-8"><a></a>num_entero <span class="op">=</span> <span class="bu">int</span>(num_decimal)</span>
+<span id="cb12-9"><a></a><span class="bu">print</span>(num_entero)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="flotantes-float" class="slide level2">
+<h2>🔵 Flotantes (<code>float</code>)</h2>
+<p>Representan números positivos o negativos con decimales.</p>
+<p><strong>No tienen precisión infinita.</strong> Los valores máximos y mínimos están definidos por el sistema, aunque podemos hacer una representación simbólica del número infinito y NaN.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a></a><span class="co"># Float</span></span>
+<span id="cb13-2"><a></a>num1 <span class="op">=</span> <span class="fl">3.14159</span></span>
+<span id="cb13-3"><a></a><span class="bu">print</span>(num1, <span class="bu">type</span>(num1))</span>
+<span id="cb13-4"><a></a></span>
+<span id="cb13-5"><a></a><span class="co"># Infinito y NaN</span></span>
+<span id="cb13-6"><a></a>num_infinito <span class="op">=</span> <span class="bu">float</span>(<span class="st">'inf'</span>)</span>
+<span id="cb13-7"><a></a>num_nan <span class="op">=</span> <span class="bu">float</span>(<span class="st">'nan'</span>)</span>
+<span id="cb13-8"><a></a><span class="bu">print</span>(num_infinito, num_nan)</span>
+<span id="cb13-9"><a></a></span>
+<span id="cb13-10"><a></a><span class="co"># Mínimo y máximo</span></span>
+<span id="cb13-11"><a></a><span class="im">import</span> sys</span>
+<span id="cb13-12"><a></a><span class="bu">print</span>(<span class="st">"Valor mínimo"</span>, sys.float_info.<span class="bu">min</span>)</span>
+<span id="cb13-13"><a></a><span class="bu">print</span>(<span class="st">"Valor máximo"</span>, sys.float_info.<span class="bu">max</span>)</span>
+<span id="cb13-14"><a></a></span>
+<span id="cb13-15"><a></a><span class="co"># ¿Cuál es el resultado de esta operación?</span></span>
+<span id="cb13-16"><a></a>num2 <span class="op">=</span> <span class="dv">1</span><span class="op">-</span><span class="fl">2.2250738585072014e-308</span></span>
+<span id="cb13-17"><a></a><span class="bu">print</span>(num2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="flotantes---recordatorio" class="slide level2">
+<h2>🔵 Flotantes - Recordatorio</h2>
+<p><strong>📌 Recordatorio</strong>:</p>
+<ul>
+<li>Podemos indicar números flotantes mediante notación científica, usamos <code>e</code> para indicar el exponente.</li>
+<li>Podemos convertir otros tipos a <code>float</code> usando <code>float()</code>.</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a></a>num3 <span class="op">=</span> <span class="fl">1.2e3</span>  <span class="co"># Notación científica (1200.0)</span></span>
+<span id="cb14-2"><a></a><span class="bu">print</span>(num3)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="booleanos-bool" class="slide level2">
+<h2>🟣 Booleanos (<code>bool</code>)</h2>
+<ul>
+<li>Tipo de dato que almacena <code>True</code> o <code>False</code>.</li>
+<li>Se utiliza con operadores como <code>&gt;</code>, <code>&lt;</code>, <code>==</code>, que devuelven valores booleanos.</li>
+<li>Podemos convertir valores a <code>bool</code> usando <code>bool()</code>.</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a></a>valor1 <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb15-2"><a></a>valor2 <span class="op">=</span> (<span class="dv">5</span> <span class="op">&gt;</span> <span class="dv">3</span>)  <span class="co"># True</span></span>
+<span id="cb15-3"><a></a>valor3 <span class="op">=</span> <span class="bu">bool</span>(<span class="dv">0</span>)   <span class="co"># False</span></span>
+<span id="cb15-4"><a></a>valor4 <span class="op">=</span> <span class="bu">bool</span>(<span class="dv">1</span>)   <span class="co"># True</span></span>
+<span id="cb15-5"><a></a><span class="bu">print</span>(valor1, valor2, valor3, valor4)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="listas-list" class="slide level2">
+<h2>🟨 Listas (<code>list</code>)</h2>
+<p>Estructura de datos mutable y dinámica.</p>
+<p><strong>Propiedades</strong>:</p>
+<ul>
+<li>Ordenadas.</li>
+<li>Contienen tipos arbitrarios.</li>
+<li>Se crean e indexan con <code>[]</code>.</li>
+<li>Pueden anidarse.</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a></a>mi_lista <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="st">"Python"</span>, [<span class="dv">5</span>, <span class="dv">6</span>]]</span>
+<span id="cb16-2"><a></a><span class="bu">print</span>(mi_lista[<span class="dv">0</span>])      <span class="co"># Salida?</span></span>
+<span id="cb16-3"><a></a><span class="bu">print</span>(mi_lista[<span class="op">-</span><span class="dv">1</span>])     <span class="co"># Salida?</span></span>
+<span id="cb16-4"><a></a>mi_lista[<span class="dv">1</span>] <span class="op">=</span> <span class="st">"Nuevo"</span></span>
+<span id="cb16-5"><a></a><span class="bu">print</span>(mi_lista)         <span class="co"># Salida?</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="listas---métodos-comunes" class="slide level2">
+<h2>🟨 Listas - Métodos comunes</h2>
+<p><strong>📌 Recordatorio</strong>:</p>
+<p>Métodos comunes de las listas:</p>
+<ul>
+<li><code>append(valor)</code>: Agrega elemento al final.</li>
+<li><code>extend(iterable)</code>: Agrega elementos de un iterable.</li>
+<li><code>insert(pos, valor)</code>: Inserta en una posición.</li>
+<li><code>pop(indice)</code>: Elimina y devuelve el elemento en el índice (por defecto el último).</li>
+<li><code>remove(valor)</code>: Elimina la primera aparición del valor.</li>
+<li><code>reverse()</code>: Invierte el orden.</li>
+<li><code>sort()</code>: Ordena la lista.</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a></a>mi_lista2 <span class="op">=</span> [<span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">4</span>]</span>
+<span id="cb17-2"><a></a>mi_lista2.append(<span class="dv">5</span>)</span>
+<span id="cb17-3"><a></a>mi_lista2.sort()</span>
+<span id="cb17-4"><a></a><span class="bu">print</span>(mi_lista2)  <span class="co"># Salida?</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="tuplas-tuple" class="slide level2">
+<h2>🟧 Tuplas (<code>tuple</code>)</h2>
+<p>Estructura de datos inmutable. Una vez que una tupla ha sido creada, <strong>sus elementos no pueden ser modificados</strong>.</p>
+<p><strong>Propiedades:</strong></p>
+<ul>
+<li>Inmutables.</li>
+<li>Ordenadas.</li>
+<li>Contienen tipos arbitrarios.</li>
+<li>Se crean con <code>()</code>, se indexan con <code>[]</code>.</li>
+<li>Pueden anidarse.</li>
+<li>Pueden contener duplicados.</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a></a>mi_tupla <span class="op">=</span> (<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>)</span>
+<span id="cb18-2"><a></a><span class="bu">print</span>(mi_tupla[<span class="dv">0</span>])  <span class="co"># Imprime: 10</span></span>
+<span id="cb18-3"><a></a><span class="bu">print</span>(mi_tupla[<span class="op">-</span><span class="dv">1</span>])  <span class="co"># Imprime: 40</span></span>
+<span id="cb18-4"><a></a></span>
+<span id="cb18-5"><a></a>mi_tupla2 <span class="op">=</span> (<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb18-6"><a></a>a, b, c <span class="op">=</span> mi_tupla2</span>
+<span id="cb18-7"><a></a><span class="bu">print</span>(a, b, c)  <span class="co"># Imprime: 1 2 3</span></span>
+<span id="cb18-8"><a></a></span>
+<span id="cb18-9"><a></a>es_tupla <span class="op">=</span> (<span class="dv">5</span>)  <span class="co"># ¿Esto es una tupla?</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="tuplas---métodos-comunes" class="slide level2">
+<h2>🟧 Tuplas - Métodos comunes</h2>
+<p><strong>📌 Recordatorio</strong>:</p>
+<p>Métodos comunes de las tuplas:</p>
+<ul>
+<li><code>count():</code> Cuenta cuántas veces aparece un elemento.</li>
+<li><code>index():</code> Devuelve el índice de la primera ocurrencia de un elemento.</li>
+</ul>
+<p><strong>En todos los iterables</strong> (listas, tuplas, cadenas, diccionarios), podemos verificar la existencia de un elemento dentro del iterable.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a></a>mi_tupla3 <span class="op">=</span> (<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>)</span>
+<span id="cb19-2"><a></a><span class="bu">print</span>(mi_tupla3.count(<span class="dv">1</span>))  <span class="co"># Imprime: 3</span></span>
+<span id="cb19-3"><a></a><span class="bu">print</span>(mi_tupla3.index(<span class="dv">2</span>))  <span class="co"># Imprime: 1</span></span>
+<span id="cb19-4"><a></a></span>
+<span id="cb19-5"><a></a>mi_tupla4 <span class="op">=</span> (<span class="st">"rojo"</span>, <span class="st">"azul"</span>, <span class="st">"verde"</span>)</span>
+<span id="cb19-6"><a></a><span class="bu">print</span>(<span class="st">"rojo"</span> <span class="kw">in</span> mi_tupla4)  <span class="co"># Imprime: True</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="cadenas-str" class="slide level2">
+<h2>🟫 Cadenas (<code>str</code>)</h2>
+<p>Tipo inmutable que almacena secuencias de caracteres. Se usan comillas simples o dobles.</p>
+<p><strong>Funciones y operaciones comunes</strong>:</p>
+<ul>
+<li>Concatenación.</li>
+<li>Repetición.</li>
+<li>Longitud.</li>
+<li>Indexación y slicing.</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a></a>texto <span class="op">=</span> <span class="st">"Hola, Python!"</span></span>
+<span id="cb20-2"><a></a><span class="bu">print</span>(texto[<span class="dv">0</span>])      <span class="co"># Salida?</span></span>
+<span id="cb20-3"><a></a><span class="bu">print</span>(<span class="bu">len</span>(texto))    <span class="co"># Salida?</span></span>
+<span id="cb20-4"><a></a><span class="bu">print</span>(texto[<span class="dv">7</span>:])     <span class="co"># Salida?</span></span>
+<span id="cb20-5"><a></a><span class="bu">print</span>(texto <span class="op">*</span> <span class="dv">3</span>)     <span class="co"># Salida?</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="diccionarios-dict" class="slide level2">
+<h2>🔼 Diccionarios (<code>dict</code>)</h2>
+<p>Son estructuras de datos que almacenan pares de clave-valor.</p>
+<p>Las claves deben ser únicas e inmutables (pueden ser cadenas, números o tuplas). Se crean con llaves <code>{}</code>.</p>
+<p><strong>Propiedades:</strong></p>
+<ul>
+<li>No ordenados (antes de Python 3.7). Desde Python 3.7, mantienen el orden de inserción.</li>
+<li>Acceso rápido a los valores usando las claves.</li>
+<li>Mutables.</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a></a>alumno <span class="op">=</span> {</span>
+<span id="cb21-2"><a></a>    <span class="st">"nombre"</span>: <span class="st">"Ana"</span>,</span>
+<span id="cb21-3"><a></a>    <span class="st">"edad"</span>: <span class="dv">21</span>,</span>
+<span id="cb21-4"><a></a>    <span class="st">"carrera"</span>: <span class="st">"Ingeniería en IA"</span></span>
+<span id="cb21-5"><a></a>}</span>
+<span id="cb21-6"><a></a></span>
+<span id="cb21-7"><a></a><span class="bu">print</span>(alumno[<span class="st">"nombre"</span>])  <span class="co"># Salida: "Ana"</span></span>
+<span id="cb21-8"><a></a>alumno[<span class="st">"promedio"</span>] <span class="op">=</span> <span class="fl">9.5</span>  <span class="co"># Agregar nueva clave</span></span>
+<span id="cb21-9"><a></a>alumno[<span class="st">"edad"</span>] <span class="op">=</span> <span class="dv">22</span>       <span class="co"># Modificar valor</span></span>
+<span id="cb21-10"><a></a><span class="bu">print</span>(alumno)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="diccionarios---métodos-comunes" class="slide level2">
+<h2>🔼 Diccionarios - Métodos comunes</h2>
+<p><strong>📌 Recordatorio</strong>:</p>
+<p>Métodos comunes de los diccionarios:</p>
+<ul>
+<li><code>keys()</code>: Devuelve las claves.</li>
+<li><code>values()</code>: Devuelve los valores.</li>
+<li><code>items()</code>: Devuelve los pares clave-valor como tuplas.</li>
+<li><code>get()</code>: Accede a un valor de forma segura (sin causar error si la clave no existe).</li>
+<li><code>del</code>: Elimina una clave y su valor.</li>
+<li><code>pop()</code>: Elimina una clave y devuelve su valor.</li>
+</ul>
+<p>También podemos iterar sobre un diccionario:</p>
+<ul>
+<li>Claves: <code>for clave in diccionario</code>.</li>
+<li>Valores: <code>for valor in diccionario.values()</code>.</li>
+<li>Pares clave-valor: <code>for clave, valor in diccionario.items()</code>.</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a></a><span class="kw">del</span> alumno[<span class="st">"carrera"</span>]</span>
+<span id="cb22-2"><a></a>promedio <span class="op">=</span> alumno.pop(<span class="st">"promedio"</span>)</span>
+<span id="cb22-3"><a></a><span class="bu">print</span>(alumno)  <span class="co"># Salida: {"nombre": "Ana", "edad": 22}</span></span>
+<span id="cb22-4"><a></a><span class="bu">print</span>(alumno.keys())      <span class="co"># Salida: dict_keys(["nombre", "edad"])</span></span>
+<span id="cb22-5"><a></a><span class="bu">print</span>(alumno.get(<span class="st">"edad"</span>)) <span class="co"># Salida: 22</span></span>
+<span id="cb22-6"><a></a></span>
+<span id="cb22-7"><a></a><span class="cf">for</span> clave, valor <span class="kw">in</span> alumno.items():</span>
+<span id="cb22-8"><a></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>clave<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>valor<span class="sc">}</span><span class="ss">"</span>) <span class="co"># Salida?</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="preguntas---tipos-de-datos" class="slide level2">
+<h2>Preguntas - Tipos de datos</h2>
+</section>
+<section id="pregunta-1" class="slide level2">
+<h2>Pregunta 1</h2>
+<p><strong>¿Qué tipo de variable es?</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a></a>nombre <span class="op">=</span> <span class="st">"Juan"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="pregunta-2" class="slide level2">
+<h2>Pregunta 2</h2>
+<p><strong>¿Qué tipo de variable es?</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a></a>es_mayor_de_edad <span class="op">=</span> <span class="va">True</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="pregunta-3" class="slide level2">
+<h2>Pregunta 3</h2>
+<p><strong>¿Qué tipo de variable es?</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a></a>precio <span class="op">=</span> <span class="fl">45.99</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="pregunta-4" class="slide level2">
+<h2>Pregunta 4</h2>
+<p><strong>¿Qué tipo de variable es?</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a></a>numeros <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>¿Cómo imprimirías el tercer elemento de la lista <code>numeros</code>?</strong></p>
+<p><strong>¿Cómo se podría modificar el contenido de la lista <code>numeros</code>?</strong></p>
+</section>
+<section id="pregunta-5" class="slide level2">
+<h2>Pregunta 5</h2>
+<p><strong>¿Qué tipo de variable es?</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a></a>estudiantes <span class="op">=</span> {<span class="st">"001"</span>: <span class="st">"Ana"</span>, <span class="st">"002"</span>: <span class="st">"Carlos"</span>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>¿Qué error podrías encontrar al intentar acceder a una clave que no existe en un diccionario?</strong></p>
+</section>
+<section id="pregunta-6" class="slide level2">
+<h2>Pregunta 6</h2>
+<p><strong>¿Qué tipo de variable es?</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a></a>edad <span class="op">=</span> <span class="dv">25</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>¿Qué sucede si intentas sumar un número entero con una cadena?</strong></p>
+</section>
+<section id="pregunta-7" class="slide level2">
+<h2>Pregunta 7</h2>
+<p><strong>¿Qué tipo de variable es?</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a></a>valor <span class="op">=</span> <span class="va">None</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>¿Cómo puedes comprobar si una variable contiene un valor nulo en Python?</strong></p>
+</section>
+<section id="pregunta-8" class="slide level2">
+<h2>Pregunta 8</h2>
+<p><strong>¿Qué tipo de variable es?</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a></a>colores <span class="op">=</span> (<span class="st">"rojo"</span>, <span class="st">"verde"</span>, <span class="st">"azul"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>¿Qué ocurre si intentas modificar una tupla después de haberla creado?</strong></p>
+</section>
+<section id="ops" class="slide level2">
+<h2>Operadores</h2>
+<section id="definición" style="background-color:#85A0F2; padding: 10px;">
+<h3>Definición:</h3>
+</section>
+<p>Son símbolos especiales que realizan operaciones en uno o más operandos. Los operandos pueden ser variables, valores o expresiones.</p>
+</section>
+<section id="tipos-de-operadores" class="slide level2 smaller">
+<h2>Tipos de Operadores</h2>
+<section id="tipos-de-operadores-1" style="background-color:#B6C5F2; padding: 10px;">
+<h3>Tipos de Operadores:</h3>
+</section>
+<p><strong>Aritméticos:</strong> Realizan operaciones matemáticas.</p>
+<ul>
+<li><code>+</code> (suma), <code>-</code> (resta), <code>*</code> (multiplicación), <code>/</code> (división), <code>//</code> (división entera), <code>%</code> (módulo o residuo), <code>**</code> (exponenciación).</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb31"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a></a>a <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb31-2"><a></a>b <span class="op">=</span> <span class="dv">3</span></span>
+<span id="cb31-3"><a></a>suma <span class="op">=</span> a <span class="op">+</span> b</span>
+<span id="cb31-4"><a></a>resta <span class="op">=</span> a <span class="op">-</span> b</span>
+<span id="cb31-5"><a></a>multiplicacion <span class="op">=</span> a <span class="op">*</span> b</span>
+<span id="cb31-6"><a></a>division <span class="op">=</span> a <span class="op">/</span> b</span>
+<span id="cb31-7"><a></a>division_entera <span class="op">=</span> a <span class="op">//</span> b</span>
+<span id="cb31-8"><a></a>modulo <span class="op">=</span> a <span class="op">%</span> b</span>
+<span id="cb31-9"><a></a>exponenciacion <span class="op">=</span> a <span class="op">**</span> b</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="operadores-de-asignación" class="slide level2">
+<h2>Operadores de Asignación</h2>
+<p><strong>De Asignación:</strong> Asignan valores a variables.</p>
+<ul>
+<li><code>=</code> (asignación simple), <code>+=</code> (suma y asignación), <code>-=</code> (resta y asignación), <code>*=</code> (multiplicación y asignación), <code>/=</code> (división y asignación), <code>//=</code> (división entera y asignación), <code>%=</code>(módulo y asignación), <code>**=</code>(exponenciación y asignación).</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb32"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a></a>x <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb32-2"><a></a>x <span class="op">+=</span> <span class="dv">3</span>  <span class="co"># Equivalente a x = x + 3</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="operadores-relacionales" class="slide level2">
+<h2>Operadores Relacionales</h2>
+<p><strong>Relacionales:</strong> Comparan valores y devuelven un resultado booleano.</p>
+<ul>
+<li><code>==</code> (igual a), <code>!=</code> (no igual a), <code>&lt;</code> (menor que), <code>&gt;</code> (mayor que), <code>&lt;=</code> (menor o igual a), <code>&gt;=</code> (mayor o igual a).</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb33"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a></a>a <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb33-2"><a></a>b <span class="op">=</span> <span class="dv">3</span></span>
+<span id="cb33-3"><a></a>resultado <span class="op">=</span> (a <span class="op">&gt;</span> b)  <span class="co"># True, ya que 10 es mayor que 3</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="operadores-lógicos" class="slide level2">
+<h2>Operadores Lógicos</h2>
+<p><strong>Lógicos:</strong> Realizan operaciones lógicas en valores booleanos.</p>
+<ul>
+<li><code>and</code> (y lógico), <code>or</code> (o lógico), <code>not</code> (no lógico).</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb34"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a></a>a <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb34-2"><a></a>b <span class="op">=</span> <span class="dv">3</span></span>
+<span id="cb34-3"><a></a>condicion1 <span class="op">=</span> (a <span class="op">&gt;</span> b) <span class="kw">and</span> (b <span class="op">!=</span> <span class="dv">0</span>)  <span class="co"># True, ambas condiciones son verdaderas</span></span>
+<span id="cb34-4"><a></a>condicion2 <span class="op">=</span> (a <span class="op">&lt;</span> b) <span class="kw">or</span> (b <span class="op">==</span> <span class="dv">0</span>)   <span class="co"># False, ninguna condición es verdadera</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="operadores-de-membresía" class="slide level2">
+<h2>Operadores de Membresía</h2>
+<p><strong>De Membresía:</strong> Verifican si un valor está presente en una secuencia.</p>
+<ul>
+<li><code>in</code> (está en), <code>not in</code> (no está en).</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb35"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a></a>lista <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span>
+<span id="cb35-2"><a></a>pertenece <span class="op">=</span> <span class="dv">3</span> <span class="kw">in</span> lista  <span class="co"># True, ya que 3 está en la lista</span></span>
+<span id="cb35-3"><a></a>no_pertenece <span class="op">=</span> <span class="dv">6</span> <span class="kw">not</span> <span class="kw">in</span> lista  <span class="co"># True, ya que 6 no está en la lista</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="operadores-de-identidad" class="slide level2">
+<h2>Operadores de Identidad</h2>
+<p><strong>De Identidad:</strong> Verifican si dos variables se refieren al mismo objeto en la memoria.</p>
+<ul>
+<li><code>is</code> (es), <code>is not</code> (no es).</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb36"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a></a>a <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
+<span id="cb36-2"><a></a>b <span class="op">=</span> a  <span class="co"># b ahora apunta al mismo objeto que a</span></span>
+<span id="cb36-3"><a></a>c <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]  <span class="co"># un nuevo objeto con el mismo contenido que a</span></span>
+<span id="cb36-4"><a></a></span>
+<span id="cb36-5"><a></a><span class="bu">print</span>(a <span class="kw">is</span> b)  <span class="co"># True, ya que b apunta al mismo objeto que a</span></span>
+<span id="cb36-6"><a></a><span class="bu">print</span>(a <span class="kw">is</span> c)  <span class="co"># False, ya que c es un objeto diferente</span></span>
+<span id="cb36-7"><a></a><span class="bu">print</span>(a <span class="kw">is</span> <span class="kw">not</span> c)  <span class="co"># True, ya que a y c no apuntan al mismo objeto</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="preguntas---operadores" class="slide level2">
+<h2>Preguntas - Operadores</h2>
+</section>
+<section id="pregunta-1---operadores" class="slide level2">
+<h2>Pregunta 1 - Operadores</h2>
+<p><strong>¿Cuál es la diferencia entre <code>=</code> y <code>==</code>?</strong></p>
+</section>
+<section id="pregunta-2---operadores" class="slide level2">
+<h2>Pregunta 2 - Operadores</h2>
+<p><strong>Sin usar calculadora ni Python, ¿Cuál es el resultado de la expresión <code>(5 + 3) * 2 / 4</code>?</strong></p>
+</section>
+<section id="pregunta-3---operadores" class="slide level2">
+<h2>Pregunta 3 - Operadores</h2>
+<p><strong>Dado el código <code>x += 2</code>, ¿cuál es el valor final de la variable <code>x</code> si su valor inicial es 7?</strong></p>
+<p><strong>¿Cómo podrías verificar si un número es par utilizando operadores relacionales y aritméticos?</strong></p>
+</section>
+<section id="pregunta-4---operadores" class="slide level2">
+<h2>Pregunta 4 - Operadores</h2>
+<p><strong>Si tienes una lista <code>numeros = [1, 2, 3, 4, 5]</code>, ¿cómo verificarías si el número 6 está presente en la lista?</strong></p>
+</section>
+<section id="pregunta-5---operadores" class="slide level2">
+<h2>Pregunta 5 - Operadores</h2>
+<p><strong>¿Cómo utilizarías el operador <code>**</code> para calcular la raíz cuadrada de un número?</strong></p>
+</section>
+<section id="pregunta-6---operadores" class="slide level2">
+<h2>Pregunta 6 - Operadores</h2>
+<p><strong>¿Qué sucede si intentas realizar una división entre cero en Python?</strong></p>
+</section>
+<section id="pregunta-7---operadores" class="slide level2">
+<h2>Pregunta 7 - Operadores</h2>
+<p><strong>Dado un diccionario <code>persona = {"nombre": "Juan", "edad": 25}</code>, ¿cómo verificarías si la clave “edad” está presente?</strong></p>
+</section>
+<section id="pregunta-8---operadores" class="slide level2">
+<h2>Pregunta 8 - Operadores</h2>
+<p><strong>¿Cuál es la diferencia entre <code>is</code> y <code>==</code>?</strong></p>
+</section>
+<section id="io" class="slide level2">
+<h2>Entrada y salida de datos</h2>
+</section>
+<section id="entrada-de-datos" class="slide level2">
+<h2>Entrada de Datos</h2>
+<section id="entrada-de-datos-1" style="background-color:#E1F25C; padding: 10px;">
+<h3>Entrada de Datos</h3>
+</section>
+<ul>
+<li>La función <code>input()</code> se utiliza para obtener datos desde la entrada estándar (generalmente el teclado) y asignarlos a variables.</li>
+<li>La entrada se toma como una cadena (<code>str</code>), por lo que a menudo es necesario convertirla al tipo de dato adecuado.</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb37"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a></a>nombre <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Ingrese su nombre: "</span>)</span>
+<span id="cb37-2"><a></a>edad <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Ingrese su edad: "</span>))  <span class="co"># Convertir la entrada a entero</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="conversión-de-tipos" class="slide level2">
+<h2>Conversión de Tipos</h2>
+<section id="conversión-de-tipos-1" style="background-color:#9FC131; padding: 10px;">
+<h3>Conversión de Tipos</h3>
+</section>
+<p>La conversión de tipos, o type casting, se refiere a cambiar el tipo de dato de una variable a otro. Por ejemplo, convertir una cadena a un entero o viceversa.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb38"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a></a>edad <span class="op">=</span> <span class="dv">25</span></span>
+<span id="cb38-2"><a></a>edad_str <span class="op">=</span> <span class="bu">str</span>(edad)  <span class="co"># Convertir entero a cadena</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="salida-de-datos" class="slide level2">
+<h2>Salida de Datos</h2>
+<section id="salida-de-datos-1" style="background-color:#DBF227; padding: 10px;">
+<h3>Salida de Datos</h3>
+</section>
+<ul>
+<li>La función <code>print()</code> se utiliza para mostrar información en la salida estándar (generalmente la consola).</li>
+<li>Puede imprimir valores de variables, texto y realizar formateo básico.</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb39"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a></a>nombre <span class="op">=</span> <span class="st">"Juan"</span></span>
+<span id="cb39-2"><a></a>edad <span class="op">=</span> <span class="dv">30</span></span>
+<span id="cb39-3"><a></a><span class="bu">print</span>(<span class="st">"Nombre:"</span>, nombre, <span class="st">"Edad:"</span>, edad)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="preguntas---io" class="slide level2">
+<h2>Preguntas - I/O</h2>
+</section>
+<section id="pregunta-1---io" class="slide level2">
+<h2>Pregunta 1 - I/O</h2>
+<p><strong>¿Cuál será la salida si el usuario ingresa “3”?</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb40"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a></a>x <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Ingrese un número: "</span>)</span>
+<span id="cb40-2"><a></a>y <span class="op">=</span> x <span class="op">*</span> <span class="dv">2</span></span>
+<span id="cb40-3"><a></a><span class="bu">print</span>(y)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="pregunta-2---io" class="slide level2">
+<h2>Pregunta 2 - I/O</h2>
+<p><strong>¿Cuál será la salida de este código?</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb41"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a></a>a <span class="op">=</span> <span class="st">"5"</span></span>
+<span id="cb41-2"><a></a>b <span class="op">=</span> <span class="bu">int</span>(a) <span class="op">+</span> <span class="dv">2</span></span>
+<span id="cb41-3"><a></a>c <span class="op">=</span> <span class="bu">str</span>(b)</span>
+<span id="cb41-4"><a></a><span class="bu">print</span>(a <span class="op">+</span> c)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="pregunta-3---io" class="slide level2">
+<h2>Pregunta 3 - I/O</h2>
+<p><strong>¿Qué tipo de error obtendrías al intentar ejecutar este código?</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb42"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a></a>num_str <span class="op">=</span> <span class="st">"abc"</span></span>
+<span id="cb42-2"><a></a>num_int <span class="op">=</span> <span class="bu">int</span>(num_str)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="pregunta-4---io" class="slide level2">
+<h2>Pregunta 4 - I/O</h2>
+<p><strong>¿Cuál será el error en este código y cómo lo corregirías?</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb43"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a></a>edad <span class="op">=</span> <span class="dv">25</span></span>
+<span id="cb43-2"><a></a><span class="bu">print</span>(<span class="st">"Mi edad es: "</span> <span class="op">+</span> edad)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="flujo-de-ejecución" class="slide level2">
+<h2>Flujo de ejecución</h2>
+</section>
+<section id="flujo-secuencial" class="slide level2">
+<h2>Flujo Secuencial</h2>
+<section id="flujo-secuencial-1" style="background-color:#F28F79; padding: 10px;">
+<h3>Flujo Secuencial:</h3>
+</section>
+<p>Implica ejecutar las instrucciones en orden, una tras otra.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb44"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a></a><span class="bu">print</span>(<span class="st">"Inicio del programa"</span>)</span>
+<span id="cb44-2"><a></a>edad <span class="op">=</span> <span class="dv">20</span></span>
+<span id="cb44-3"><a></a><span class="bu">print</span>(<span class="st">"La edad es:"</span>, edad)</span>
+<span id="cb44-4"><a></a><span class="bu">print</span>(<span class="st">"Fin del programa"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="cond" class="slide level2">
+<h2>Estructuras Condicionales</h2>
+<section id="estructuras-condicionales-if-elif-else" style="background-color:#F22F1D; color:white; padding: 10px;">
+<h3>Estructuras Condicionales (if, elif, else):</h3>
+</section>
+<p>Permiten ejecutar bloques de código dependiendo si una condición es verdadera o falsa.</p>
+<p><strong>Estructura <code>if</code>:</strong> Ejecuta el bloque de código dentro del <code>if</code> si la condición es verdadera.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb45"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a></a>edad <span class="op">=</span> <span class="dv">20</span></span>
+<span id="cb45-2"><a></a><span class="cf">if</span> edad <span class="op">&gt;=</span> <span class="dv">18</span>:</span>
+<span id="cb45-3"><a></a>    <span class="bu">print</span>(<span class="st">"Eres mayor de edad."</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="estructura-elif" class="slide level2">
+<h2>Estructura elif</h2>
+<p><strong>Estructura <code>elif</code>:</strong> Se utiliza para evaluar condiciones adicionales si la condición del <code>if</code> no se cumple.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb46"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a></a>temperatura <span class="op">=</span> <span class="dv">25</span></span>
+<span id="cb46-2"><a></a><span class="cf">if</span> temperatura <span class="op">&gt;</span> <span class="dv">30</span>:</span>
+<span id="cb46-3"><a></a>    <span class="bu">print</span>(<span class="st">"Hace mucho calor."</span>)</span>
+<span id="cb46-4"><a></a><span class="cf">elif</span> temperatura <span class="op">&gt;</span> <span class="dv">20</span>:</span>
+<span id="cb46-5"><a></a>    <span class="bu">print</span>(<span class="st">"La temperatura es agradable."</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="estructura-else" class="slide level2">
+<h2>Estructura else</h2>
+<p><strong>Estructura <code>else</code>:</strong> Proporciona un bloque de código que se ejecuta si ninguna de las condiciones anteriores es verdadera.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb47"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a></a>edad <span class="op">=</span> <span class="dv">15</span></span>
+<span id="cb47-2"><a></a><span class="cf">if</span> edad <span class="op">&gt;=</span> <span class="dv">18</span>:</span>
+<span id="cb47-3"><a></a>    <span class="bu">print</span>(<span class="st">"Eres mayor de edad."</span>)</span>
+<span id="cb47-4"><a></a><span class="cf">else</span>:</span>
+<span id="cb47-5"><a></a>    <span class="bu">print</span>(<span class="st">"Eres menor de edad."</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="preguntas---condicionales" class="slide level2">
+<h2>Preguntas - Condicionales</h2>
+</section>
+<section id="pregunta-1---condicionales" class="slide level2">
+<h2>Pregunta 1 - Condicionales</h2>
+<p><strong>¿Cuál será la salida de este código?</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb48"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a></a>x <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb48-2"><a></a><span class="cf">if</span> x <span class="op">&gt;</span> <span class="dv">5</span>:</span>
+<span id="cb48-3"><a></a>    <span class="bu">print</span>(<span class="st">"A"</span>)</span>
+<span id="cb48-4"><a></a><span class="cf">elif</span> x <span class="op">&lt;</span> <span class="dv">15</span>:</span>
+<span id="cb48-5"><a></a>    <span class="bu">print</span>(<span class="st">"B"</span>)</span>
+<span id="cb48-6"><a></a><span class="cf">else</span>:</span>
+<span id="cb48-7"><a></a>    <span class="bu">print</span>(<span class="st">"C"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="pregunta-2---condicionales" class="slide level2">
+<h2>Pregunta 2 - Condicionales</h2>
+<p><strong>¿Cuál es el error y cómo se puede corregir?</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb49"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a></a><span class="cf">if</span> x <span class="op">&gt;</span> <span class="dv">10</span></span>
+<span id="cb49-2"><a></a>    <span class="bu">print</span>(<span class="st">"Mayor que 10"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="cycles" class="slide level2">
+<h2>Ciclos</h2>
+<section id="estructuras-de-iteraciónciclos-for-while" style="background-color:#A60303; color:white; padding: 10px;">
+<h3>Estructuras de Iteración/Ciclos (for, while):</h3>
+</section>
+<p>Permiten repetir bloques de código mientras se cumpla una condición.</p>
+<p><strong>Ciclo <code>for</code>:</strong></p>
+<p>Obtiene los elementos de un iterable (como una lista) y ejecuta el bloque de código en cada iteración.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb50"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a></a>frutas <span class="op">=</span> [<span class="st">"manzana"</span>, <span class="st">"banana"</span>, <span class="st">"cereza"</span>]</span>
+<span id="cb50-2"><a></a><span class="cf">for</span> fruta <span class="kw">in</span> frutas:</span>
+<span id="cb50-3"><a></a>    <span class="bu">print</span>(fruta)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="ciclo-while" class="slide level2">
+<h2>Ciclo while</h2>
+<p><strong>Ciclo <code>while</code>:</strong></p>
+<p>Ejecuta el bloque de código mientras la condición sea verdadera.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb51"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a></a>contador <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb51-2"><a></a><span class="cf">while</span> contador <span class="op">&lt;</span> <span class="dv">5</span>:</span>
+<span id="cb51-3"><a></a>    <span class="bu">print</span>(contador)</span>
+<span id="cb51-4"><a></a>    contador <span class="op">+=</span> <span class="dv">1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="preguntas---ciclos" class="slide level2">
+<h2>Preguntas - Ciclos</h2>
+</section>
+<section id="pregunta-1---ciclos" class="slide level2">
+<h2>Pregunta 1 - Ciclos</h2>
+<p><strong>¿Qué valores imprimirá este ciclo?</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb52"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span>, <span class="dv">5</span>):</span>
+<span id="cb52-2"><a></a>    <span class="bu">print</span>(i)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="pregunta-2---ciclos" class="slide level2">
+<h2>Pregunta 2 - Ciclos</h2>
+<p><strong>¿Cuál es el error y cómo se puede corregir?</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb53"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a></a><span class="cf">while</span> <span class="va">True</span></span>
+<span id="cb53-2"><a></a>    <span class="bu">print</span>(<span class="st">"Instrucción dentro de un ciclo"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="pregunta-3---ciclos" class="slide level2">
+<h2>Pregunta 3 - Ciclos</h2>
+<p><strong>¿Qué diferencia hay entre <code>while</code> y <code>for</code> en términos de su comportamiento?</strong></p>
+</section>
+<section id="pregunta-4---ciclos" class="slide level2">
+<h2>Pregunta 4 - Ciclos</h2>
+<p><strong>¿Puedes modificar el ejemplo del bucle <code>for</code> para imprimir las frutas en mayúsculas?</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb54"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a></a>frutas <span class="op">=</span> [<span class="st">"manzana"</span>, <span class="st">"banana"</span>, <span class="st">"cereza"</span>]</span>
+<span id="cb54-2"><a></a><span class="cf">for</span> fruta <span class="kw">in</span> frutas:</span>
+<span id="cb54-3"><a></a>    <span class="bu">print</span>(fruta)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
 <section id="ejercicio-2-tipos-de-variables" class="slide level2">
 <h2>Ejercicio 2: Tipos de variables</h2>
 <h3 id="identificación-de-tipos">1. Identificación de tipos</h3>
 <p>Indica el tipo de dato de cada una de las siguientes variables:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a></a>nombre <span class="op">=</span> <span class="st">"Juan"</span>                   <span class="co"># ?</span></span>
-<span id="cb11-2"><a></a>es_mayor_de_edad <span class="op">=</span> <span class="va">True</span>           <span class="co"># ?</span></span>
-<span id="cb11-3"><a></a>precio <span class="op">=</span> <span class="fl">45.99</span>                    <span class="co"># ?</span></span>
-<span id="cb11-4"><a></a>numeros <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]         <span class="co"># ?</span></span>
-<span id="cb11-5"><a></a>estudiantes <span class="op">=</span> {<span class="st">"001"</span>: <span class="st">"Ana"</span>,      <span class="co"># ?</span></span>
-<span id="cb11-6"><a></a>               <span class="st">"002"</span>: <span class="st">"Carlos"</span>}</span>
-<span id="cb11-7"><a></a>edad <span class="op">=</span> <span class="dv">25</span>                         <span class="co"># ?</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb55"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a></a>nombre <span class="op">=</span> <span class="st">"Juan"</span>                   <span class="co"># ?</span></span>
+<span id="cb55-2"><a></a>es_mayor_de_edad <span class="op">=</span> <span class="va">True</span>           <span class="co"># ?</span></span>
+<span id="cb55-3"><a></a>precio <span class="op">=</span> <span class="fl">45.99</span>                    <span class="co"># ?</span></span>
+<span id="cb55-4"><a></a>numeros <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]         <span class="co"># ?</span></span>
+<span id="cb55-5"><a></a>estudiantes <span class="op">=</span> {<span class="st">"001"</span>: <span class="st">"Ana"</span>,      <span class="co"># ?</span></span>
+<span id="cb55-6"><a></a>               <span class="st">"002"</span>: <span class="st">"Carlos"</span>}</span>
+<span id="cb55-7"><a></a>edad <span class="op">=</span> <span class="dv">25</span>                         <span class="co"># ?</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="comportamiento-y-evidencia" class="slide level2 scrollable">
 <h2>2. Comportamiento y evidencia</h2>
@@ -598,7 +1152,7 @@ https://www.youtube.com/watch?v=mrmqRoRDrFg
 </ul></li>
 </ol>
 </section>
-<section id="entrada-de-datos" class="slide level2">
+<section id="entrada-de-datos-2" class="slide level2">
 <h2>Entrada de datos</h2>
 <div class="callout callout-warning no-icon callout-titled callout-style-default">
 <div class="callout-body">
@@ -607,13 +1161,13 @@ https://www.youtube.com/watch?v=mrmqRoRDrFg
 </div>
 <div class="callout-content">
 <p>La función <code>input()</code> se utiliza para obtener datos desde la entrada estándar (generalmente el teclado) y asignarlos a variables. La entrada se toma como una cadena (<code>str</code>).</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a></a>nombre <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Ingrese su nombre: "</span>)</span>
-<span id="cb12-2"><a></a>edad <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Ingrese su edad: "</span>))  <span class="co"># Convertir a entero</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb56"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a></a>nombre <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Ingrese su nombre: "</span>)</span>
+<span id="cb56-2"><a></a>edad <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Ingrese su edad: "</span>))  <span class="co"># Convertir a entero</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
 </section>
-<section id="salida-de-datos" class="slide level2">
+<section id="salida-de-datos-2" class="slide level2">
 <h2>Salida de datos</h2>
 <div class="callout callout-important no-icon callout-titled callout-style-default">
 <div class="callout-body">
@@ -622,16 +1176,16 @@ https://www.youtube.com/watch?v=mrmqRoRDrFg
 </div>
 <div class="callout-content">
 <p>La función <code>print()</code> se utiliza para mostrar información en la salida estándar (consola).</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a></a>nombre <span class="op">=</span> <span class="st">"Juan"</span></span>
-<span id="cb13-2"><a></a>edad <span class="op">=</span> <span class="dv">30</span></span>
-<span id="cb13-3"><a></a><span class="bu">print</span>(<span class="st">"Nombre:"</span>, nombre, <span class="st">"Edad:"</span>, edad)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb57"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a></a>nombre <span class="op">=</span> <span class="st">"Juan"</span></span>
+<span id="cb57-2"><a></a>edad <span class="op">=</span> <span class="dv">30</span></span>
+<span id="cb57-3"><a></a><span class="bu">print</span>(<span class="st">"Nombre:"</span>, nombre, <span class="st">"Edad:"</span>, edad)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Uso recomendado: f-strings (desde Python 3.6)</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>nombre<span class="sc">}</span><span class="ss"> tiene </span><span class="sc">{</span>edad<span class="sc">}</span><span class="ss"> años"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb58"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>nombre<span class="sc">}</span><span class="ss"> tiene </span><span class="sc">{</span>edad<span class="sc">}</span><span class="ss"> años"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
 </section>
-<section id="conversión-de-tipos" class="slide level2">
+<section id="conversión-de-tipos-2" class="slide level2">
 <h2>Conversión de tipos</h2>
 <div class="callout callout-note callout-titled callout-style-default">
 <div class="callout-body">
@@ -643,8 +1197,8 @@ https://www.youtube.com/watch?v=mrmqRoRDrFg
 </div>
 <div class="callout-content">
 <p>La conversión de tipos, o type casting, se refiere a cambiar el tipo de dato de una variable a otro.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a></a>edad <span class="op">=</span> <span class="dv">25</span></span>
-<span id="cb15-2"><a></a>edad_str <span class="op">=</span> <span class="bu">str</span>(edad)  <span class="co"># Convertir entero a cadena</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb59"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a></a>edad <span class="op">=</span> <span class="dv">25</span></span>
+<span id="cb59-2"><a></a>edad_str <span class="op">=</span> <span class="bu">str</span>(edad)  <span class="co"># Convertir entero a cadena</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -665,7 +1219,7 @@ https://www.youtube.com/watch?v=mrmqRoRDrFg
 </div>
 </div>
 </section>
-<section id="tipos-de-operadores" class="slide level2">
+<section id="tipos-de-operadores-2" class="slide level2">
 <h2>Tipos de Operadores</h2>
 <table class="caption-top">
 <thead>
@@ -816,11 +1370,11 @@ https://www.youtube.com/watch?v=mrmqRoRDrFg
 <section id="ejercicio-3.-tipos-de-operadores" class="slide level2 scrollable smaller">
 <h2>Ejercicio 3. Tipos de operadores</h2>
 <p>Supón que tienes las siguientes variables iniciales:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a></a>a <span class="op">=</span> <span class="dv">10</span></span>
-<span id="cb16-2"><a></a>b <span class="op">=</span> <span class="dv">4</span></span>
-<span id="cb16-3"><a></a>lista <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span>
-<span id="cb16-4"><a></a>nombre <span class="op">=</span> <span class="st">"Juan"</span></span>
-<span id="cb16-5"><a></a>persona <span class="op">=</span> {<span class="st">"nombre"</span>: <span class="st">"Juan"</span>, <span class="st">"edad"</span>: <span class="dv">25</span>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb60"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a></a>a <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb60-2"><a></a>b <span class="op">=</span> <span class="dv">4</span></span>
+<span id="cb60-3"><a></a>lista <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span>
+<span id="cb60-4"><a></a>nombre <span class="op">=</span> <span class="st">"Juan"</span></span>
+<span id="cb60-5"><a></a>persona <span class="op">=</span> {<span class="st">"nombre"</span>: <span class="st">"Juan"</span>, <span class="st">"edad"</span>: <span class="dv">25</span>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Responde las siguientes preguntas. Justifica tu respuesta mostrando la evidencia del comportamiento observado.</p>
 <ol type="1">
 <li>¿Cuál es el resultado de <code>a + b * 2 - 3</code>?</li>
@@ -962,24 +1516,24 @@ https://www.youtube.com/watch?v=mrmqRoRDrFg
 </section>
 <section id="sintaxis-de-funciones" class="slide level2">
 <h2>Sintaxis de funciones</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a></a><span class="kw">def</span> nombre_funcion(parámetros):</span>
-<span id="cb17-2"><a></a>    <span class="co">"""Docstring opcional que explica qué hace la función"""</span></span>
-<span id="cb17-3"><a></a>    <span class="co"># cuerpo de la función</span></span>
-<span id="cb17-4"><a></a>    <span class="cf">return</span> valor</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb61"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb61-1"><a></a><span class="kw">def</span> nombre_funcion(parámetros):</span>
+<span id="cb61-2"><a></a>    <span class="co">"""Docstring opcional que explica qué hace la función"""</span></span>
+<span id="cb61-3"><a></a>    <span class="co"># cuerpo de la función</span></span>
+<span id="cb61-4"><a></a>    <span class="cf">return</span> valor</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Ejemplo:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a></a><span class="kw">def</span> saludar(nombre):</span>
-<span id="cb18-2"><a></a>    <span class="bu">print</span>(<span class="ss">f"Hola, </span><span class="sc">{</span>nombre<span class="sc">}</span><span class="ss">!"</span>)</span>
-<span id="cb18-3"><a></a></span>
-<span id="cb18-4"><a></a><span class="co"># llamada</span></span>
-<span id="cb18-5"><a></a>saludar(<span class="st">"Ana"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb62"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a></a><span class="kw">def</span> saludar(nombre):</span>
+<span id="cb62-2"><a></a>    <span class="bu">print</span>(<span class="ss">f"Hola, </span><span class="sc">{</span>nombre<span class="sc">}</span><span class="ss">!"</span>)</span>
+<span id="cb62-3"><a></a></span>
+<span id="cb62-4"><a></a><span class="co"># llamada</span></span>
+<span id="cb62-5"><a></a>saludar(<span class="st">"Ana"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="funciones-con-retorno-return" class="slide level2">
 <h2>Funciones con retorno (<code>return</code>)</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a></a><span class="kw">def</span> cuadrado(x):</span>
-<span id="cb19-2"><a></a>    <span class="cf">return</span> x <span class="op">*</span> x</span>
-<span id="cb19-3"><a></a></span>
-<span id="cb19-4"><a></a>resultado <span class="op">=</span> cuadrado(<span class="dv">5</span>)</span>
-<span id="cb19-5"><a></a><span class="bu">print</span>(resultado)  <span class="co"># Imprime 25</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb63"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb63-1"><a></a><span class="kw">def</span> cuadrado(x):</span>
+<span id="cb63-2"><a></a>    <span class="cf">return</span> x <span class="op">*</span> x</span>
+<span id="cb63-3"><a></a></span>
+<span id="cb63-4"><a></a>resultado <span class="op">=</span> cuadrado(<span class="dv">5</span>)</span>
+<span id="cb63-5"><a></a><span class="bu">print</span>(resultado)  <span class="co"># Imprime 25</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="buenas-prácticas-al-definir-funciones" class="slide level2 smaller">
 <h2>Buenas prácticas al definir funciones</h2>
@@ -1033,10 +1587,10 @@ https://www.youtube.com/watch?v=mrmqRoRDrFg
 <li class="fragment"><p><strong>Parámetro</strong>: variable declarada en la definición de la función.</p></li>
 <li class="fragment"><p><strong>Argumento</strong>: valor real que se pasa cuando se llama a la función.</p></li>
 <li class="fragment"><p>Ejemplo:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a></a><span class="kw">def</span> saludar(nombre):  <span class="co"># nombre es un parámetro</span></span>
-<span id="cb20-2"><a></a>    <span class="bu">print</span>(<span class="st">"Hola"</span>, nombre)</span>
-<span id="cb20-3"><a></a></span>
-<span id="cb20-4"><a></a>saludar(<span class="st">"Lucía"</span>)  <span class="co"># "Lucía" es un argumento</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb64"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb64-1"><a></a><span class="kw">def</span> saludar(nombre):  <span class="co"># nombre es un parámetro</span></span>
+<span id="cb64-2"><a></a>    <span class="bu">print</span>(<span class="st">"Hola"</span>, nombre)</span>
+<span id="cb64-3"><a></a></span>
+<span id="cb64-4"><a></a>saludar(<span class="st">"Lucía"</span>)  <span class="co"># "Lucía" es un argumento</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 </ul>
 </section>
 <section id="ejercicio-4.-estructuras-de-control-y-funciones" class="slide level2 smaller">
