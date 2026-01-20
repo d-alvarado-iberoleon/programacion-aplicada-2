@@ -1330,179 +1330,39 @@
     "text": "🔼 Diccionarios - Métodos comunes\n📌 Recordatorio:\nMétodos comunes de los diccionarios:\n\nkeys(): Devuelve las claves.\nvalues(): Devuelve los valores.\nitems(): Devuelve los pares clave-valor como tuplas.\nget(): Accede a un valor de forma segura (sin causar error si la clave no existe).\ndel: Elimina una clave y su valor.\npop(): Elimina una clave y devuelve su valor.\n\nTambién podemos iterar sobre un diccionario:\n\nClaves: for clave in diccionario.\nValores: for valor in diccionario.values().\nPares clave-valor: for clave, valor in diccionario.items().\n\ndel alumno[\"carrera\"]\npromedio = alumno.pop(\"promedio\")\nprint(alumno)  # Salida: {\"nombre\": \"Ana\", \"edad\": 22}\nprint(alumno.keys())      # Salida: dict_keys([\"nombre\", \"edad\"])\nprint(alumno.get(\"edad\")) # Salida: 22\n\nfor clave, valor in alumno.items():\n    print(f\"{clave}: {valor}\") # Salida?"
   },
   {
-    "objectID": "clases/02_repaso-fundamentos.html#preguntas---tipos-de-datos",
-    "href": "clases/02_repaso-fundamentos.html#preguntas---tipos-de-datos",
+    "objectID": "clases/02_repaso-fundamentos.html#ejercicio-2-tipos-de-variables",
+    "href": "clases/02_repaso-fundamentos.html#ejercicio-2-tipos-de-variables",
     "title": "Clase 02 - Fundamentos de programación",
-    "section": "Preguntas - Tipos de datos",
-    "text": "Preguntas - Tipos de datos"
+    "section": "Ejercicio 2: Tipos de variables",
+    "text": "Ejercicio 2: Tipos de variables\n1. Identificación de tipos\nIndica el tipo de dato de cada una de las siguientes variables:\nnombre = \"Juan\"                   # ?\nes_mayor_de_edad = True           # ?\nprecio = 45.99                    # ?\nnumeros = [1, 2, 3, 4, 5]         # ?\nestudiantes = {\"001\": \"Ana\",      # ?\n               \"002\": \"Carlos\"}\nedad = 25                         # ?"
   },
   {
-    "objectID": "clases/02_repaso-fundamentos.html#pregunta-1",
-    "href": "clases/02_repaso-fundamentos.html#pregunta-1",
+    "objectID": "clases/02_repaso-fundamentos.html#comportamiento-y-evidencia",
+    "href": "clases/02_repaso-fundamentos.html#comportamiento-y-evidencia",
     "title": "Clase 02 - Fundamentos de programación",
-    "section": "Pregunta 1",
-    "text": "Pregunta 1\n¿Qué tipo de variable es?\nnombre = \"Juan\""
-  },
-  {
-    "objectID": "clases/02_repaso-fundamentos.html#pregunta-2",
-    "href": "clases/02_repaso-fundamentos.html#pregunta-2",
-    "title": "Clase 02 - Fundamentos de programación",
-    "section": "Pregunta 2",
-    "text": "Pregunta 2\n¿Qué tipo de variable es?\nes_mayor_de_edad = True"
-  },
-  {
-    "objectID": "clases/02_repaso-fundamentos.html#pregunta-3",
-    "href": "clases/02_repaso-fundamentos.html#pregunta-3",
-    "title": "Clase 02 - Fundamentos de programación",
-    "section": "Pregunta 3",
-    "text": "Pregunta 3\n¿Qué tipo de variable es?\nprecio = 45.99"
-  },
-  {
-    "objectID": "clases/02_repaso-fundamentos.html#pregunta-4",
-    "href": "clases/02_repaso-fundamentos.html#pregunta-4",
-    "title": "Clase 02 - Fundamentos de programación",
-    "section": "Pregunta 4",
-    "text": "Pregunta 4\n¿Qué tipo de variable es?\nnumeros = [1, 2, 3, 4, 5]\n¿Cómo imprimirías el tercer elemento de la lista numeros?\n¿Cómo se podría modificar el contenido de la lista numeros?"
-  },
-  {
-    "objectID": "clases/02_repaso-fundamentos.html#pregunta-5",
-    "href": "clases/02_repaso-fundamentos.html#pregunta-5",
-    "title": "Clase 02 - Fundamentos de programación",
-    "section": "Pregunta 5",
-    "text": "Pregunta 5\n¿Qué tipo de variable es?\nestudiantes = {\"001\": \"Ana\", \"002\": \"Carlos\"}\n¿Qué error podrías encontrar al intentar acceder a una clave que no existe en un diccionario?"
-  },
-  {
-    "objectID": "clases/02_repaso-fundamentos.html#pregunta-6",
-    "href": "clases/02_repaso-fundamentos.html#pregunta-6",
-    "title": "Clase 02 - Fundamentos de programación",
-    "section": "Pregunta 6",
-    "text": "Pregunta 6\n¿Qué tipo de variable es?\nedad = 25\n¿Qué sucede si intentas sumar un número entero con una cadena?"
-  },
-  {
-    "objectID": "clases/02_repaso-fundamentos.html#pregunta-7",
-    "href": "clases/02_repaso-fundamentos.html#pregunta-7",
-    "title": "Clase 02 - Fundamentos de programación",
-    "section": "Pregunta 7",
-    "text": "Pregunta 7\n¿Qué tipo de variable es?\nvalor = None\n¿Cómo puedes comprobar si una variable contiene un valor nulo en Python?"
-  },
-  {
-    "objectID": "clases/02_repaso-fundamentos.html#pregunta-8",
-    "href": "clases/02_repaso-fundamentos.html#pregunta-8",
-    "title": "Clase 02 - Fundamentos de programación",
-    "section": "Pregunta 8",
-    "text": "Pregunta 8\n¿Qué tipo de variable es?\ncolores = (\"rojo\", \"verde\", \"azul\")\n¿Qué ocurre si intentas modificar una tupla después de haberla creado?"
+    "section": "2. Comportamiento y evidencia",
+    "text": "2. Comportamiento y evidencia\n\nResponde las siguientes preguntas. Justifica tu respuesta mostrando la evidencia del comportamiento observado (código, resultado, explicación de lo que sucede y por qué).\n\n¿Cómo imprimirías el tercer elemento de la lista numeros?\n¿Cómo se podría modificar el contenido de la lista numeros?\n¿Qué error aparece al intentar acceder a una clave que no existe en un diccionario?\n¿Qué sucede si intentas sumar un número entero con una cadena?\n¿Qué ocurre si intentas modificar una tupla después de haberla creado?\n¿Cómo puedes comprobar si una variable contiene un valor nulo?"
   },
   {
     "objectID": "clases/02_repaso-fundamentos.html#ops",
     "href": "clases/02_repaso-fundamentos.html#ops",
     "title": "Clase 02 - Fundamentos de programación",
     "section": "Operadores",
-    "text": "Operadores\n\nDefinición:\n\nSon símbolos especiales que realizan operaciones en uno o más operandos. Los operandos pueden ser variables, valores o expresiones."
+    "text": "Operadores\n\n\n\n\n\n\nOperador\n\n\nEs un símbolo especial que realiza una operación en uno o más operandos.\n\n\n\nTipos de Operadores\n\n\n\nTipo\nOperadores\nEjemplo\n\n\n\n\nAritméticos\n+, -, *, /, //, %, **\na + b\n\n\nRelacionales\n==, !=, &gt;, &lt;, &gt;=, &lt;=\nx &gt;= 10\n\n\nLógicos\nand, or, not\nx &gt; 5 and x &lt; 20\n\n\nAsignación\n=, +=, -=, *=, /=\ncontador += 1\n\n\nMembresía\nin, not in\n\"a\" in \"cadena\"\n\n\nIdentidad\nis, is not\nx is None\n\n\n\nReglas de precedencia\nTIPS:\n\nUsa paréntesis para agrupar expresiones y evitar errores de precedencia.\nPotencia (**) se evalúa de derecha a izquierda.\nLos operadores lógicos siguen el orden: not &gt; and &gt; or.\nLa asignación siempre ocurre al final.\n\n\n\n\n\n\n\n\n\n\nNivel\nOperador(es)\nDescripción\nEjemplo\n\n\n\n\n1 (más alta)\n()\nAgrupación mediante paréntesis\n(5 + 3) * 2 → 16\n\n\n2\n**\nPotencia\n2 ** 3 ** 2 → 512\n\n\n3\n+x, -x\nOperadores unarios\n-3 + 4 → 1\n\n\n4\n*, /, //, %\nMultiplicación, división, división entera, módulo\n10 % 3 → 1\n\n\n5\n+, -\nSuma y resta\n10 - 4 + 2 → 8\n\n\n6\n==, !=, &gt;, &lt;, &gt;=, &lt;=, is, in\nComparación, identidad y pertenencia\na in lista\n\n\n7\nnot\nNegación lógica\nnot True → False\n\n\n8\nand\nConjunción lógica\nTrue and False → False\n\n\n9\nor\nDisyunción lógica\nFalse or True → True\n\n\n10 (más baja)\n=, +=, -=, *=, /=\nAsignación\nx = 5; x += 1 → 6"
   },
   {
-    "objectID": "clases/02_repaso-fundamentos.html#tipos-de-operadores",
-    "href": "clases/02_repaso-fundamentos.html#tipos-de-operadores",
+    "objectID": "clases/02_repaso-fundamentos.html#ejemplos-de-operadores",
+    "href": "clases/02_repaso-fundamentos.html#ejemplos-de-operadores",
     "title": "Clase 02 - Fundamentos de programación",
-    "section": "Tipos de Operadores",
-    "text": "Tipos de Operadores\n\nTipos de Operadores:\n\nAritméticos: Realizan operaciones matemáticas.\n\n+ (suma), - (resta), * (multiplicación), / (división), // (división entera), % (módulo o residuo), ** (exponenciación).\n\na = 10\nb = 3\nsuma = a + b\nresta = a - b\nmultiplicacion = a * b\ndivision = a / b\ndivision_entera = a // b\nmodulo = a % b\nexponenciacion = a ** b"
+    "section": "Ejemplos de operadores",
+    "text": "Ejemplos de operadores\nveamos algunos ejemplos…\n\nSin usar calculadora ni Python, ¿Cuál es el resultado de la expresión (5 + 3) * 2 / 4?\nDado el código x += 2, ¿cuál es el valor final de la variable x si su valor inicial es 7?\n¿Cómo podrías verificar si un número es par utilizando operadores relacionales y aritméticos?\n¿Cómo utilizarías el operador ** para calcular la raíz cuadrada de un número?"
   },
   {
-    "objectID": "clases/02_repaso-fundamentos.html#operadores-de-asignación",
-    "href": "clases/02_repaso-fundamentos.html#operadores-de-asignación",
+    "objectID": "clases/02_repaso-fundamentos.html#ejercicio-3.-tipos-de-operadores",
+    "href": "clases/02_repaso-fundamentos.html#ejercicio-3.-tipos-de-operadores",
     "title": "Clase 02 - Fundamentos de programación",
-    "section": "Operadores de Asignación",
-    "text": "Operadores de Asignación\nDe Asignación: Asignan valores a variables.\n\n= (asignación simple), += (suma y asignación), -= (resta y asignación), *= (multiplicación y asignación), /= (división y asignación), //= (división entera y asignación), %=(módulo y asignación), **=(exponenciación y asignación).\n\nx = 5\nx += 3  # Equivalente a x = x + 3"
-  },
-  {
-    "objectID": "clases/02_repaso-fundamentos.html#operadores-relacionales",
-    "href": "clases/02_repaso-fundamentos.html#operadores-relacionales",
-    "title": "Clase 02 - Fundamentos de programación",
-    "section": "Operadores Relacionales",
-    "text": "Operadores Relacionales\nRelacionales: Comparan valores y devuelven un resultado booleano.\n\n== (igual a), != (no igual a), &lt; (menor que), &gt; (mayor que), &lt;= (menor o igual a), &gt;= (mayor o igual a).\n\na = 10\nb = 3\nresultado = (a &gt; b)  # True, ya que 10 es mayor que 3"
-  },
-  {
-    "objectID": "clases/02_repaso-fundamentos.html#operadores-lógicos",
-    "href": "clases/02_repaso-fundamentos.html#operadores-lógicos",
-    "title": "Clase 02 - Fundamentos de programación",
-    "section": "Operadores Lógicos",
-    "text": "Operadores Lógicos\nLógicos: Realizan operaciones lógicas en valores booleanos.\n\nand (y lógico), or (o lógico), not (no lógico).\n\na = 10\nb = 3\ncondicion1 = (a &gt; b) and (b != 0)  # True, ambas condiciones son verdaderas\ncondicion2 = (a &lt; b) or (b == 0)   # False, ninguna condición es verdadera"
-  },
-  {
-    "objectID": "clases/02_repaso-fundamentos.html#operadores-de-membresía",
-    "href": "clases/02_repaso-fundamentos.html#operadores-de-membresía",
-    "title": "Clase 02 - Fundamentos de programación",
-    "section": "Operadores de Membresía",
-    "text": "Operadores de Membresía\nDe Membresía: Verifican si un valor está presente en una secuencia.\n\nin (está en), not in (no está en).\n\nlista = [1, 2, 3, 4, 5]\npertenece = 3 in lista  # True, ya que 3 está en la lista\nno_pertenece = 6 not in lista  # True, ya que 6 no está en la lista"
-  },
-  {
-    "objectID": "clases/02_repaso-fundamentos.html#operadores-de-identidad",
-    "href": "clases/02_repaso-fundamentos.html#operadores-de-identidad",
-    "title": "Clase 02 - Fundamentos de programación",
-    "section": "Operadores de Identidad",
-    "text": "Operadores de Identidad\nDe Identidad: Verifican si dos variables se refieren al mismo objeto en la memoria.\n\nis (es), is not (no es).\n\na = [1, 2, 3]\nb = a  # b ahora apunta al mismo objeto que a\nc = [1, 2, 3]  # un nuevo objeto con el mismo contenido que a\n\nprint(a is b)  # True, ya que b apunta al mismo objeto que a\nprint(a is c)  # False, ya que c es un objeto diferente\nprint(a is not c)  # True, ya que a y c no apuntan al mismo objeto"
-  },
-  {
-    "objectID": "clases/02_repaso-fundamentos.html#preguntas---operadores",
-    "href": "clases/02_repaso-fundamentos.html#preguntas---operadores",
-    "title": "Clase 02 - Fundamentos de programación",
-    "section": "Preguntas - Operadores",
-    "text": "Preguntas - Operadores"
-  },
-  {
-    "objectID": "clases/02_repaso-fundamentos.html#pregunta-1---operadores",
-    "href": "clases/02_repaso-fundamentos.html#pregunta-1---operadores",
-    "title": "Clase 02 - Fundamentos de programación",
-    "section": "Pregunta 1 - Operadores",
-    "text": "Pregunta 1 - Operadores\n¿Cuál es la diferencia entre = y ==?"
-  },
-  {
-    "objectID": "clases/02_repaso-fundamentos.html#pregunta-2---operadores",
-    "href": "clases/02_repaso-fundamentos.html#pregunta-2---operadores",
-    "title": "Clase 02 - Fundamentos de programación",
-    "section": "Pregunta 2 - Operadores",
-    "text": "Pregunta 2 - Operadores\nSin usar calculadora ni Python, ¿Cuál es el resultado de la expresión (5 + 3) * 2 / 4?"
-  },
-  {
-    "objectID": "clases/02_repaso-fundamentos.html#pregunta-3---operadores",
-    "href": "clases/02_repaso-fundamentos.html#pregunta-3---operadores",
-    "title": "Clase 02 - Fundamentos de programación",
-    "section": "Pregunta 3 - Operadores",
-    "text": "Pregunta 3 - Operadores\nDado el código x += 2, ¿cuál es el valor final de la variable x si su valor inicial es 7?\n¿Cómo podrías verificar si un número es par utilizando operadores relacionales y aritméticos?"
-  },
-  {
-    "objectID": "clases/02_repaso-fundamentos.html#pregunta-4---operadores",
-    "href": "clases/02_repaso-fundamentos.html#pregunta-4---operadores",
-    "title": "Clase 02 - Fundamentos de programación",
-    "section": "Pregunta 4 - Operadores",
-    "text": "Pregunta 4 - Operadores\nSi tienes una lista numeros = [1, 2, 3, 4, 5], ¿cómo verificarías si el número 6 está presente en la lista?"
-  },
-  {
-    "objectID": "clases/02_repaso-fundamentos.html#pregunta-5---operadores",
-    "href": "clases/02_repaso-fundamentos.html#pregunta-5---operadores",
-    "title": "Clase 02 - Fundamentos de programación",
-    "section": "Pregunta 5 - Operadores",
-    "text": "Pregunta 5 - Operadores\n¿Cómo utilizarías el operador ** para calcular la raíz cuadrada de un número?"
-  },
-  {
-    "objectID": "clases/02_repaso-fundamentos.html#pregunta-6---operadores",
-    "href": "clases/02_repaso-fundamentos.html#pregunta-6---operadores",
-    "title": "Clase 02 - Fundamentos de programación",
-    "section": "Pregunta 6 - Operadores",
-    "text": "Pregunta 6 - Operadores\n¿Qué sucede si intentas realizar una división entre cero en Python?"
-  },
-  {
-    "objectID": "clases/02_repaso-fundamentos.html#pregunta-7---operadores",
-    "href": "clases/02_repaso-fundamentos.html#pregunta-7---operadores",
-    "title": "Clase 02 - Fundamentos de programación",
-    "section": "Pregunta 7 - Operadores",
-    "text": "Pregunta 7 - Operadores\nDado un diccionario persona = {\"nombre\": \"Juan\", \"edad\": 25}, ¿cómo verificarías si la clave “edad” está presente?"
-  },
-  {
-    "objectID": "clases/02_repaso-fundamentos.html#pregunta-8---operadores",
-    "href": "clases/02_repaso-fundamentos.html#pregunta-8---operadores",
-    "title": "Clase 02 - Fundamentos de programación",
-    "section": "Pregunta 8 - Operadores",
-    "text": "Pregunta 8 - Operadores\n¿Cuál es la diferencia entre is y ==?"
+    "section": "Ejercicio 3. Tipos de operadores",
+    "text": "Ejercicio 3. Tipos de operadores\nSupón que tienes las siguientes variables iniciales:\na = 10\nb = 4\nlista = [1, 2, 3, 4, 5]\nnombre = \"Juan\"\npersona = {\"nombre\": \"Juan\", \"edad\": 25}\nResponde las siguientes preguntas. Justifica tu respuesta mostrando la evidencia del comportamiento observado.\n\n¿Cuál es el resultado de a + b * 2 - 3?\nSi haces a //= 3, ¿cuál es el nuevo valor de a?\nUsa el operador de potencia ** para calcular el cuadrado de b.\n¿Cuál es el resultado de a &gt; b and b &lt; 5?\n¿Qué valor retorna not (a == 10)?\nVerifica si a es múltiplo de b utilizando una expresión booleana.\n¿Cómo verificarías si el número 6 está o no en lista?\n¿Cómo saber si la clave “edad” está presente en el diccionario persona?\nDeclara c = 10 y verifica si a is c y luego si a == c. ¿Por qué puede haber diferencia?\n¿Qué ocurre si ejecutas a / 0? ¿Qué tipo de error se genera?\n¿Cómo podrías validar que una variable no es None?"
   },
   {
     "objectID": "clases/02_repaso-fundamentos.html#io",
@@ -1515,22 +1375,22 @@
     "objectID": "clases/02_repaso-fundamentos.html#entrada-de-datos",
     "href": "clases/02_repaso-fundamentos.html#entrada-de-datos",
     "title": "Clase 02 - Fundamentos de programación",
-    "section": "Entrada de Datos",
-    "text": "Entrada de Datos\n\nEntrada de Datos\n\n\nLa función input() se utiliza para obtener datos desde la entrada estándar (generalmente el teclado) y asignarlos a variables.\nLa entrada se toma como una cadena (str), por lo que a menudo es necesario convertirla al tipo de dato adecuado.\n\nnombre = input(\"Ingrese su nombre: \")\nedad = int(input(\"Ingrese su edad: \"))  # Convertir la entrada a entero"
-  },
-  {
-    "objectID": "clases/02_repaso-fundamentos.html#conversión-de-tipos",
-    "href": "clases/02_repaso-fundamentos.html#conversión-de-tipos",
-    "title": "Clase 02 - Fundamentos de programación",
-    "section": "Conversión de Tipos",
-    "text": "Conversión de Tipos\n\nConversión de Tipos\n\nLa conversión de tipos, o type casting, se refiere a cambiar el tipo de dato de una variable a otro. Por ejemplo, convertir una cadena a un entero o viceversa.\nedad = 25\nedad_str = str(edad)  # Convertir entero a cadena"
+    "section": "Entrada de datos",
+    "text": "Entrada de datos\n\n\n\nEntrada de datos\n\n\nLa función input() se utiliza para obtener datos desde la entrada estándar (generalmente el teclado) y asignarlos a variables. La entrada se toma como una cadena (str).\nnombre = input(\"Ingrese su nombre: \")\nedad = int(input(\"Ingrese su edad: \"))  # Convertir a entero"
   },
   {
     "objectID": "clases/02_repaso-fundamentos.html#salida-de-datos",
     "href": "clases/02_repaso-fundamentos.html#salida-de-datos",
     "title": "Clase 02 - Fundamentos de programación",
-    "section": "Salida de Datos",
-    "text": "Salida de Datos\n\nSalida de Datos\n\n\nLa función print() se utiliza para mostrar información en la salida estándar (generalmente la consola).\nPuede imprimir valores de variables, texto y realizar formateo básico.\n\nnombre = \"Juan\"\nedad = 30\nprint(\"Nombre:\", nombre, \"Edad:\", edad)"
+    "section": "Salida de datos",
+    "text": "Salida de datos\n\n\n\nSalida de datos\n\n\nLa función print() se utiliza para mostrar información en la salida estándar (consola).\nnombre = \"Juan\"\nedad = 30\nprint(\"Nombre:\", nombre, \"Edad:\", edad)\nUso recomendado: f-strings (desde Python 3.6)\nprint(f\"{nombre} tiene {edad} años\")"
+  },
+  {
+    "objectID": "clases/02_repaso-fundamentos.html#conversión-de-tipos",
+    "href": "clases/02_repaso-fundamentos.html#conversión-de-tipos",
+    "title": "Clase 02 - Fundamentos de programación",
+    "section": "Conversión de tipos",
+    "text": "Conversión de tipos\n\n\n\n\n\n\nConversión de tipos\n\n\nLa conversión de tipos, o type casting, se refiere a cambiar el tipo de dato de una variable a otro.\nedad = 25\nedad_str = str(edad)  # Convertir entero a cadena"
   },
   {
     "objectID": "clases/02_repaso-fundamentos.html#preguntas---io",
@@ -1544,7 +1404,7 @@
     "href": "clases/02_repaso-fundamentos.html#pregunta-1---io",
     "title": "Clase 02 - Fundamentos de programación",
     "section": "Pregunta 1 - I/O",
-    "text": "Pregunta 1 - I/O\n¿Cuál será la salida si el usuario ingresa “3”?\nx = input(\"Ingrese un número: \")\ny = x * 2\nprint(y)"
+    "text": "Pregunta 1 - I/O\n¿Cuál será la salida si el usuario ingresa 3?\nx = input(\"Ingrese un número: \")\ny = x * 2\nprint(y)"
   },
   {
     "objectID": "clases/02_repaso-fundamentos.html#pregunta-2---io",
@@ -1572,35 +1432,7 @@
     "href": "clases/02_repaso-fundamentos.html#flujo-de-ejecución",
     "title": "Clase 02 - Fundamentos de programación",
     "section": "Flujo de ejecución",
-    "text": "Flujo de ejecución"
-  },
-  {
-    "objectID": "clases/02_repaso-fundamentos.html#flujo-secuencial",
-    "href": "clases/02_repaso-fundamentos.html#flujo-secuencial",
-    "title": "Clase 02 - Fundamentos de programación",
-    "section": "Flujo Secuencial",
-    "text": "Flujo Secuencial\n\nFlujo Secuencial:\n\nImplica ejecutar las instrucciones en orden, una tras otra.\nprint(\"Inicio del programa\")\nedad = 20\nprint(\"La edad es:\", edad)\nprint(\"Fin del programa\")"
-  },
-  {
-    "objectID": "clases/02_repaso-fundamentos.html#cond",
-    "href": "clases/02_repaso-fundamentos.html#cond",
-    "title": "Clase 02 - Fundamentos de programación",
-    "section": "Estructuras Condicionales",
-    "text": "Estructuras Condicionales\n\nEstructuras Condicionales (if, elif, else):\n\nPermiten ejecutar bloques de código dependiendo si una condición es verdadera o falsa.\nEstructura if: Ejecuta el bloque de código dentro del if si la condición es verdadera.\nedad = 20\nif edad &gt;= 18:\n    print(\"Eres mayor de edad.\")"
-  },
-  {
-    "objectID": "clases/02_repaso-fundamentos.html#estructura-elif",
-    "href": "clases/02_repaso-fundamentos.html#estructura-elif",
-    "title": "Clase 02 - Fundamentos de programación",
-    "section": "Estructura elif",
-    "text": "Estructura elif\nEstructura elif: Se utiliza para evaluar condiciones adicionales si la condición del if no se cumple.\ntemperatura = 25\nif temperatura &gt; 30:\n    print(\"Hace mucho calor.\")\nelif temperatura &gt; 20:\n    print(\"La temperatura es agradable.\")"
-  },
-  {
-    "objectID": "clases/02_repaso-fundamentos.html#estructura-else",
-    "href": "clases/02_repaso-fundamentos.html#estructura-else",
-    "title": "Clase 02 - Fundamentos de programación",
-    "section": "Estructura else",
-    "text": "Estructura else\nEstructura else: Proporciona un bloque de código que se ejecuta si ninguna de las condiciones anteriores es verdadera.\nedad = 15\nif edad &gt;= 18:\n    print(\"Eres mayor de edad.\")\nelse:\n    print(\"Eres menor de edad.\")"
+    "text": "Flujo de ejecución\nFlujo Secuencial\nImplica ejecutar las instrucciones en orden, una tras otra.\nprint(\"Inicio del programa\")\nedad = 20\nprint(\"La edad es:\", edad)\nprint(\"Fin del programa\")\nEstructuras Condicionales\nPermiten ejecutar bloques de código dependiendo si una condición es verdadera o falsa.\nEstructura if: Ejecuta el bloque de código dentro del if si la condición es verdadera.\nedad = 20\nif edad &gt;= 18:\n    print(\"Eres mayor de edad.\")\nEstructura elif: Se utiliza para evaluar condiciones adicionales si la condición del if no se cumple.\ntemperatura = 25\nif temperatura &gt; 30:\n    print(\"Hace mucho calor.\")\nelif temperatura &gt; 20:\n    print(\"La temperatura es agradable.\")\nEstructura else: Proporciona un bloque de código que se ejecuta si ninguna de las condiciones anteriores es verdadera.\nedad = 15\nif edad &gt;= 18:\n    print(\"Eres mayor de edad.\")\nelse:\n    print(\"Eres menor de edad.\")"
   },
   {
     "objectID": "clases/02_repaso-fundamentos.html#preguntas---condicionales",
@@ -1627,15 +1459,8 @@
     "objectID": "clases/02_repaso-fundamentos.html#cycles",
     "href": "clases/02_repaso-fundamentos.html#cycles",
     "title": "Clase 02 - Fundamentos de programación",
-    "section": "Ciclos",
-    "text": "Ciclos\n\nEstructuras de Iteración/Ciclos (for, while):\n\nPermiten repetir bloques de código mientras se cumpla una condición.\nCiclo for:\nObtiene los elementos de un iterable (como una lista) y ejecuta el bloque de código en cada iteración.\nfrutas = [\"manzana\", \"banana\", \"cereza\"]\nfor fruta in frutas:\n    print(fruta)"
-  },
-  {
-    "objectID": "clases/02_repaso-fundamentos.html#ciclo-while",
-    "href": "clases/02_repaso-fundamentos.html#ciclo-while",
-    "title": "Clase 02 - Fundamentos de programación",
-    "section": "Ciclo while",
-    "text": "Ciclo while\nCiclo while:\nEjecuta el bloque de código mientras la condición sea verdadera.\ncontador = 0\nwhile contador &lt; 5:\n    print(contador)\n    contador += 1"
+    "section": "Estructuras de Iteración/Ciclos (for, while):",
+    "text": "Estructuras de Iteración/Ciclos (for, while):\nPermiten repetir bloques de código mientras se cumpla una condición.\nCiclo for:\nObtiene los elementos de un iterable (como una lista) y ejecuta el bloque de código en cada iteración.\nfrutas = [\"manzana\", \"banana\", \"cereza\"]\nfor fruta in frutas:\n    print(fruta)\nCiclo while:\nEjecuta el bloque de código mientras la condición sea verdadera.\ncontador = 0\nwhile contador &lt; 5:\n    print(contador)\n    contador += 1"
   },
   {
     "objectID": "clases/02_repaso-fundamentos.html#preguntas---ciclos",
@@ -1673,81 +1498,11 @@
     "text": "Pregunta 4 - Ciclos\n¿Puedes modificar el ejemplo del bucle for para imprimir las frutas en mayúsculas?\nfrutas = [\"manzana\", \"banana\", \"cereza\"]\nfor fruta in frutas:\n    print(fruta)"
   },
   {
-    "objectID": "clases/02_repaso-fundamentos.html#ejercicio-2-tipos-de-variables",
-    "href": "clases/02_repaso-fundamentos.html#ejercicio-2-tipos-de-variables",
-    "title": "Clase 02 - Fundamentos de programación",
-    "section": "Ejercicio 2: Tipos de variables",
-    "text": "Ejercicio 2: Tipos de variables\n1. Identificación de tipos\nIndica el tipo de dato de cada una de las siguientes variables:\nnombre = \"Juan\"                   # ?\nes_mayor_de_edad = True           # ?\nprecio = 45.99                    # ?\nnumeros = [1, 2, 3, 4, 5]         # ?\nestudiantes = {\"001\": \"Ana\",      # ?\n               \"002\": \"Carlos\"}\nedad = 25                         # ?"
-  },
-  {
-    "objectID": "clases/02_repaso-fundamentos.html#comportamiento-y-evidencia",
-    "href": "clases/02_repaso-fundamentos.html#comportamiento-y-evidencia",
-    "title": "Clase 02 - Fundamentos de programación",
-    "section": "2. Comportamiento y evidencia",
-    "text": "2. Comportamiento y evidencia\n\nResponde las siguientes preguntas. Justifica tu respuesta mostrando la evidencia del comportamiento observado (código, resultado, explicación de lo que sucede y por qué).\n\n¿Cómo imprimirías el tercer elemento de la lista numeros?\n¿Cómo se podría modificar el contenido de la lista numeros?\n¿Qué error aparece al intentar acceder a una clave que no existe en un diccionario?\n¿Qué sucede si intentas sumar un número entero con una cadena?\n¿Qué ocurre si intentas modificar una tupla después de haberla creado?\n¿Cómo puedes comprobar si una variable contiene un valor nulo?"
-  },
-  {
-    "objectID": "clases/02_repaso-fundamentos.html#entrada-de-datos-2",
-    "href": "clases/02_repaso-fundamentos.html#entrada-de-datos-2",
-    "title": "Clase 02 - Fundamentos de programación",
-    "section": "Entrada de datos",
-    "text": "Entrada de datos\n\n\n\nEntrada de datos\n\n\nLa función input() se utiliza para obtener datos desde la entrada estándar (generalmente el teclado) y asignarlos a variables. La entrada se toma como una cadena (str).\nnombre = input(\"Ingrese su nombre: \")\nedad = int(input(\"Ingrese su edad: \"))  # Convertir a entero"
-  },
-  {
-    "objectID": "clases/02_repaso-fundamentos.html#salida-de-datos-2",
-    "href": "clases/02_repaso-fundamentos.html#salida-de-datos-2",
-    "title": "Clase 02 - Fundamentos de programación",
-    "section": "Salida de datos",
-    "text": "Salida de datos\n\n\n\nSalida de datos\n\n\nLa función print() se utiliza para mostrar información en la salida estándar (consola).\nnombre = \"Juan\"\nedad = 30\nprint(\"Nombre:\", nombre, \"Edad:\", edad)\nUso recomendado: f-strings (desde Python 3.6)\nprint(f\"{nombre} tiene {edad} años\")"
-  },
-  {
-    "objectID": "clases/02_repaso-fundamentos.html#conversión-de-tipos-2",
-    "href": "clases/02_repaso-fundamentos.html#conversión-de-tipos-2",
-    "title": "Clase 02 - Fundamentos de programación",
-    "section": "Conversión de tipos",
-    "text": "Conversión de tipos\n\n\n\n\n\n\nConversión de tipos\n\n\nLa conversión de tipos, o type casting, se refiere a cambiar el tipo de dato de una variable a otro.\nedad = 25\nedad_str = str(edad)  # Convertir entero a cadena"
-  },
-  {
-    "objectID": "clases/02_repaso-fundamentos.html#operadores",
-    "href": "clases/02_repaso-fundamentos.html#operadores",
-    "title": "Clase 02 - Fundamentos de programación",
-    "section": "Operadores",
-    "text": "Operadores\n\n\n\n\n\n\nOperador\n\n\nEs un símbolo especial que realiza una operación en uno o más operandos."
-  },
-  {
-    "objectID": "clases/02_repaso-fundamentos.html#tipos-de-operadores-2",
-    "href": "clases/02_repaso-fundamentos.html#tipos-de-operadores-2",
-    "title": "Clase 02 - Fundamentos de programación",
-    "section": "Tipos de Operadores",
-    "text": "Tipos de Operadores\n\n\n\nTipo\nOperadores\nEjemplo\n\n\n\n\nAritméticos\n+, -, *, /, //, %, **\na + b\n\n\nRelacionales\n==, !=, &gt;, &lt;, &gt;=, &lt;=\nx &gt;= 10\n\n\nLógicos\nand, or, not\nx &gt; 5 and x &lt; 20\n\n\nAsignación\n=, +=, -=, *=, /=\ncontador += 1\n\n\nMembresía\nin, not in\n\"a\" in \"cadena\"\n\n\nIdentidad\nis, is not\nx is None"
-  },
-  {
-    "objectID": "clases/02_repaso-fundamentos.html#reglas-de-precedencia",
-    "href": "clases/02_repaso-fundamentos.html#reglas-de-precedencia",
-    "title": "Clase 02 - Fundamentos de programación",
-    "section": "Reglas de precedencia",
-    "text": "Reglas de precedencia\nTIPS:\n\nUsa paréntesis para agrupar expresiones y evitar errores de precedencia.\nPotencia (**) se evalúa de derecha a izquierda.\nLos operadores lógicos siguen el orden: not &gt; and &gt; or.\nLa asignación siempre ocurre al final.\n\n\n\n\n\n\n\n\n\n\nNivel\nOperador(es)\nDescripción\nEjemplo\n\n\n\n\n1 (más alta)\n()\nAgrupación mediante paréntesis\n(5 + 3) * 2 → 16\n\n\n2\n**\nPotencia\n2 ** 3 ** 2 → 512\n\n\n3\n+x, -x\nOperadores unarios\n-3 + 4 → 1\n\n\n4\n*, /, //, %\nMultiplicación, división, división entera, módulo\n10 % 3 → 1\n\n\n5\n+, -\nSuma y resta\n10 - 4 + 2 → 8\n\n\n6\n==, !=, &gt;, &lt;, &gt;=, &lt;=, is, in\nComparación, identidad y pertenencia\na in lista\n\n\n7\nnot\nNegación lógica\nnot True → False\n\n\n8\nand\nConjunción lógica\nTrue and False → False\n\n\n9\nor\nDisyunción lógica\nFalse or True → True\n\n\n10 (más baja)\n=, +=, -=, *=, /=\nAsignación\nx = 5; x += 1 → 6"
-  },
-  {
-    "objectID": "clases/02_repaso-fundamentos.html#ejemplos-de-operadores",
-    "href": "clases/02_repaso-fundamentos.html#ejemplos-de-operadores",
-    "title": "Clase 02 - Fundamentos de programación",
-    "section": "Ejemplos de operadores",
-    "text": "Ejemplos de operadores\nveamos algunos ejemplos…\n\nSin usar calculadora ni Python, ¿Cuál es el resultado de la expresión (5 + 3) * 2 / 4?\n\n\nDado el código x += 2, ¿cuál es el valor final de la variable x si su valor inicial es 7?\n\n\n¿Cómo podrías verificar si un número es par utilizando operadores relacionales y aritméticos?\n\n\n¿Cómo utilizarías el operador ** para calcular la raíz cuadrada de un número?"
-  },
-  {
-    "objectID": "clases/02_repaso-fundamentos.html#ejercicio-3.-tipos-de-operadores",
-    "href": "clases/02_repaso-fundamentos.html#ejercicio-3.-tipos-de-operadores",
-    "title": "Clase 02 - Fundamentos de programación",
-    "section": "Ejercicio 3. Tipos de operadores",
-    "text": "Ejercicio 3. Tipos de operadores\nSupón que tienes las siguientes variables iniciales:\na = 10\nb = 4\nlista = [1, 2, 3, 4, 5]\nnombre = \"Juan\"\npersona = {\"nombre\": \"Juan\", \"edad\": 25}\nResponde las siguientes preguntas. Justifica tu respuesta mostrando la evidencia del comportamiento observado.\n\n¿Cuál es el resultado de a + b * 2 - 3?\nSi haces a //= 3, ¿cuál es el nuevo valor de a?\nUsa el operador de potencia ** para calcular el cuadrado de b.\n¿Cuál es el resultado de a &gt; b and b &lt; 5?\n¿Qué valor retorna not (a == 10)?\nVerifica si a es múltiplo de b utilizando una expresión booleana.\n¿Cómo verificarías si el número 6 está o no en lista?\n¿Cómo saber si la clave “edad” está presente en el diccionario persona?\nDeclara c = 10 y verifica si a is c y luego si a == c. ¿Por qué puede haber diferencia?\n¿Qué ocurre si ejecutas a / 0? ¿Qué tipo de error se genera?\n¿Cómo podrías validar que una variable no es None?"
-  },
-  {
     "objectID": "clases/02_repaso-fundamentos.html#estructuras-de-control",
     "href": "clases/02_repaso-fundamentos.html#estructuras-de-control",
     "title": "Clase 02 - Fundamentos de programación",
     "section": "Estructuras de control",
-    "text": "Estructuras de control\n\n\n\n\n\n\n\n\n\nTipo\nEstructura\nDescripción\nEjemplo de uso\n\n\n\n\nCondicional\nif\nEvalúa una condición y ejecuta un bloque si se cumple.\nif edad &gt;= 18:\n\n\nCondicional\nif ... else\nEjecuta un bloque si se cumple la condición, otro si no.\nif edad &gt;= 18: ... else: ...\n\n\nCondicional\nif ... elif ... else\nPermite múltiples condiciones encadenadas.\nif x &gt; 0: ... elif x &lt; 0: ...\n\n\nBucle\nwhile\nRepite un bloque mientras una condición sea verdadera.\nwhile i &lt; 10:\n\n\nBucle\nfor\nItera sobre elementos de una secuencia.\nfor letra in palabra:\n\n\nControl de flujo\nbreak\nTermina un ciclo de forma anticipada.\nif x == 5: break\n\n\nControl de flujo\ncontinue\nOmite el resto del ciclo actual.\nif x == 0: continue\n\n\nControl nulo\npass\nNo hace nada; marcador de posición.\nif condicion: pass\n\n\n\nTips: Usa if...elif...else para condiciones excluyentes. Prefiere for para recorrer elementos y while cuando no sabes cuántas iteraciones. Evita ciclos infinitos."
+    "text": "Estructuras de control\n\n\n\n\n\n\n\n\n\nTipo\nEstructura\nDescripción\nEjemplo de uso\n\n\n\n\nCondicional\nif\nEvalúa una condición y ejecuta un bloque si se cumple.\nif edad &gt;= 18:\n\n\nCondicional\nif ... else\nEjecuta un bloque si se cumple la condición, otro si no.\nif edad &gt;= 18: ... else: ...\n\n\nCondicional\nif ... elif ... else\nPermite múltiples condiciones encadenadas.\nif x &gt; 0: ... elif x &lt; 0: ...\n\n\nCiclo\nwhile\nRepite un bloque mientras una condición sea verdadera.\nwhile i &lt; 10:\n\n\nCiclo\nfor\nItera sobre elementos de una secuencia.\nfor letra in palabra:\n\n\nControl de flujo\nbreak\nTermina un ciclo de forma anticipada.\nif x == 5: break\n\n\nControl de flujo\ncontinue\nOmite el resto del ciclo actual.\nif x == 0: continue\n\n\nControl nulo\npass\nNo hace nada; marcador de posición.\nif condicion: pass\n\n\n\nTips: Usa if...elif...else para condiciones excluyentes. Prefiere for para recorrer elementos y while cuando no sabes cuántas iteraciones. Evita ciclos infinitos."
   },
   {
     "objectID": "clases/02_repaso-fundamentos.html#ejemplos-de-estructuras-de-control",
