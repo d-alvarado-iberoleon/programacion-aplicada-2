@@ -1120,69 +1120,6 @@
     "text": "1 Listado de clases"
   },
   {
-    "objectID": "clases/01_logistica.html#contenido",
-    "href": "clases/01_logistica.html#contenido",
-    "title": "Clase 01 - Logística del curso",
-    "section": "Contenido",
-    "text": "Contenido\n\nAcerca del curso\n\nInformación del curso\nQué esperar y que NO esperar del curso\nPrerrequisitos\nObjetivos\n\nCódigo de conducta\n\nComunicación oficial 455\n\nTemario\nEvaluación\nFechas importantes\nMaterial de estudio"
-  },
-  {
-    "objectID": "clases/01_logistica.html#acercade",
-    "href": "clases/01_logistica.html#acercade",
-    "title": "Clase 01 - Logística del curso",
-    "section": "Acerca del curso",
-    "text": "Acerca del curso\nProgramación Aplicada II\n\nHorario: Lunes y Miércoles, 07:00 a 09:00 hrs\nDocente: Dra. Dora Alvarado\n\nEmail: 27382@iberoleon.edu.mx; doraelisa.alvaradocarrillo@iberoleon.edu.mx\n\nAvisos, exámenes, tareas a través de la página del curso en Moodle."
-  },
-  {
-    "objectID": "clases/01_logistica.html#codigo",
-    "href": "clases/01_logistica.html#codigo",
-    "title": "Clase 01 - Logística del curso",
-    "section": "Código de conducta",
-    "text": "Código de conducta\nVersión resumida:\n\n\n\n\n\n\nDisciplina\n\n\nCualquier indisciplina en el salón de clase implicará la salida del salón con falta y un reporte a la coordinación de la carrera."
-  },
-  {
-    "objectID": "clases/01_logistica.html#temario-sujeto-a-cambios-según-sea-necesario",
-    "href": "clases/01_logistica.html#temario-sujeto-a-cambios-según-sea-necesario",
-    "title": "Clase 01 - Logística del curso",
-    "section": "Temario (sujeto a cambios según sea necesario):",
-    "text": "Temario (sujeto a cambios según sea necesario):"
-  },
-  {
-    "objectID": "clases/01_logistica.html#evaluacion",
-    "href": "clases/01_logistica.html#evaluacion",
-    "title": "Clase 01 - Logística del curso",
-    "section": "Evaluación",
-    "text": "Evaluación"
-  },
-  {
-    "objectID": "clases/01_logistica.html#evaluación",
-    "href": "clases/01_logistica.html#evaluación",
-    "title": "Clase 01 - Logística del curso",
-    "section": "Evaluación",
-    "text": "Evaluación\n\n\n\n\n\n\n\n\nComponente\nPorcentaje\nDetalles\n\n\n\n\nExámenes parciales (3)\n75% (25% c/u)\nEvaluaciones teórico-prácticas al final de cada unidad.\n\n\nProyecto final\n15%\nIndividual o en equipos de máximo 3 integrantes. Incluye 1 avance obligatorio durante el semestre.\n\n\nEjercicios de clase\n10%\nEntrega individual. Ejercicios, pseudocódigo, prácticas guiadas.\n\n\n\n\nNota importante:\n- La calificación que se reporta por parcial corresponde únicamente al examen parcial y tiene carácter informativo.\n- Los ejercicios se revisarán al final de la clase o, en su defecto, al inicio de la siguiente clase si así se indica.\n- No se recibirán ejercicios fuera de tiempo, excepto en casos debidamente justificados y avalados por la coordinación de carrera."
-  },
-  {
-    "objectID": "clases/01_logistica.html#fechas",
-    "href": "clases/01_logistica.html#fechas",
-    "title": "Clase 01 - Logística del curso",
-    "section": "Fechas importantes",
-    "text": "Fechas importantes\n\n\n\nEvento\nFecha\n\n\n\n\n🟢 INICIO DE SEMESTRE\nMartes 13 de Enero\n\n\n🟡 1era evaluación parcial\nMiércoles 11 de febrero\n\n\n🟡 2da evaluación parcial\nMiércoles 25 de marzo\n\n\n🟡 Evaluación final\nLunes 04 de mayo\n\n\n🔵 Entrega de calificaciones finales\nMiércoles 06 de mayo\n\n\n🔴 FIN DE SEMESTRE\nViernes 08 de Mayo"
-  },
-  {
-    "objectID": "clases/01_logistica.html#material",
-    "href": "clases/01_logistica.html#material",
-    "title": "Clase 01 - Logística del curso",
-    "section": "Material de estudio",
-    "text": "Material de estudio\n\n\n\n\n\n\n\nLibro\nDescripción\n\n\n\n\n\nHow to Think Like a Computer Scientist, 3rd Edition (Using Python 3.x)\n\n\n\nEl Libro de Python\n\n\n\nIntroduction to Computation and Programming Using Python, 3rd edition John V. Guttag"
-  },
-  {
-    "objectID": "clases/01_logistica.html#diagnostico",
-    "href": "clases/01_logistica.html#diagnostico",
-    "title": "Clase 01 - Logística del curso",
-    "section": "Actividad diagnóstica",
-    "text": "Actividad diagnóstica\nAbrir formulario de diagnóstico: https://forms.office.com/r/iy9LhBQ1XE\nEscanea el código QR:"
-  },
-  {
     "objectID": "clases/02_repaso-fundamentos.html#fundamentos",
     "href": "clases/02_repaso-fundamentos.html#fundamentos",
     "title": "Clase 02 - Fundamentos de programación",
@@ -1580,6 +1517,174 @@
     "title": "Clase 02 - Fundamentos de programación",
     "section": "Referencias",
     "text": "Referencias\n\nArora, Pretti. Computer Science with Python. (2020). Computer Science with Python\nStanford University. Stanford CS224N Python Review. Stanford CS224N Python Review\n\nEjercicio 1: Dos gatos y un ratón\nDos gatos y un ratón\nEjercicio 2: Una sumatoria muy extraña\nUna sumatoria muy extraña\nEjercicio 3: Una serie poco interesante\nUna serie poco interesante"
+  },
+  {
+    "objectID": "clases/01_logistica.html#contenido",
+    "href": "clases/01_logistica.html#contenido",
+    "title": "Clase 01 - Logística del curso",
+    "section": "Contenido",
+    "text": "Contenido\n\nAcerca del curso\n\nInformación del curso\nQué esperar y que NO esperar del curso\nPrerrequisitos\nObjetivos\n\nCódigo de conducta\n\nComunicación oficial 455\n\nTemario\nEvaluación\nFechas importantes\nMaterial de estudio"
+  },
+  {
+    "objectID": "clases/01_logistica.html#acercade",
+    "href": "clases/01_logistica.html#acercade",
+    "title": "Clase 01 - Logística del curso",
+    "section": "Acerca del curso",
+    "text": "Acerca del curso\nProgramación Aplicada II\n\nHorario: Lunes y Miércoles, 07:00 a 09:00 hrs\nDocente: Dra. Dora Alvarado\n\nEmail: 27382@iberoleon.edu.mx; doraelisa.alvaradocarrillo@iberoleon.edu.mx\n\nAvisos, exámenes, tareas a través de la página del curso en Moodle."
+  },
+  {
+    "objectID": "clases/01_logistica.html#codigo",
+    "href": "clases/01_logistica.html#codigo",
+    "title": "Clase 01 - Logística del curso",
+    "section": "Código de conducta",
+    "text": "Código de conducta\nVersión resumida:\n\n\n\n\n\n\nDisciplina\n\n\nCualquier indisciplina en el salón de clase implicará la salida del salón con falta y un reporte a la coordinación de la carrera."
+  },
+  {
+    "objectID": "clases/01_logistica.html#temario-sujeto-a-cambios-según-sea-necesario",
+    "href": "clases/01_logistica.html#temario-sujeto-a-cambios-según-sea-necesario",
+    "title": "Clase 01 - Logística del curso",
+    "section": "Temario (sujeto a cambios según sea necesario):",
+    "text": "Temario (sujeto a cambios según sea necesario):"
+  },
+  {
+    "objectID": "clases/01_logistica.html#evaluacion",
+    "href": "clases/01_logistica.html#evaluacion",
+    "title": "Clase 01 - Logística del curso",
+    "section": "Evaluación",
+    "text": "Evaluación"
+  },
+  {
+    "objectID": "clases/01_logistica.html#evaluación",
+    "href": "clases/01_logistica.html#evaluación",
+    "title": "Clase 01 - Logística del curso",
+    "section": "Evaluación",
+    "text": "Evaluación\n\n\n\n\n\n\n\n\nComponente\nPorcentaje\nDetalles\n\n\n\n\nExámenes parciales (3)\n75% (25% c/u)\nEvaluaciones teórico-prácticas al final de cada unidad.\n\n\nProyecto final\n15%\nIndividual o en equipos de máximo 3 integrantes. Incluye 1 avance obligatorio durante el semestre.\n\n\nEjercicios de clase\n10%\nEntrega individual. Ejercicios, pseudocódigo, prácticas guiadas.\n\n\n\n\nNota importante:\n- La calificación que se reporta por parcial corresponde únicamente al examen parcial y tiene carácter informativo.\n- Los ejercicios se revisarán al final de la clase o, en su defecto, al inicio de la siguiente clase si así se indica.\n- No se recibirán ejercicios fuera de tiempo, excepto en casos debidamente justificados y avalados por la coordinación de carrera."
+  },
+  {
+    "objectID": "clases/01_logistica.html#fechas",
+    "href": "clases/01_logistica.html#fechas",
+    "title": "Clase 01 - Logística del curso",
+    "section": "Fechas importantes",
+    "text": "Fechas importantes\n\n\n\nEvento\nFecha\n\n\n\n\n🟢 INICIO DE SEMESTRE\nMartes 13 de Enero\n\n\n🟡 1era evaluación parcial\nMiércoles 11 de febrero\n\n\n🟡 2da evaluación parcial\nMiércoles 25 de marzo\n\n\n🟡 Evaluación final\nLunes 04 de mayo\n\n\n🔵 Entrega de calificaciones finales\nMiércoles 06 de mayo\n\n\n🔴 FIN DE SEMESTRE\nViernes 08 de Mayo"
+  },
+  {
+    "objectID": "clases/01_logistica.html#material",
+    "href": "clases/01_logistica.html#material",
+    "title": "Clase 01 - Logística del curso",
+    "section": "Material de estudio",
+    "text": "Material de estudio\n\n\n\n\n\n\n\nLibro\nDescripción\n\n\n\n\n\nHow to Think Like a Computer Scientist, 3rd Edition (Using Python 3.x)\n\n\n\nEl Libro de Python\n\n\n\nIntroduction to Computation and Programming Using Python, 3rd edition John V. Guttag"
+  },
+  {
+    "objectID": "clases/01_logistica.html#diagnostico",
+    "href": "clases/01_logistica.html#diagnostico",
+    "title": "Clase 01 - Logística del curso",
+    "section": "Actividad diagnóstica",
+    "text": "Actividad diagnóstica\nAbrir formulario de diagnóstico: https://forms.office.com/r/iy9LhBQ1XE\nEscanea el código QR:"
+  },
+  {
+    "objectID": "clases/03_poo.html#contenido",
+    "href": "clases/03_poo.html#contenido",
+    "title": "Clase 03 - Programación Orientada a Objetos",
+    "section": "Contenido",
+    "text": "Contenido\n\nIntroducción\n\nDefinición\nPilares\n\nClases y objetos\n\n¿Qué es una clase?\n¿Qué es un objeto?\nEjemplos y analogías de clase y objeto\n\n¿Cómo crear una clase y un objeto en Python?\n\nSintaxis\n¿Qué es un constructor?\n\nEncapsulamiento\nPolimorfismo\nHerencia\nAbstracción"
+  },
+  {
+    "objectID": "clases/03_poo.html#intro",
+    "href": "clases/03_poo.html#intro",
+    "title": "Clase 03 - Programación Orientada a Objetos",
+    "section": "Introducción (paradigmas de programación)",
+    "text": "Introducción (paradigmas de programación)\n\n\n\nExisten muchos paradigmas (estilos genéricos) de programación:\n\n\n\nProgramación Declarativa\nProgramación Imperativa\nProgramación Estructurada\nProgramación Lógica\nProgramación Funcional\nProgramación Orientada a Objetos"
+  },
+  {
+    "objectID": "clases/03_poo.html#def",
+    "href": "clases/03_poo.html#def",
+    "title": "Clase 03 - Programación Orientada a Objetos",
+    "section": "Programación Orientada a Objetos",
+    "text": "Programación Orientada a Objetos\n\n\n\nLa Programación Orientada a Objetos es un paradigma que consiste en modelar sistemas a través de la creación de objetos que contienen atributos y métodos.\nTiene como objetivos el facilitar el desarrollo de software robusto y adaptable a medida que el proyecto crece y mejorar el mantenimiento del software mediante la estructuración en clases, facilitando la comprensión y modificaciones.\n\n\nPilares\nPara cumplir los objetivos anteriores, se utilizan los siguientes pilares, que explicaremos durante esta sesión.\n\nAbstracción: Simplifica la representación de un objeto, centrándose en aspectos esenciales.\nEncapsulamiento: Oculta detalles internos, exponiendo solo interfaces necesarias.\nPolimorfismo: Capacidad de objetos de diferentes clases de comportarse de manera uniforme (interfaz común).\nHerencia: Crear nuevas clases basadas en clases existentes.\n\n\n\n\n\n\n\n\n\n\n\n\n\nAbstracción\nEncapsulamiento\n\n\n\n\n\n\nPolimorfismo\nHerencia\n\n\n\nImágenes de los apuntes de nlaredo.tecnm.mx y stayfreemagazine.org"
+  },
+  {
+    "objectID": "clases/03_poo.html#clases-objs",
+    "href": "clases/03_poo.html#clases-objs",
+    "title": "Clase 03 - Programación Orientada a Objetos",
+    "section": "Clases y objetos",
+    "text": "Clases y objetos\nHemos visto que Python ofrece distintos tipos de datos para crear variables (int, float, String, etc), pero también ofrece la posibilidad de crear nuestros propios tipos de datos para modelar conceptos más complejos."
+  },
+  {
+    "objectID": "clases/03_poo.html#howto",
+    "href": "clases/03_poo.html#howto",
+    "title": "Clase 03 - Programación Orientada a Objetos",
+    "section": "¿Cómo crear una clase y un objeto en Python?",
+    "text": "¿Cómo crear una clase y un objeto en Python?\nSintaxis\nPara crear una clase, se utiliza la palabra clave class, seguida del nombre de la clase y dos puntos.\nclass MiClase:\n    pass  # pass no realiza ninguna acción, se usa para indicar que aquí pondremos más código en el futuro"
+  },
+  {
+    "objectID": "clases/03_poo.html#qué-son-los-atributos",
+    "href": "clases/03_poo.html#qué-son-los-atributos",
+    "title": "Clase 03 - Programación Orientada a Objetos",
+    "section": "¿Qué son los atributos?",
+    "text": "¿Qué son los atributos?\n\nSon variables que pertenecen a un objeto específico de una clase.\nRepresentan características o propiedades del objeto.\nEn Python, los atributos pueden ser de dos tipos principales:\n\natributos de instancia\natributos de clase.\n\n\n\n\n\n\n\n\n\n\n\nTipo de atributo\nDefinición\nAcceso desde objeto\n¿Se comparte entre objetos?\n\n\n\n\nDe instancia\nDentro de __init__ con self.\nobj.atributo\n❌ No\n\n\nDe clase\nDentro de la clase, fuera de métodos\nClase.atributo o obj.atributo\n✅ Sí"
+  },
+  {
+    "objectID": "clases/03_poo.html#qué-son-los-métodos",
+    "href": "clases/03_poo.html#qué-son-los-métodos",
+    "title": "Clase 03 - Programación Orientada a Objetos",
+    "section": "¿Qué son los métodos?",
+    "text": "¿Qué son los métodos?\n\nSon funciones que están definidas dentro de esa clase y actúan sobre los atributos que pertenecen a la misma.\nRepresentan acciones o comportamientos del objeto.\nHay tres diferentes tipos de métodos que puedes tener en una clase de Python:\n\nMétodos de instancia\nMétodos de clase\nMétodos estáticos\n\n\n\n\n\n\n\n\n\n\n\n\nTipo de método\nDecorador\nPrimer parámetro\nAccede a atributos\nUso principal\n\n\n\n\nInstancia\n—\nself\nSí (de instancia)\nComportamiento específico del objeto\n\n\nClase\n@classmethod\ncls\nSí (de clase)\nAcceso/modificación compartida\n\n\nEstático\n@staticmethod\n—\nNo\nFunciones utilitarias dentro de clase"
+  },
+  {
+    "objectID": "clases/03_poo.html#encapsulamiento",
+    "href": "clases/03_poo.html#encapsulamiento",
+    "title": "Clase 03 - Programación Orientada a Objetos",
+    "section": "Encapsulamiento",
+    "text": "Encapsulamiento\n\n\n\nComo hemos visto, en Python podemos acceder a los atributos de clase con la palabra reservada self desde dentro de la clase, y con el nombre del objeto/clase, punto, y nombre del atributo desde el exterior (en el programa principal, módulo o en otra clase).\nNo obstante, en algunas ocasiones vamos a preferir que los atributos y métodos no sean accesibles desde el exterior, es decir, que sean privados.\n\n\n\nImágenes de los apuntes de nlaredo.tecnm.mx"
+  },
+  {
+    "objectID": "clases/03_poo.html#qué-es-el-encapsulamiento",
+    "href": "clases/03_poo.html#qué-es-el-encapsulamiento",
+    "title": "Clase 03 - Programación Orientada a Objetos",
+    "section": "¿Qué es el encapsulamiento?",
+    "text": "¿Qué es el encapsulamiento?\n\nEs uno de los pilares de la programación orientada a objetos (OOP).\nSe refiere a la ocultación de los detalles internos de una clase y la restricción del acceso directo a ciertos componentes."
+  },
+  {
+    "objectID": "clases/03_poo.html#por-qué-hacer-encapsulamiento",
+    "href": "clases/03_poo.html#por-qué-hacer-encapsulamiento",
+    "title": "Clase 03 - Programación Orientada a Objetos",
+    "section": "¿Por qué hacer encapsulamiento?",
+    "text": "¿Por qué hacer encapsulamiento?\n\nProtege un objeto del acceso no deseado mediante código fuera de la clase. EJ: Una aplicación bancaria prohíbe a un cliente cambiar el saldo de una Cuenta.\nPermite cambiar/actualizar la implementación de la clase si es necesario, sin que eso afecte el funcionamiento de la misma. EJ: Podríamos cambiar la lógica detrás de un método, pero su nombre y parámetros no cambian, así que se pueden seguir utilizando de la misma manera.\nPermite restringir el estado de los objetos (atributos invariantes)."
+  },
+  {
+    "objectID": "clases/03_poo.html#polimorfismo",
+    "href": "clases/03_poo.html#polimorfismo",
+    "title": "Clase 03 - Programación Orientada a Objetos",
+    "section": "Polimorfismo",
+    "text": "Polimorfismo\n\n\n\nEtimológicamente, “polimorfismo” significa “muchas formas”.\nEl polimorfismo es un principio de la POO que permite que distintos objetos respondan a la misma operación (función o método) de maneras diferentes.\nEn POO, el polimorfismo se manifiesta de varias maneras:\n\nCon métodos\nCon sobrecarga de operadores\nCon herencia\n\n\n\n\nImágenes de stayfreemagazine.org"
+  },
+  {
+    "objectID": "clases/03_poo.html#herencia",
+    "href": "clases/03_poo.html#herencia",
+    "title": "Clase 03 - Programación Orientada a Objetos",
+    "section": "Herencia",
+    "text": "Herencia\n\n\n\nLa herencia es un mecanismo de la POO que permite a una clase adquirir atributos y métodos de otra clase.\nSe utiliza para modelar relaciones jerárquicas entre clases.\n\n\n\nImágenes de los apuntes de nlaredo.tecnm.mx\n\n\n\nClase base\n\nLas clases existentes se llaman clases base. Son las que proporcionan los atributos y métodos.\nTambién reciben otros nombres como superclase, clase padre o antepasado.\n\nClase derivada\n\nLa clase que hereda de otra se llama clase derivada.\nTambién se llama con otros nombres como subclase, clase secundaria y descendiente.\nLa clase derivada hereda los atributos/métodos de la clase base y normalmente contiene atributos/métodos adicionales.\n\n\n\nImagen de www.unipamplona.edu.co"
+  },
+  {
+    "objectID": "clases/03_poo.html#sintaxis-1",
+    "href": "clases/03_poo.html#sintaxis-1",
+    "title": "Clase 03 - Programación Orientada a Objetos",
+    "section": "Sintaxis",
+    "text": "Sintaxis\n\nEn Python, la herencia se implementa mediante el uso del operador ().\nPor ejemplo, para crear una clase derivada de la clase Vehiculo, se puede usar el siguiente código:\n\n–\nLa función super\n\nLa función super() es una función incorporada que se utiliza para acceder a métodos y atributos de una clase base.\nSe puede usar para llamar a métodos y atributos de la clase base sin tener que especificar explícitamente el nombre de la clase base.\n\n\nclass Persona:\n    def __init__(self, nombre):\n        self.nombre = nombre\n\n    def __str__(self):\n        return f'Persona (nombre: {self.nombre})'\n\nclass Estudiante(Persona):\n    def __init__(self, nombre, carrera):\n        super().__init__(nombre)  # llama al constructor de Persona\n        self.carrera = carrera\n    def __str__(self):\n        return f'Estudiante (nombre: {self.nombre}; carrera: {self.carrera})'\n\nestudiante1 = Estudiante(\"Raúl Rojas\", \"Ing. en Robótica\")\nprint(estudiante1)\n\nEstudiante (nombre: Raúl Rojas; carrera: Ing. en Robótica)"
+  },
+  {
+    "objectID": "clases/03_poo.html#abstraccion",
+    "href": "clases/03_poo.html#abstraccion",
+    "title": "Clase 03 - Programación Orientada a Objetos",
+    "section": "Abstracción",
+    "text": "Abstracción\n\n\n\nLa abstracción es el principio de la POO que permite ocultar los detalles internos de implementación de un objeto y exponer solo lo necesario para su uso.\nEn otras palabras, permite modelar lo esencial de una entidad y ocultar lo irrelevante o complejo para el usuario del objeto.\n\nUn auto: puedes encenderlo y conducirlo sin saber cómo funciona el motor internamente.\nUna cafetera: basta con oprimir un botón; no necesitas conocer el sistema de calentamiento ni presión.\nEn ambos casos, el usuario interactúa con una interfaz simple y el funcionamiento interno está abstraído.\n\n\n\n\nImágenes de los apuntes de nlaredo.tecnm.mx"
+  },
+  {
+    "objectID": "clases/03_poo.html#referencias",
+    "href": "clases/03_poo.html#referencias",
+    "title": "Clase 03 - Programación Orientada a Objetos",
+    "section": "Referencias",
+    "text": "Referencias\n\nPhillips, D. (n.d.). Python 3 object-oriented programming (2nd ed.). Retrieved from https://library.kre.dp.ua/…\nJordan, K. (n.d.). Classes and objects. Retrieved from https://20f.comp110.com/…"
   },
   {
     "objectID": "clases2025/clase01_logistica-curso.html",
