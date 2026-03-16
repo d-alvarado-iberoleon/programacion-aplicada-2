@@ -1771,6 +1771,125 @@
     "text": "Ejemplo\n\n¿Qué error podría presentarse en el siguiente código?\n\n\nclass CuentaBancaria:\n    def __init__(self, saldo_inicial):\n        self.saldo = saldo_inicial\n\n    def realizar_retiro(self, monto):\n        self.saldo -= monto\n        print(f\"Retiro exitoso. Saldo restante: {self.saldo}\")\n        \nsaldo_inicial = float(input(\"Ingresa el saldo inicial de la cuenta:\"))\ncuenta = CuentaBancaria(saldo_inicial)\ncantidad_a_retirar = float(input(\"¿Cuanto deseas retirar de la cuenta?:\"))\ncuenta.realizar_retiro(cantidad_a_retirar)"
   },
   {
+    "objectID": "clases/04_manejo-de-errores.html#en-la-clase-anterior-vimos",
+    "href": "clases/04_manejo-de-errores.html#en-la-clase-anterior-vimos",
+    "title": "Clase 04 - Manejo de excepciones y aserciones",
+    "section": "En la clase anterior vimos …",
+    "text": "En la clase anterior vimos …\n\nLas excepciones son situaciones de error o eventos inesperados que interrumpen el flujo normal de un programa. Las excepciones son objetos y tienen clases con constructores.\nEl manejo de excepciones permite que el programa continúe ejecutándose sin interrupciones, incluso si ocurre un error.\nPodemos crear excepciones personalizadas definiendo una nueva clase que herede de Exception."
+  },
+  {
+    "objectID": "clases/04_manejo-de-errores.html#motivación",
+    "href": "clases/04_manejo-de-errores.html#motivación",
+    "title": "Clase 04 - Manejo de excepciones y aserciones",
+    "section": "Motivación",
+    "text": "Motivación\n\nLa programación de calidad se refiere a la práctica de escribir código que sea fiable, eficiente y fácil de mantener.\nIncluye estrategias como la programación defensiva, las pruebas exhaustivas y la depuración de errores.\n\n¿Por qué tomarse el tiempo de escribir buen código?\n\n\n\nReduce el número de errores en el software.\nAumenta la eficiencia del desarrollo y mantenimiento del software.\nMejora la satisfacción de los usuarios con el software.\nReduce los costos de desarrollo y mantenimiento del software.\n\n\n\n\n\nBuen código\n\n\nImagen de x.com"
+  },
+  {
+    "objectID": "clases/04_manejo-de-errores.html#cómo-escribir-código-de-calidad",
+    "href": "clases/04_manejo-de-errores.html#cómo-escribir-código-de-calidad",
+    "title": "Clase 04 - Manejo de excepciones y aserciones",
+    "section": "¿Cómo escribir código de calidad?",
+    "text": "¿Cómo escribir código de calidad?\n\nSupongamos que un cocinero quiere asegurarse de que su comida sigue todas las normas de sanidad (que no tenga ningún bicho)\n¿Qué acciones debería realizar?\n\n\nBuen códigoImagen de render.fineartamerica.com\n\nMantener las ollas tapadas. (Programación defensiva)\nRevisar constantemente la cocina. (Validación/Pruebas)\nLimpiar la cocina. (Depuración)"
+  },
+  {
+    "objectID": "clases/04_manejo-de-errores.html#aserciones",
+    "href": "clases/04_manejo-de-errores.html#aserciones",
+    "title": "Clase 04 - Manejo de excepciones y aserciones",
+    "section": "Aserciones",
+    "text": "Aserciones\n\nLas aserciones son instrucciones que verifican si una condición específica es verdadera o falsa durante la ejecución de un programa.\nSi la condición es verdadera, el programa continúa su ejecución normal.\nSi la condición es falsa, el programa lanza una excepción AssertionError con un mensaje de error opcional.\nSon una herramienta de programación defensiva: ayudan a detectar errores temprano durante el desarrollo."
+  },
+  {
+    "objectID": "clases/04_manejo-de-errores.html#sintaxis",
+    "href": "clases/04_manejo-de-errores.html#sintaxis",
+    "title": "Clase 04 - Manejo de excepciones y aserciones",
+    "section": "Sintaxis",
+    "text": "Sintaxis\nassert condición, \"mensaje de error\""
+  },
+  {
+    "objectID": "clases/04_manejo-de-errores.html#ejemplo-1-1",
+    "href": "clases/04_manejo-de-errores.html#ejemplo-1-1",
+    "title": "Clase 04 - Manejo de excepciones y aserciones",
+    "section": "Ejemplo 1",
+    "text": "Ejemplo 1\n\ndef dividir(a, b):\n    assert b != 0, \"La división por cero no está permitida\"\n    return a / b\n\n# Programa principal\ntry:\n    resultado = dividir(10, 0)\nexcept AssertionError as error:\n    print(error)\nelse:\n    print(\"El resultado de la división es:\", resultado)"
+  },
+  {
+    "objectID": "clases/04_manejo-de-errores.html#ejemplo-2-1",
+    "href": "clases/04_manejo-de-errores.html#ejemplo-2-1",
+    "title": "Clase 04 - Manejo de excepciones y aserciones",
+    "section": "Ejemplo 2",
+    "text": "Ejemplo 2\n\ndef suma(a, b):\n    assert isinstance(a, int), \"El primer argumento debe ser un número entero\"\n    assert isinstance(b, int), \"El segundo argumento debe ser un número entero\"\n    return a + b\n\nresultado = suma(1, 2)\nprint(resultado)  # Salida: 3\n\nresultado = suma(\"a\", 2)\n# Se genera una excepción AssertionError: \"El primer argumento debe ser un número entero\""
+  },
+  {
+    "objectID": "clases/04_manejo-de-errores.html#dónde-usar-aserciones",
+    "href": "clases/04_manejo-de-errores.html#dónde-usar-aserciones",
+    "title": "Clase 04 - Manejo de excepciones y aserciones",
+    "section": "¿Dónde usar aserciones?",
+    "text": "¿Dónde usar aserciones?\n\nLas aserciones son útiles para validar condiciones que deben ser siempre verdaderas en el código.\nSe utilizan comúnmente para:\n\nVerificar precondiciones: condiciones que deben ser verdaderas antes de que se ejecute una función.\nVerificar postcondiciones: condiciones que deben ser verdaderas después de que se ejecute una función.\nVerificar invariantes: condiciones que deben ser siempre verdaderas durante la ejecución del programa."
+  },
+  {
+    "objectID": "clases/04_manejo-de-errores.html#depuración-de-errores",
+    "href": "clases/04_manejo-de-errores.html#depuración-de-errores",
+    "title": "Clase 04 - Manejo de excepciones y aserciones",
+    "section": "Depuración de errores",
+    "text": "Depuración de errores\n\n\n\nLa palabra debugging (depuración) tiene sus orígenes en la década de 1940 durante el desarrollo de la computadora Mark II, utilizada en la Universidad de Harvard.\nEn ese tiempo, la programación se realizaba mediante tarjetas perforadas.\n\n\n\n\n\nMark II y Grace Hopper\n\n\nImagen de techcrunch.com"
+  },
+  {
+    "objectID": "clases/04_manejo-de-errores.html#cómo-hacer-debugging",
+    "href": "clases/04_manejo-de-errores.html#cómo-hacer-debugging",
+    "title": "Clase 04 - Manejo de excepciones y aserciones",
+    "section": "¿Cómo hacer debugging?",
+    "text": "¿Cómo hacer debugging?\n\n\n\nCon impresión de mensajes (print)\nBiblioteca de registro (logging)\nDepurador del IDE\n\n\n\n\n\nBugs\n\n\nImagen de programmerhumor.io"
+  },
+  {
+    "objectID": "clases/04_manejo-de-errores.html#debugging-con-print",
+    "href": "clases/04_manejo-de-errores.html#debugging-con-print",
+    "title": "Clase 04 - Manejo de excepciones y aserciones",
+    "section": "Debugging con print",
+    "text": "Debugging con print\n\nUna forma simple pero efectiva de depurar es mediante la inserción de sentencias de impresión en nuestro código.\nSe puede utilizar para imprimir el valor de variables, resultados de operaciones, o mensajes de estado en puntos específicos del programa.\n\n\n# Ejemplo de declaración de impresión para depurar un ciclo for\nfor i in range(5):\n    print(\"Valor de i:\", i)\n    resultado = i * 2\n    print(\"Resultado:\", resultado)"
+  },
+  {
+    "objectID": "clases/04_manejo-de-errores.html#debugging-con-logging",
+    "href": "clases/04_manejo-de-errores.html#debugging-con-logging",
+    "title": "Clase 04 - Manejo de excepciones y aserciones",
+    "section": "Debugging con logging",
+    "text": "Debugging con logging\n\nLa biblioteca logging proporciona una forma más estructurada y flexible para registrar mensajes durante la ejecución del programa.\nA diferencia de los print, los mensajes de registro pueden ser fácilmente habilitados o deshabilitados, y pueden ser enviados a diferentes destinos (consola, archivo, etc.).\n\n\nimport logging\n\n# Configuración básica del registro\nlogger = logging.getLogger(__name__)\nlogging.basicConfig(filename='app.log', level=logging.DEBUG)\n\ndef dividir(a, b):\n    try:\n        resultado = a / b\n        logger.info(f\"La división de {a} entre {b} es {resultado}\")\n        return resultado\n    except ZeroDivisionError:\n        logger.error(\"Intento de dividir por cero\")\n        return None\n\ndividir(10, 2)\ndividir(5, 0)"
+  },
+  {
+    "objectID": "clases/04_manejo-de-errores.html#debugging-con-logging-1",
+    "href": "clases/04_manejo-de-errores.html#debugging-con-logging-1",
+    "title": "Clase 04 - Manejo de excepciones y aserciones",
+    "section": "Debugging con logging",
+    "text": "Debugging con logging\nlogging.basicConfig es una función que se utiliza al comienzo de un código para establecer la forma en que se registrarán los mensajes durante la ejecución del programa. Sus parámetros más comunes son:\n\nfilename: nombre del archivo donde se guardarán los mensajes.\nlevel: nivel mínimo de gravedad de los mensajes que se registrarán.\nformat: formato de los mensajes de registro."
+  },
+  {
+    "objectID": "clases/04_manejo-de-errores.html#debugging-con-logging-2",
+    "href": "clases/04_manejo-de-errores.html#debugging-con-logging-2",
+    "title": "Clase 04 - Manejo de excepciones y aserciones",
+    "section": "Debugging con logging",
+    "text": "Debugging con logging\nLos niveles son utilizados para indicar la gravedad de un mensaje de registro. Estos niveles permiten a los desarrolladores categorizar y filtrar los mensajes según su importancia:\n\nDEBUG: Mensajes de depuración detallados.\nINFO: Mensajes informativos generales.\nWARNING: Mensajes de advertencia sobre situaciones potencialmente problemáticas.\nERROR: Mensajes de error que indican un fallo en alguna parte del programa.\nCRITICAL: Mensajes de error críticos que indican un fallo grave.\n\n\nimport logging\n\n# Configuración básica del registro\nlogger = logging.getLogger(__name__)\nlogging.basicConfig(filename='registro.log', level=logging.DEBUG)\n\n# Ejemplo de registro\nlogger.debug('Este es un mensaje de depuración')\nlogger.info('Este es un mensaje informativo')\nlogger.warning('Este es un mensaje de advertencia')\nlogger.error('Este es un mensaje de error')\nlogger.critical('Este es un mensaje crítico')"
+  },
+  {
+    "objectID": "clases/04_manejo-de-errores.html#debugging-con-el-depurador-de-spyder",
+    "href": "clases/04_manejo-de-errores.html#debugging-con-el-depurador-de-spyder",
+    "title": "Clase 04 - Manejo de excepciones y aserciones",
+    "section": "Debugging con el depurador de Spyder",
+    "text": "Debugging con el depurador de Spyder\n\nSpyder incluye un depurador que nos permite ejecutar nuestro código paso a paso, inspeccionar variables y encontrar errores de manera más eficiente."
+  },
+  {
+    "objectID": "clases/04_manejo-de-errores.html#ejemplo-3",
+    "href": "clases/04_manejo-de-errores.html#ejemplo-3",
+    "title": "Clase 04 - Manejo de excepciones y aserciones",
+    "section": "Ejemplo",
+    "text": "Ejemplo\n\nImplementa el siguiente código en Spyder:\n\n\ndef suma_pares(lista):\n    suma = 0\n    for numero in lista:\n    if numero % 2 == 0:\n        suma += numero\n    return suma\n\nnumeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]\nprint(suma_pares(numeros))"
+  },
+  {
+    "objectID": "clases/04_manejo-de-errores.html#ejercicio",
+    "href": "clases/04_manejo-de-errores.html#ejercicio",
+    "title": "Clase 04 - Manejo de excepciones y aserciones",
+    "section": "Ejercicio",
+    "text": "Ejercicio\n\nIntenta ejecutar este código y observa el error que se produce.\nLuego, utiliza las tres técnicas de depuración vistas en clase para identificar y corregir los errores.\n\n\ndef calcular_promedio(numeros):\n    suma = 0\n    contador = 1\n    while (contador &lt; len(numeros)):\n        suma += numeros[contador]\n        contador += 1\n    promedio = suma / contador\n    return promedio\n\n# El programa debería calcular el promedio de una lista de números.\n# Si la lista no tiene elementos, el valor de retorno debería ser None\n# Hay errores en el código. ¡Encuéntralos y corrígelos!\n\nlista_numeros1 = [10, 15, 20, 25, 30]\nresultado1 = calcular_promedio(lista_numeros1)\n\nlista_numeros2 = []\nresultado2 = calcular_promedio(lista_numeros2)\n\n# Debería imprimir el resultado, pero algo no está bien.\nprint(\"El promedio de la lista 1 es: \", resultado1)\nprint(\"El promedio de la lista 2 es: \", resultado2)"
+  },
+  {
     "objectID": "clases/04_manejo-de-errores.html#referencias-bibliograficas",
     "href": "clases/04_manejo-de-errores.html#referencias-bibliograficas",
     "title": "Clase 04 - Manejo de excepciones y aserciones",
