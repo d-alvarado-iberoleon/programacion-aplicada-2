@@ -7,8 +7,8 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.8.26">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.27">
 
   <meta name="author" content="Dra. Dora Alvarado">
   <meta name="dcterms.date" content="2026-01-19">
@@ -276,7 +276,7 @@ Dra. Dora Alvarado
 <li>Usa variables mutables y estructuras de control como bucles y condicionales.</li>
 <li>Es el enfoque más tradicional y ampliamente utilizado.</li>
 </ul>
-<div id="4ffbac70" class="cell" data-execution_count="1">
+<div id="ab92f51f" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a>numeros <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>]</span>
 <span id="cb2-2"><a></a>suma <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb2-3"><a></a><span class="cf">for</span> numero <span class="kw">in</span> numeros:</span>
@@ -298,7 +298,7 @@ Dra. Dora Alvarado
 <li><strong>Iteración</strong>: Repetición mediante bucles como <code>for</code> o <code>while</code>.</li>
 </ul></li>
 </ul>
-<div id="b949eff7" class="cell" data-execution_count="2">
+<div id="fe7f2bae" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a>calificacion <span class="op">=</span> <span class="bu">float</span>(<span class="bu">input</span>(<span class="st">"Ingresa una calificación (0-100): "</span>))</span>
 <span id="cb4-2"><a></a></span>
 <span id="cb4-3"><a></a><span class="cf">if</span> <span class="dv">0</span> <span class="op">&lt;=</span> calificacion <span class="op">&lt;=</span> <span class="dv">100</span>:</span>
@@ -333,7 +333,7 @@ Dra. Dora Alvarado
 <li>Utiliza <strong>funciones</strong>, donde cada función produce el mismo resultado si se le dan los mismos argumentos.</li>
 <li>Las funciones pueden asignarse a variables o pasarse como argumentos.</li>
 </ul>
-<div id="d907029f" class="cell" data-execution_count="3">
+<div id="14fd169b" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a><span class="co"># Función</span></span>
 <span id="cb6-2"><a></a><span class="kw">def</span> suma_cuadrados(lista):</span>
 <span id="cb6-3"><a></a>    <span class="cf">return</span> <span class="bu">sum</span>(x<span class="op">**</span><span class="dv">2</span> <span class="cf">for</span> x <span class="kw">in</span> lista)</span>
@@ -351,7 +351,7 @@ Dra. Dora Alvarado
 <ul>
 <li>Organiza el código en <strong>objetos</strong>, que combinan <strong>datos</strong> (atributos) y <strong>comportamientos</strong> (métodos). Este paradigma se enfoca en modelar entidades del mundo real.</li>
 </ul>
-<div id="26f664eb" class="cell" data-execution_count="4">
+<div id="cfd4f0ff" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a></a><span class="kw">class</span> Rectangulo:</span>
 <span id="cb8-2"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, base, altura):</span>
 <span id="cb8-3"><a></a>        <span class="va">self</span>.base <span class="op">=</span> base</span>
@@ -522,7 +522,7 @@ Dra. Dora Alvarado
 <section class="slide level2">
 
 <p><strong>por ejemplo…</strong></p>
-<div id="66bdeb19" class="cell" data-execution_count="5">
+<div id="1431973f" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a></a><span class="co"># Ejemplo</span></span>
 <span id="cb12-2"><a></a></span>
 <span id="cb12-3"><a></a><span class="co"># Define una nueva clase (plantilla/tipo de dato/plano) llamada "Estudiante"</span></span>
@@ -549,7 +549,7 @@ Dra. Dora Alvarado
 <li><p>El constructor puede tener cualquier número de parámetros, incluso ninguno.</p></li>
 <li><p>Por ejemplo, en nuestra clase <code>Estudiante</code> podemos agregar algunos atributos (variables) que se crearán al crear un nuevo objeto.</p></li>
 </ul>
-<div id="aa4e36cf" class="cell" data-execution_count="6">
+<div id="169ffdfe" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a></a><span class="co"># Define una nueva clase (plantilla/tipo de dato/plano) llamada "Estudiante"</span></span>
 <span id="cb14-2"><a></a><span class="kw">class</span> Estudiante:</span>
 <span id="cb14-3"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, nombre, no_cuenta, asignaturas <span class="op">=</span> []):  <span class="co"># Constructor de la clase</span></span>
@@ -638,7 +638,7 @@ Dra. Dora Alvarado
 <li>Cada objeto tiene su propia copia del atributo de instancia.</li>
 <li>Se definen dentro de los métodos de la clase: generalmente en el método <code>__init__</code>, utilizando el prefijo self.</li>
 </ul>
-<div id="72d49e7f" class="cell" data-execution_count="7">
+<div id="fdb12401" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a></a><span class="co"># Define una nueva clase (plantilla/tipo de dato/plano) llamada "Estudiante"</span></span>
 <span id="cb16-2"><a></a><span class="kw">class</span> Estudiante:</span>
 <span id="cb16-3"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, nombre, no_cuenta, asignaturas <span class="op">=</span> []):  <span class="co"># Constructor de la clase, "self" representa la instancia actual</span></span>
@@ -722,7 +722,7 @@ Dra. Dora Alvarado
 <li>Se definen con el primer parámetro como <code>self</code>, que hace referencia a la instancia de la clase en sí.</li>
 <li>Acceden y manipulan los atributos de la instancia.</li>
 </ul>
-<div id="191786d8" class="cell" data-execution_count="8">
+<div id="744c98d3" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a></a><span class="co"># Define una nueva clase (plantilla/tipo de dato/plano) llamada "Estudiante"</span></span>
 <span id="cb18-2"><a></a><span class="kw">class</span> Estudiante:</span>
 <span id="cb18-3"><a></a></span>
@@ -855,7 +855,7 @@ Física
 <section class="slide level2">
 
 <p><strong>POR EJEMPLO…</strong></p>
-<div id="22e954cf" class="cell" data-execution_count="9">
+<div id="633c591d" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a></a><span class="kw">class</span> CuentaBancaria:</span>
 <span id="cb20-2"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, titular, saldo_inicial<span class="op">=</span><span class="dv">0</span>):</span>
 <span id="cb20-3"><a></a>        <span class="co"># Atributos privados</span></span>
@@ -904,14 +904,14 @@ Error: La cantidad debe ser mayor que cero.</code></pre>
 <section class="slide level2">
 
 <p><strong>Intentar acceder directamente a un atributo o método privado genera un error:</strong></p>
-<div id="2e8ebe55" class="cell" data-execution_count="10">
+<div id="142949ee" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a></a><span class="co"># print(cuenta.__titular)  # Esto generará un error</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section class="slide level2">
 
 <p><strong>Intentar llamar directamente a un método privado genera un error:</strong></p>
-<div id="452eae25" class="cell" data-execution_count="11">
+<div id="c7c4008e" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a></a><span class="co"># cuenta.__es_cantidad_valida(100)  # AttributeError</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
@@ -928,7 +928,7 @@ Error: La cantidad debe ser mayor que cero.</code></pre>
 
 <p>Agreguemos getters y setters para la clase CuentaBancaria:</p>
 <h4 id="opción-1-método-tradicional">Opción 1 (método tradicional)</h4>
-<div id="49f31b0c" class="cell" data-execution_count="12">
+<div id="a542b7e7" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a></a><span class="kw">class</span> CuentaBancaria:</span>
 <span id="cb24-2"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, titular, saldo_inicial<span class="op">=</span><span class="dv">0</span>):</span>
 <span id="cb24-3"><a></a>        <span class="va">self</span>.__titular <span class="op">=</span> titular</span>
@@ -997,7 +997,7 @@ Nuevo titular: María García</code></pre>
 <section class="slide level2">
 
 <h4 id="opción-2-usando-el-decorador-property">Opción 2 (usando el decorador <span class="citation" data-cites="property">@property</span>)</h4>
-<div id="29c1b9e4" class="cell" data-execution_count="13">
+<div id="3fc19350" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a></a><span class="kw">class</span> CuentaBancaria:</span>
 <span id="cb26-2"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, titular, saldo_inicial<span class="op">=</span><span class="dv">0</span>):</span>
 <span id="cb26-3"><a></a>        <span class="va">self</span>.__titular <span class="op">=</span> titular</span>
@@ -1146,7 +1146,7 @@ Nuevo titular: María García</code></pre>
 <li>Una clase puede implementar un método con el mismo nombre que otra clase, pero con un comportamiento diferente.</li>
 <li>Esto permite que objetos de distintas clases respondan a la misma llamada de método de manera diferente.</li>
 </ul>
-<div id="784ab6e4" class="cell" data-execution_count="14">
+<div id="4aad0635" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a></a><span class="im">import</span> math</span>
 <span id="cb29-2"><a></a></span>
 <span id="cb29-3"><a></a><span class="kw">class</span> Cuadrado:</span>
@@ -1253,7 +1253,7 @@ Nuevo titular: María García</code></pre>
 </section>
 <section class="slide level2">
 
-<div id="b8dccd8e" class="cell" data-execution_count="15">
+<div id="42d56b42" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a></a><span class="kw">class</span> Cuadrado:</span>
 <span id="cb31-2"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, lado):</span>
 <span id="cb31-3"><a></a>        <span class="va">self</span>.lado <span class="op">=</span> lado</span>
@@ -1365,7 +1365,7 @@ Cuadrado(lado: 5)</code></pre>
 <li>La función <code>super()</code> es una función incorporada que se utiliza para acceder a métodos y atributos de una clase base.</li>
 <li>Se puede usar para llamar a métodos y atributos de la clase base sin tener que especificar explícitamente el nombre de la clase base.</li>
 </ul>
-<div id="14473e08" class="cell" data-execution_count="16">
+<div id="6a5ae82f" class="cell" data-execution_count="16">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a></a><span class="kw">class</span> Persona:</span>
 <span id="cb33-2"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, nombre):</span>
 <span id="cb33-3"><a></a>        <span class="va">self</span>.nombre <span class="op">=</span> nombre</span>
@@ -1435,7 +1435,7 @@ Cuadrado(lado: 5)</code></pre>
 <li>Python sigue el orden de izquierda a derecha para buscar atributos o métodos en las clases base.</li>
 <li>Si dos clases base tienen un método con el mismo nombre, el método de la clase más a la izquierda se utilizará.</li>
 </ul>
-<div id="ffff0576" class="cell" data-execution_count="17">
+<div id="f5bcb198" class="cell" data-execution_count="17">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a></a><span class="co"># Clase base 1</span></span>
 <span id="cb35-2"><a></a><span class="kw">class</span> ClaseBase1:</span>
 <span id="cb35-3"><a></a>    <span class="kw">def</span> metodo_comun(<span class="va">self</span>):</span>
@@ -1504,7 +1504,7 @@ Cuadrado(lado: 5)</code></pre>
 <ul>
 <li>La creación de una instancia de la clase abstracta directamente generaría un error.</li>
 </ul>
-<div id="c87c91fe" class="cell" data-execution_count="18">
+<div id="0c69a83b" class="cell" data-execution_count="18">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a></a><span class="im">from</span> abc <span class="im">import</span> ABC, abstractmethod</span>
 <span id="cb37-2"><a></a></span>
 <span id="cb37-3"><a></a><span class="kw">class</span> Figura(ABC):</span>
@@ -1524,14 +1524,14 @@ Cuadrado(lado: 5)</code></pre>
 <section class="slide level2">
 
 <p><strong>Intentar instanciar la clase abstracta genera un error:</strong></p>
-<div id="3966f050" class="cell" data-execution_count="19">
+<div id="613d36d1" class="cell" data-execution_count="19">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a></a>fig <span class="op">=</span> Figura()  <span class="co"># generará un error</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section class="slide level2">
 
 <p><strong>Pero sí podemos crear objetos de las clases derivadas:</strong></p>
-<div id="276852c6" class="cell" data-execution_count="20">
+<div id="1902fc19" class="cell" data-execution_count="20">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a></a>rectangulo1 <span class="op">=</span> Rectangulo(<span class="dv">5</span>, <span class="dv">4</span>)</span>
 <span id="cb39-2"><a></a><span class="bu">print</span>(rectangulo1.area())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
