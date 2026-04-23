@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"><head>
 <link href="../assets/logo.png" rel="icon" type="image/png">
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-html/tabby.min.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -193,6 +193,9 @@
       margin-right: 0; 
     }
   </style>
+  <script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
+  
+  <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -470,7 +473,7 @@ externo/
 <section class="slide level2">
 
 <p>Por ejemplo, supongamos que necesitamos duplicar el valor de cada elemento en una lista de números. ¿Funcionaría el siguiente código para nuestro propósito?</p>
-<div id="e2129163" class="cell" data-execution_count="1">
+<div id="f35897fb" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a></a>lista <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>]</span>
 <span id="cb11-2"><a></a><span class="bu">print</span>(lista <span class="op">*</span> <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -478,7 +481,7 @@ externo/
 <section class="slide level2">
 
 <p>El resultado anterior concatena la lista consigo misma, no es la operación deseada. Si en cambio utilizamos un <code>ndarray</code> de NumPy:</p>
-<div id="09dcce21" class="cell" data-execution_count="2">
+<div id="c0f0fcda" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb12-2"><a></a>arreglo <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>])</span>
 <span id="cb12-3"><a></a><span class="bu">print</span>(arreglo <span class="op">*</span> <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -574,7 +577,7 @@ externo/
 <section class="slide level2">
 
 <p><strong>Veamos algunos ejemplos:</strong></p>
-<div id="ab904e07" class="cell" data-execution_count="3">
+<div id="69b79db3" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a></a><span class="co"># Convertir una lista en un arreglo 1D</span></span>
 <span id="cb14-2"><a></a></span>
 <span id="cb14-3"><a></a><span class="co"># Crear un array de ceros con cinco elementos.</span></span>
@@ -632,7 +635,7 @@ externo/
 <span id="cb15-12"><a></a><span class="co">    ndarray 1D de shape (24,) con dtype int.</span></span>
 <span id="cb15-13"><a></a><span class="co">    """</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Utiliza <code>np.arange</code>, <code>np.exp</code>, <code>np.random.normal</code> y <code>np.clip</code>.</p>
-<div id="d6796aee" class="cell" data-execution_count="4">
+<div id="b8120cf0" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a></a><span class="co">"""</span></span>
 <span id="cb16-2"><a></a><span class="co">1. Generar un arreglo hrs de 1 a 24.</span></span>
 <span id="cb16-3"><a></a><span class="co">2. Generar una func distribucion de coches bimodal, con picos en 8 y 17</span></span>
@@ -650,7 +653,7 @@ externo/
 
 <h3 id="propsndarray">Propiedades de un ndarray</h3>
 <p>Cuando creas un <code>ndarray</code>, puedes consultar sus características más importantes:</p>
-<div id="dd1c90e1" class="cell" data-execution_count="5">
+<div id="9d87dcce" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a></a>a <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>]])</span>
 <span id="cb18-2"><a></a></span>
 <span id="cb18-3"><a></a><span class="bu">print</span>(<span class="st">"Forma:"</span>, a.shape)     <span class="co"># (2, 3) – dos filas, tres columnas</span></span>
@@ -669,7 +672,7 @@ Tipo de datos: int64</code></pre>
 
 <h3 id="propiedades">Propiedades de un <code>ndarray</code></h3>
 <p>Cuando se crea un <code>ndarray</code>, es posible consultar sus características a través de sus atributos:</p>
-<div id="a298f3f9" class="cell" data-execution_count="6">
+<div id="4a027d1a" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a></a>a <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>],</span>
 <span id="cb20-2"><a></a>              [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>]])</span>
 <span id="cb20-3"><a></a></span>
@@ -706,7 +709,7 @@ Memoria total:          48 bytes</code></pre>
 
 <h3 id="reshape">Redimensionar arreglos</h3>
 <p>Es posible reestructurar un arreglo sin modificar sus datos, siempre que el número total de elementos se conserve. Esto se realiza con <code>reshape</code>:</p>
-<div id="03ca3763" class="cell" data-execution_count="7">
+<div id="12756677" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a></a>arr1d <span class="op">=</span> np.arange(<span class="dv">1</span>, <span class="dv">25</span>)</span>
 <span id="cb22-2"><a></a><span class="bu">print</span>(<span class="st">"Original:"</span>, arr1d.shape)</span>
 <span id="cb22-3"><a></a></span>
@@ -739,7 +742,7 @@ Remodelado a (4, 6):
 <section class="slide level2">
 
 <p>De forma inversa, <code>ravel()</code> aplana cualquier arreglo a una única dimensión:</p>
-<div id="b7ed8314" class="cell" data-execution_count="8">
+<div id="724c4055" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a></a>plano <span class="op">=</span> arr2d.ravel()</span>
 <span id="cb24-2"><a></a><span class="bu">print</span>(<span class="st">"Aplanado:"</span>, plano)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -763,7 +766,7 @@ Remodelado a (4, 6):
 <li>Al igual que en Python, los índices pueden ser negativos.</li>
 <li>El slicing permite obtener subarreglos con la notación <code>[inicio:fin:paso]</code>. El índice final <strong>no se incluye</strong>.</li>
 </ul>
-<div id="bb85f992" class="cell" data-execution_count="9">
+<div id="0e712842" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a></a>a <span class="op">=</span> np.array([<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">50</span>])</span>
 <span id="cb26-2"><a></a><span class="bu">print</span>(a[<span class="dv">0</span>])     <span class="co"># </span></span>
 <span id="cb26-3"><a></a><span class="bu">print</span>(a[<span class="op">-</span><span class="dv">1</span>])    <span class="co"># </span></span>
@@ -778,7 +781,7 @@ Remodelado a (4, 6):
 <ul>
 <li>Al indexar matrices en Python, normalmente hacemos lo siguiente para una matriz <span class="math inline">\(3 \times 3\)</span>:</li>
 </ul>
-<div id="9685bc3b" class="cell" data-execution_count="10">
+<div id="d11d29ae" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a></a>matriz <span class="op">=</span> [[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], </span>
 <span id="cb27-2"><a></a>          [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>], </span>
 <span id="cb27-3"><a></a>          [<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>]]</span>
@@ -792,7 +795,7 @@ Remodelado a (4, 6):
 <section class="slide level2">
 
 <p>En arreglos bidimensionales de numpy se usan <strong>dos índices separados por coma</strong>: <code>arreglo[fila, columna]</code>. El slicing se aplica de forma independiente en cada dimensión.</p>
-<div id="78efa7ca" class="cell" data-execution_count="11">
+<div id="903d7e57" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a></a>array2d <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>],</span>
 <span id="cb29-2"><a></a>                    [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>],</span>
 <span id="cb29-3"><a></a>                    [<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>]])</span>
@@ -813,7 +816,7 @@ Remodelado a (4, 6):
 <li>Para un array multidimensional <code>a</code>, <code>a[0]</code> se interpreta tomando todos los elementos en las dimensiones no especificadas.</li>
 </ul></li>
 </ul>
-<div id="cde449c1" class="cell" data-execution_count="12">
+<div id="e3bfd8cf" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a></a><span class="co"># Acceso a filas y columnas</span></span>
 <span id="cb31-2"><a></a><span class="bu">print</span>(array2d[<span class="dv">0</span>])       <span class="co"># </span></span>
 <span id="cb31-3"><a></a><span class="bu">print</span>(array2d[:, <span class="dv">1</span>])    <span class="co"># </span></span>
@@ -868,7 +871,7 @@ Remodelado a (4, 6):
 
 <h3 id="indexación-booleana">Indexación booleana</h3>
 <p>NumPy permite filtrar elementos mediante <strong>máscaras booleanas</strong>: arreglos de valores <code>True</code>/<code>False</code> del mismo tamaño que el arreglo original.</p>
-<div id="dd1efe2c" class="cell" data-execution_count="13">
+<div id="4c77ca61" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a></a>conteos <span class="op">=</span> np.array([<span class="dv">120</span>, <span class="dv">450</span>, <span class="dv">80</span>, <span class="dv">620</span>, <span class="dv">310</span>, <span class="dv">95</span>, <span class="dv">540</span>, <span class="dv">200</span>])</span>
 <span id="cb32-2"><a></a></span>
 <span id="cb32-3"><a></a>mascara <span class="op">=</span> conteos <span class="op">&gt;</span> <span class="dv">300</span></span>
@@ -937,7 +940,7 @@ Número de horas con &gt;300:  4</code></pre>
 <li>Las operaciones aritméticas entre arreglos de NumPy se aplican <strong>elemento por elemento</strong>.</li>
 <li>Las funciones estadísticas operan sobre la totalidad del arreglo o por <strong>eje</strong> (<code>axis</code>):</li>
 </ul>
-<div id="e4593b38" class="cell" data-execution_count="14">
+<div id="0e24f9ea" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a></a>m <span class="op">=</span> np.array([[<span class="dv">120</span>, <span class="dv">340</span>, <span class="dv">510</span>, <span class="dv">289</span>],</span>
 <span id="cb35-2"><a></a>              [<span class="dv">402</span>, <span class="dv">178</span>, <span class="dv">633</span>, <span class="dv">415</span>],</span>
 <span id="cb35-3"><a></a>              [ <span class="dv">95</span>, <span class="dv">220</span>, <span class="dv">480</span>, <span class="dv">371</span>]])</span>
@@ -986,7 +989,7 @@ Suma por fila     (axis=1): [1259 1628 1166]</code></pre>
 <li>NumPy incluye funciones optimizadas llamadas <strong>ufuncs</strong> (universal functions), que son más rápidas que usar funciones de Python como <code>math.sqrt()</code>.</li>
 <li>Estas funciones operan <strong>elemento a elemento</strong> y son muy eficientes.</li>
 </ul>
-<div id="b80b78ee" class="cell" data-execution_count="15">
+<div id="623cd699" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a></a>x <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">9</span>, <span class="dv">16</span>])</span>
 <span id="cb37-2"><a></a></span>
 <span id="cb37-3"><a></a>np.sqrt(x)     <span class="co"># [1. 2. 3. 4.]</span></span>
@@ -1001,7 +1004,7 @@ Suma por fila     (axis=1): [1259 1628 1166]</code></pre>
 <ul>
 <li>NumPy permite aplicar operaciones estadísticas <strong>a nivel global</strong> o <strong>por eje</strong>.</li>
 </ul>
-<div id="a53e24de" class="cell" data-execution_count="16">
+<div id="82313b09" class="cell" data-execution_count="16">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a></a>m <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>],</span>
 <span id="cb39-2"><a></a>              [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>]])</span>
 <span id="cb39-3"><a></a></span>
@@ -1025,7 +1028,7 @@ Suma por fila     (axis=1): [1259 1628 1166]</code></pre>
 <ul>
 <li>Muy útiles para filtrar datos.</li>
 </ul>
-<div id="2a195419" class="cell" data-execution_count="17">
+<div id="5996e893" class="cell" data-execution_count="17">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a></a>a <span class="op">=</span> np.array([<span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">7</span>, <span class="dv">22</span>])</span>
 <span id="cb40-2"><a></a>cond <span class="op">=</span> a <span class="op">&gt;</span> <span class="dv">10</span></span>
 <span id="cb40-3"><a></a><span class="bu">print</span>(cond)           <span class="co"># </span></span>
@@ -1101,7 +1104,7 @@ Suma por fila     (axis=1): [1259 1628 1166]</code></pre>
 4.0 5.0 6.0
 7.0 8.0 9.0</code></pre></li>
 </ol>
-<div id="b630b1bf" class="cell" data-execution_count="18">
+<div id="75b40dd9" class="cell" data-execution_count="18">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a></a><span class="co"># Ejemplo 1: Archivo de texto con valores separados por espacios</span></span>
 <span id="cb43-2"><a></a>datos1 <span class="op">=</span> np.loadtxt(<span class="st">'datos/archivo1.txt'</span>)</span>
 <span id="cb43-3"><a></a><span class="bu">print</span>(<span class="st">"Datos del archivo 1:"</span>)</span>
@@ -1122,7 +1125,7 @@ Suma por fila     (axis=1): [1259 1628 1166]</code></pre>
 4.0,5.0,6.0
 7.0,8.0,9.0</code></pre></li>
 </ol>
-<div id="56e31175" class="cell" data-execution_count="19">
+<div id="5a8b7cd5" class="cell" data-execution_count="19">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a></a><span class="co"># Ejemplo 2: Archivo de texto con valores separados por comas (CSV)</span></span>
 <span id="cb46-2"><a></a>datos2 <span class="op">=</span> np.loadtxt(<span class="st">'datos/archivo2.csv'</span>, delimiter<span class="op">=</span><span class="st">','</span>)</span>
 <span id="cb46-3"><a></a><span class="bu">print</span>(<span class="st">"Datos del archivo 2:"</span>)</span>
@@ -1145,7 +1148,7 @@ Suma por fila     (axis=1): [1259 1628 1166]</code></pre>
 1.0            21.5
 2.0            22.7</code></pre></li>
 </ol>
-<div id="ae8417d8" class="cell" data-execution_count="20">
+<div id="fed0b8b3" class="cell" data-execution_count="20">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a></a><span class="co"># Ejemplo 3: Archivo de texto con encabezado y comentarios</span></span>
 <span id="cb49-2"><a></a>datos3 <span class="op">=</span> np.loadtxt(<span class="st">'datos/archivo3.txt'</span>, skiprows<span class="op">=</span><span class="dv">2</span>)  <span class="co"># Saltamos 2 filas para ignorar los comentarios y el encabezado</span></span>
 <span id="cb49-3"><a></a><span class="bu">print</span>(<span class="st">"Datos del archivo 3:"</span>)</span>
@@ -1162,7 +1165,7 @@ Suma por fila     (axis=1): [1259 1628 1166]</code></pre>
 
 <h3 id="savetxt">Escribir arreglos a un archivo</h3>
 <p>Podemos guardar los datos de un arreglo de numpy con la función <code>np.savetxt</code></p>
-<div id="91f38e02" class="cell" data-execution_count="21">
+<div id="67706b2e" class="cell" data-execution_count="21">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a></a><span class="co"># Supongamos que tenemos un arreglo de datos</span></span>
 <span id="cb51-2"><a></a>datos <span class="op">=</span> np.arange(<span class="dv">1</span>,<span class="dv">10</span>).reshape((<span class="dv">3</span>,<span class="dv">3</span>))</span>
 <span id="cb51-3"><a></a></span>
@@ -1321,7 +1324,7 @@ Suma por fila     (axis=1): [1259 1628 1166]</code></pre>
 </section>
 <section class="slide level2">
 
-<div id="fa5a8cfe" class="cell" data-execution_count="22">
+<div id="42444deb" class="cell" data-execution_count="22">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb52-2"><a></a></span>
 <span id="cb52-3"><a></a><span class="co"># aqui creamos una Serie con valores y etiquetas (índice) </span></span>
@@ -1346,7 +1349,7 @@ dtype: int64</code></pre>
 
 <h3 id="acceso-a-datos-en-una-serie">Acceso a datos en una Serie</h3>
 <p>El acceso a los elementos de una Serie puede realizarse por <strong>etiqueta</strong> (<code>.loc</code>) o por <strong>posición</strong> (<code>.iloc</code>). Las operaciones aritméticas son vectorizadas, al igual que en NumPy:</p>
-<div id="a3c83b66" class="cell" data-execution_count="23">
+<div id="83c0f2a4" class="cell" data-execution_count="23">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a></a><span class="co"># Acceso por etiqueta</span></span>
 <span id="cb54-2"><a></a><span class="bu">print</span>(<span class="st">"Volumen a las 08:00:"</span>, trafico_h[<span class="st">'08:00'</span>])</span>
 <span id="cb54-3"><a></a></span>
@@ -1457,7 +1460,7 @@ dtype: float64</code></pre>
 </section>
 <section class="slide level2">
 
-<div id="f515a2ec" class="cell" data-execution_count="24">
+<div id="e7ac2dce" class="cell" data-execution_count="24">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb56-2"><a></a></span>
 <span id="cb56-3"><a></a><span class="co"># DataFrame construido desde un arreglo NumPy</span></span>
@@ -1489,7 +1492,7 @@ dtype: float64</code></pre>
 </section>
 <section class="slide level2">
 
-<div id="c6871a29" class="cell" data-execution_count="25">
+<div id="e7f9552f" class="cell" data-execution_count="25">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a></a><span class="co"># Acceso a una columna (devuelve Serie)</span></span>
 <span id="cb58-2"><a></a><span class="bu">print</span>(<span class="st">"Columna trafico:</span><span class="ch">\n</span><span class="st">"</span>, df_ej[<span class="st">'trafico'</span>])</span>
 <span id="cb58-3"><a></a></span>
@@ -1528,7 +1531,7 @@ Trafico y temp, horas 06:00-07:00:
 07:00    489.0    18.2</code></pre>
 </div>
 </div>
-<div id="c594d29a" class="cell" data-execution_count="26">
+<div id="4dc10a74" class="cell" data-execution_count="26">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb60"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a></a><span class="bu">print</span>(df_ej.at[<span class="st">'07:00'</span>, <span class="st">'lluvia'</span>])     <span class="co"># usando etiquetas de fila y columna</span></span>
 <span id="cb60-2"><a></a><span class="bu">print</span>(df_ej.iloc[<span class="dv">1</span>, <span class="dv">2</span>]) <span class="co"># usando posiciones, estilo numpy</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -1656,79 +1659,126 @@ Trafico y temp, horas 06:00-07:00:
 </section>
 <section class="slide level2">
 
-<div id="5679fe64" class="cell" data-execution_count="27">
+<div id="45c16f84" class="cell" data-execution_count="27">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb62"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb62-2"><a></a></span>
 <span id="cb62-3"><a></a>df <span class="op">=</span> pd.read_csv(<span class="st">"datos/titanic_train.csv"</span>)</span>
 <span id="cb62-4"><a></a>df.head()</span>
 <span id="cb62-5"><a></a></span>
 <span id="cb62-6"><a></a><span class="co"># guardar un dataframe es similar: df.to_csv("titanic_procesado.csv", index=False) # o to_xlsx, o to_json</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-error">
-<div class="ansi-escaped-output">
-<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">FileNotFoundError</span>                         Traceback (most recent call last)
-Cell <span class="ansi-green-fg">In[22], line 3</span>
-<span class="ansi-green-fg ansi-bold">      1</span> <span style="font-weight:bold;color:rgb(0,135,0)">import</span><span style="color:rgb(188,188,188)"> </span><span style="font-weight:bold;color:rgb(0,0,255)">pandas</span><span style="color:rgb(188,188,188)"> </span><span style="font-weight:bold;color:rgb(0,135,0)">as</span><span style="color:rgb(188,188,188)"> </span><span style="font-weight:bold;color:rgb(0,0,255)">pd</span>
-<span class="ansi-green-fg">----&gt; 3</span> df <span style="color:rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">pd</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">read_csv</span><span class="ansi-yellow-bg">(</span><span style="color:rgb(175,0,0)" class="ansi-yellow-bg">"</span><span style="color:rgb(175,0,0)" class="ansi-yellow-bg">datos/titanic_train.csv</span><span style="color:rgb(175,0,0)" class="ansi-yellow-bg">"</span><span class="ansi-yellow-bg">)</span>
-<span class="ansi-green-fg ansi-bold">      4</span> df<span style="color:rgb(98,98,98)">.</span>head()
-<span class="ansi-green-fg ansi-bold">      6</span> <span style="font-style:italic;color:rgb(95,135,135)"># guardar un dataframe es similar: df.to_csv("titanic_procesado.csv", index=False) # o to_xlsx, o to_json</span>
+<div class="cell-output cell-output-display" data-execution_count="22">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-File <span class="ansi-green-fg">/opt/miniconda3/envs/ibero2026/lib/python3.9/site-packages/pandas/io/parsers/readers.py:1026</span>, in <span class="ansi-cyan-fg">read_csv</span><span class="ansi-blue-fg">(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, date_format, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, encoding_errors, dialect, on_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options, dtype_backend)</span>
-<span class="ansi-green-fg ansi-bold">   1013</span> kwds_defaults <span style="color:rgb(98,98,98)">=</span> _refine_defaults_read(
-<span class="ansi-green-fg ansi-bold">   1014</span>     dialect,
-<span class="ansi-green-fg ansi-bold">   1015</span>     delimiter,
-<span class="ansi-green-fg">   (...)</span>
-<span class="ansi-green-fg ansi-bold">   1022</span>     dtype_backend<span style="color:rgb(98,98,98)">=</span>dtype_backend,
-<span class="ansi-green-fg ansi-bold">   1023</span> )
-<span class="ansi-green-fg ansi-bold">   1024</span> kwds<span style="color:rgb(98,98,98)">.</span>update(kwds_defaults)
-<span class="ansi-green-fg">-&gt; 1026</span> <span style="font-weight:bold;color:rgb(0,135,0)">return</span> <span class="ansi-yellow-bg">_read</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">filepath_or_buffer</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">kwds</span><span class="ansi-yellow-bg">)</span>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
 
-File <span class="ansi-green-fg">/opt/miniconda3/envs/ibero2026/lib/python3.9/site-packages/pandas/io/parsers/readers.py:620</span>, in <span class="ansi-cyan-fg">_read</span><span class="ansi-blue-fg">(filepath_or_buffer, kwds)</span>
-<span class="ansi-green-fg ansi-bold">    617</span> _validate_names(kwds<span style="color:rgb(98,98,98)">.</span>get(<span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">names</span><span style="color:rgb(175,0,0)">"</span>, <span style="font-weight:bold;color:rgb(0,135,0)">None</span>))
-<span class="ansi-green-fg ansi-bold">    619</span> <span style="font-style:italic;color:rgb(95,135,135)"># Create the parser.</span>
-<span class="ansi-green-fg">--&gt; 620</span> parser <span style="color:rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">TextFileReader</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">filepath_or_buffer</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">*</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">*</span><span class="ansi-yellow-bg">kwds</span><span class="ansi-yellow-bg">)</span>
-<span class="ansi-green-fg ansi-bold">    622</span> <span style="font-weight:bold;color:rgb(0,135,0)">if</span> chunksize <span style="font-weight:bold;color:rgb(175,0,255)">or</span> iterator:
-<span class="ansi-green-fg ansi-bold">    623</span>     <span style="font-weight:bold;color:rgb(0,135,0)">return</span> parser
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
 
-File <span class="ansi-green-fg">/opt/miniconda3/envs/ibero2026/lib/python3.9/site-packages/pandas/io/parsers/readers.py:1620</span>, in <span class="ansi-cyan-fg">TextFileReader.__init__</span><span class="ansi-blue-fg">(self, f, engine, **kwds)</span>
-<span class="ansi-green-fg ansi-bold">   1617</span>     <span style="color:rgb(0,135,0)">self</span><span style="color:rgb(98,98,98)">.</span>options[<span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">has_index_names</span><span style="color:rgb(175,0,0)">"</span>] <span style="color:rgb(98,98,98)">=</span> kwds[<span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">has_index_names</span><span style="color:rgb(175,0,0)">"</span>]
-<span class="ansi-green-fg ansi-bold">   1619</span> <span style="color:rgb(0,135,0)">self</span><span style="color:rgb(98,98,98)">.</span>handles: IOHandles <span style="color:rgb(98,98,98)">|</span> <span style="font-weight:bold;color:rgb(0,135,0)">None</span> <span style="color:rgb(98,98,98)">=</span> <span style="font-weight:bold;color:rgb(0,135,0)">None</span>
-<span class="ansi-green-fg">-&gt; 1620</span> <span style="color:rgb(0,135,0)">self</span><span style="color:rgb(98,98,98)">.</span>_engine <span style="color:rgb(98,98,98)">=</span> <span style="color:rgb(0,135,0)" class="ansi-yellow-bg">self</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">_make_engine</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">f</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span style="color:rgb(0,135,0)" class="ansi-yellow-bg">self</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">engine</span><span class="ansi-yellow-bg">)</span>
+<table class="dataframe caption-top" data-border="1">
+<thead>
+<tr class="header" style="text-align: right;">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">PassengerId</th>
+<th data-quarto-table-cell-role="th">Survived</th>
+<th data-quarto-table-cell-role="th">Pclass</th>
+<th data-quarto-table-cell-role="th">Name</th>
+<th data-quarto-table-cell-role="th">Sex</th>
+<th data-quarto-table-cell-role="th">Age</th>
+<th data-quarto-table-cell-role="th">SibSp</th>
+<th data-quarto-table-cell-role="th">Parch</th>
+<th data-quarto-table-cell-role="th">Ticket</th>
+<th data-quarto-table-cell-role="th">Fare</th>
+<th data-quarto-table-cell-role="th">Cabin</th>
+<th data-quarto-table-cell-role="th">Embarked</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">0</th>
+<td>1</td>
+<td>0</td>
+<td>3</td>
+<td>Braund, Mr. Owen Harris</td>
+<td>male</td>
+<td>22.0</td>
+<td>1</td>
+<td>0</td>
+<td>A/5 21171</td>
+<td>7.2500</td>
+<td>NaN</td>
+<td>S</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1</th>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+<td>Cumings, Mrs. John Bradley (Florence Briggs Th...</td>
+<td>female</td>
+<td>38.0</td>
+<td>1</td>
+<td>0</td>
+<td>PC 17599</td>
+<td>71.2833</td>
+<td>C85</td>
+<td>C</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2</th>
+<td>3</td>
+<td>1</td>
+<td>3</td>
+<td>Heikkinen, Miss. Laina</td>
+<td>female</td>
+<td>26.0</td>
+<td>0</td>
+<td>0</td>
+<td>STON/O2. 3101282</td>
+<td>7.9250</td>
+<td>NaN</td>
+<td>S</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">3</th>
+<td>4</td>
+<td>1</td>
+<td>1</td>
+<td>Futrelle, Mrs. Jacques Heath (Lily May Peel)</td>
+<td>female</td>
+<td>35.0</td>
+<td>1</td>
+<td>0</td>
+<td>113803</td>
+<td>53.1000</td>
+<td>C123</td>
+<td>S</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">4</th>
+<td>5</td>
+<td>0</td>
+<td>3</td>
+<td>Allen, Mr. William Henry</td>
+<td>male</td>
+<td>35.0</td>
+<td>0</td>
+<td>0</td>
+<td>373450</td>
+<td>8.0500</td>
+<td>NaN</td>
+<td>S</td>
+</tr>
+</tbody>
+</table>
 
-File <span class="ansi-green-fg">/opt/miniconda3/envs/ibero2026/lib/python3.9/site-packages/pandas/io/parsers/readers.py:1880</span>, in <span class="ansi-cyan-fg">TextFileReader._make_engine</span><span class="ansi-blue-fg">(self, f, engine)</span>
-<span class="ansi-green-fg ansi-bold">   1878</span>     <span style="font-weight:bold;color:rgb(0,135,0)">if</span> <span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">b</span><span style="color:rgb(175,0,0)">"</span> <span style="font-weight:bold;color:rgb(175,0,255)">not</span> <span style="font-weight:bold;color:rgb(175,0,255)">in</span> mode:
-<span class="ansi-green-fg ansi-bold">   1879</span>         mode <span style="color:rgb(98,98,98)">+</span><span style="color:rgb(98,98,98)">=</span> <span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">b</span><span style="color:rgb(175,0,0)">"</span>
-<span class="ansi-green-fg">-&gt; 1880</span> <span style="color:rgb(0,135,0)">self</span><span style="color:rgb(98,98,98)">.</span>handles <span style="color:rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">get_handle</span><span class="ansi-yellow-bg">(</span>
-<span class="ansi-green-fg ansi-bold">   1881</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg">f</span><span class="ansi-yellow-bg">,</span>
-<span class="ansi-green-fg ansi-bold">   1882</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg">mode</span><span class="ansi-yellow-bg">,</span>
-<span class="ansi-green-fg ansi-bold">   1883</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg">encoding</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">=</span><span style="color:rgb(0,135,0)" class="ansi-yellow-bg">self</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">options</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">get</span><span class="ansi-yellow-bg">(</span><span style="color:rgb(175,0,0)" class="ansi-yellow-bg">"</span><span style="color:rgb(175,0,0)" class="ansi-yellow-bg">encoding</span><span style="color:rgb(175,0,0)" class="ansi-yellow-bg">"</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span style="font-weight:bold;color:rgb(0,135,0)" class="ansi-yellow-bg">None</span><span class="ansi-yellow-bg">)</span><span class="ansi-yellow-bg">,</span>
-<span class="ansi-green-fg ansi-bold">   1884</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg">compression</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">=</span><span style="color:rgb(0,135,0)" class="ansi-yellow-bg">self</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">options</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">get</span><span class="ansi-yellow-bg">(</span><span style="color:rgb(175,0,0)" class="ansi-yellow-bg">"</span><span style="color:rgb(175,0,0)" class="ansi-yellow-bg">compression</span><span style="color:rgb(175,0,0)" class="ansi-yellow-bg">"</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span style="font-weight:bold;color:rgb(0,135,0)" class="ansi-yellow-bg">None</span><span class="ansi-yellow-bg">)</span><span class="ansi-yellow-bg">,</span>
-<span class="ansi-green-fg ansi-bold">   1885</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg">memory_map</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">=</span><span style="color:rgb(0,135,0)" class="ansi-yellow-bg">self</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">options</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">get</span><span class="ansi-yellow-bg">(</span><span style="color:rgb(175,0,0)" class="ansi-yellow-bg">"</span><span style="color:rgb(175,0,0)" class="ansi-yellow-bg">memory_map</span><span style="color:rgb(175,0,0)" class="ansi-yellow-bg">"</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span style="font-weight:bold;color:rgb(0,135,0)" class="ansi-yellow-bg">False</span><span class="ansi-yellow-bg">)</span><span class="ansi-yellow-bg">,</span>
-<span class="ansi-green-fg ansi-bold">   1886</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg">is_text</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">=</span><span class="ansi-yellow-bg">is_text</span><span class="ansi-yellow-bg">,</span>
-<span class="ansi-green-fg ansi-bold">   1887</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg">errors</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">=</span><span style="color:rgb(0,135,0)" class="ansi-yellow-bg">self</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">options</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">get</span><span class="ansi-yellow-bg">(</span><span style="color:rgb(175,0,0)" class="ansi-yellow-bg">"</span><span style="color:rgb(175,0,0)" class="ansi-yellow-bg">encoding_errors</span><span style="color:rgb(175,0,0)" class="ansi-yellow-bg">"</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span style="color:rgb(175,0,0)" class="ansi-yellow-bg">"</span><span style="color:rgb(175,0,0)" class="ansi-yellow-bg">strict</span><span style="color:rgb(175,0,0)" class="ansi-yellow-bg">"</span><span class="ansi-yellow-bg">)</span><span class="ansi-yellow-bg">,</span>
-<span class="ansi-green-fg ansi-bold">   1888</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg">storage_options</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">=</span><span style="color:rgb(0,135,0)" class="ansi-yellow-bg">self</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">options</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">get</span><span class="ansi-yellow-bg">(</span><span style="color:rgb(175,0,0)" class="ansi-yellow-bg">"</span><span style="color:rgb(175,0,0)" class="ansi-yellow-bg">storage_options</span><span style="color:rgb(175,0,0)" class="ansi-yellow-bg">"</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span style="font-weight:bold;color:rgb(0,135,0)" class="ansi-yellow-bg">None</span><span class="ansi-yellow-bg">)</span><span class="ansi-yellow-bg">,</span>
-<span class="ansi-green-fg ansi-bold">   1889</span> <span class="ansi-yellow-bg">)</span>
-<span class="ansi-green-fg ansi-bold">   1890</span> <span style="font-weight:bold;color:rgb(0,135,0)">assert</span> <span style="color:rgb(0,135,0)">self</span><span style="color:rgb(98,98,98)">.</span>handles <span style="font-weight:bold;color:rgb(175,0,255)">is</span> <span style="font-weight:bold;color:rgb(175,0,255)">not</span> <span style="font-weight:bold;color:rgb(0,135,0)">None</span>
-<span class="ansi-green-fg ansi-bold">   1891</span> f <span style="color:rgb(98,98,98)">=</span> <span style="color:rgb(0,135,0)">self</span><span style="color:rgb(98,98,98)">.</span>handles<span style="color:rgb(98,98,98)">.</span>handle
-
-File <span class="ansi-green-fg">/opt/miniconda3/envs/ibero2026/lib/python3.9/site-packages/pandas/io/common.py:873</span>, in <span class="ansi-cyan-fg">get_handle</span><span class="ansi-blue-fg">(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)</span>
-<span class="ansi-green-fg ansi-bold">    868</span> <span style="font-weight:bold;color:rgb(0,135,0)">elif</span> <span style="color:rgb(0,135,0)">isinstance</span>(handle, <span style="color:rgb(0,135,0)">str</span>):
-<span class="ansi-green-fg ansi-bold">    869</span>     <span style="font-style:italic;color:rgb(95,135,135)"># Check whether the filename is to be opened in binary mode.</span>
-<span class="ansi-green-fg ansi-bold">    870</span>     <span style="font-style:italic;color:rgb(95,135,135)"># Binary mode does not support 'encoding' and 'newline'.</span>
-<span class="ansi-green-fg ansi-bold">    871</span>     <span style="font-weight:bold;color:rgb(0,135,0)">if</span> ioargs<span style="color:rgb(98,98,98)">.</span>encoding <span style="font-weight:bold;color:rgb(175,0,255)">and</span> <span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">b</span><span style="color:rgb(175,0,0)">"</span> <span style="font-weight:bold;color:rgb(175,0,255)">not</span> <span style="font-weight:bold;color:rgb(175,0,255)">in</span> ioargs<span style="color:rgb(98,98,98)">.</span>mode:
-<span class="ansi-green-fg ansi-bold">    872</span>         <span style="font-style:italic;color:rgb(95,135,135)"># Encoding</span>
-<span class="ansi-green-fg">--&gt; 873</span>         handle <span style="color:rgb(98,98,98)">=</span> <span style="color:rgb(0,135,0)" class="ansi-yellow-bg">open</span><span class="ansi-yellow-bg">(</span>
-<span class="ansi-green-fg ansi-bold">    874</span> <span class="ansi-yellow-bg">            </span><span class="ansi-yellow-bg">handle</span><span class="ansi-yellow-bg">,</span>
-<span class="ansi-green-fg ansi-bold">    875</span> <span class="ansi-yellow-bg">            </span><span class="ansi-yellow-bg">ioargs</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">mode</span><span class="ansi-yellow-bg">,</span>
-<span class="ansi-green-fg ansi-bold">    876</span> <span class="ansi-yellow-bg">            </span><span class="ansi-yellow-bg">encoding</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">=</span><span class="ansi-yellow-bg">ioargs</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">encoding</span><span class="ansi-yellow-bg">,</span>
-<span class="ansi-green-fg ansi-bold">    877</span> <span class="ansi-yellow-bg">            </span><span class="ansi-yellow-bg">errors</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">=</span><span class="ansi-yellow-bg">errors</span><span class="ansi-yellow-bg">,</span>
-<span class="ansi-green-fg ansi-bold">    878</span> <span class="ansi-yellow-bg">            </span><span class="ansi-yellow-bg">newline</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">=</span><span style="color:rgb(175,0,0)" class="ansi-yellow-bg">"</span><span style="color:rgb(175,0,0)" class="ansi-yellow-bg">"</span><span class="ansi-yellow-bg">,</span>
-<span class="ansi-green-fg ansi-bold">    879</span> <span class="ansi-yellow-bg">        </span><span class="ansi-yellow-bg">)</span>
-<span class="ansi-green-fg ansi-bold">    880</span>     <span style="font-weight:bold;color:rgb(0,135,0)">else</span>:
-<span class="ansi-green-fg ansi-bold">    881</span>         <span style="font-style:italic;color:rgb(95,135,135)"># Binary mode</span>
-<span class="ansi-green-fg ansi-bold">    882</span>         handle <span style="color:rgb(98,98,98)">=</span> <span style="color:rgb(0,135,0)">open</span>(handle, ioargs<span style="color:rgb(98,98,98)">.</span>mode)
-
-<span class="ansi-red-fg">FileNotFoundError</span>: [Errno 2] No such file or directory: 'datos/titanic_train.csv'</pre>
 </div>
 </div>
 </div>
@@ -1749,17 +1799,29 @@ File <span class="ansi-green-fg">/opt/miniconda3/envs/ibero2026/lib/python3.9/si
 </section>
 <section class="slide level2">
 
-<div id="7fbc5759" class="cell" data-execution_count="28">
+<div id="f35622c4" class="cell" data-execution_count="28">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb63"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb63-1"><a></a><span class="bu">print</span>(df.info())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-error">
-<div class="ansi-escaped-output">
-<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-Cell <span class="ansi-green-fg">In[23], line 1</span>
-<span class="ansi-green-fg">----&gt; 1</span> <span style="color:rgb(0,135,0)">print</span>(<span class="ansi-yellow-bg">df</span><span style="color:rgb(98,98,98)">.</span>info())
-
-<span class="ansi-red-fg">NameError</span>: name 'df' is not defined</pre>
-</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
+RangeIndex: 891 entries, 0 to 890
+Data columns (total 12 columns):
+ #   Column       Non-Null Count  Dtype  
+---  ------       --------------  -----  
+ 0   PassengerId  891 non-null    int64  
+ 1   Survived     891 non-null    int64  
+ 2   Pclass       891 non-null    int64  
+ 3   Name         891 non-null    object 
+ 4   Sex          891 non-null    object 
+ 5   Age          714 non-null    float64
+ 6   SibSp        891 non-null    int64  
+ 7   Parch        891 non-null    int64  
+ 8   Ticket       891 non-null    object 
+ 9   Fare         891 non-null    float64
+ 10  Cabin        204 non-null    object 
+ 11  Embarked     889 non-null    object 
+dtypes: float64(2), int64(5), object(5)
+memory usage: 83.7+ KB
+None</code></pre>
 </div>
 </div>
 <ul>
@@ -1775,30 +1837,56 @@ Cell <span class="ansi-green-fg">In[23], line 1</span>
 </section>
 <section class="slide level2">
 
-<div id="6511ff9a" class="cell" data-execution_count="29">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb64"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb64-1"><a></a><span class="bu">print</span>(<span class="st">"Dimensiones del dataset:"</span>)</span>
-<span id="cb64-2"><a></a><span class="bu">print</span>(df.shape)</span>
-<span id="cb64-3"><a></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n\n</span><span class="st">Columnas: "</span>)</span>
-<span id="cb64-4"><a></a><span class="bu">print</span>(df.columns)</span>
-<span id="cb64-5"><a></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n\n</span><span class="st">Tipos"</span>)</span>
-<span id="cb64-6"><a></a><span class="bu">print</span>(df.dtypes)</span>
-<span id="cb64-7"><a></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n\n</span><span class="st">Nulos"</span>)</span>
-<span id="cb64-8"><a></a><span class="bu">print</span>(df.isnull().<span class="bu">sum</span>())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="23334422" class="cell" data-execution_count="29">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb65"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb65-1"><a></a><span class="bu">print</span>(<span class="st">"Dimensiones del dataset:"</span>)</span>
+<span id="cb65-2"><a></a><span class="bu">print</span>(df.shape)</span>
+<span id="cb65-3"><a></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n\n</span><span class="st">Columnas: "</span>)</span>
+<span id="cb65-4"><a></a><span class="bu">print</span>(df.columns)</span>
+<span id="cb65-5"><a></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n\n</span><span class="st">Tipos"</span>)</span>
+<span id="cb65-6"><a></a><span class="bu">print</span>(df.dtypes)</span>
+<span id="cb65-7"><a></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n\n</span><span class="st">Nulos"</span>)</span>
+<span id="cb65-8"><a></a><span class="bu">print</span>(df.isnull().<span class="bu">sum</span>())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Dimensiones del dataset:</code></pre>
-</div>
-<div class="cell-output cell-output-error">
-<div class="ansi-escaped-output">
-<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-Cell <span class="ansi-green-fg">In[24], line 2</span>
-<span class="ansi-green-fg ansi-bold">      1</span> <span style="color:rgb(0,135,0)">print</span>(<span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">Dimensiones del dataset:</span><span style="color:rgb(175,0,0)">"</span>)
-<span class="ansi-green-fg">----&gt; 2</span> <span style="color:rgb(0,135,0)">print</span>(<span class="ansi-yellow-bg">df</span><span style="color:rgb(98,98,98)">.</span>shape)
-<span class="ansi-green-fg ansi-bold">      3</span> <span style="color:rgb(0,135,0)">print</span>(<span style="color:rgb(175,0,0)">"</span><span style="font-weight:bold;color:rgb(175,95,0)">\n</span><span style="font-weight:bold;color:rgb(175,95,0)">\n</span><span style="color:rgb(175,0,0)">Columnas: </span><span style="color:rgb(175,0,0)">"</span>)
-<span class="ansi-green-fg ansi-bold">      4</span> <span style="color:rgb(0,135,0)">print</span>(df<span style="color:rgb(98,98,98)">.</span>columns)
+<pre><code>Dimensiones del dataset:
+(891, 12)
 
-<span class="ansi-red-fg">NameError</span>: name 'df' is not defined</pre>
-</div>
+
+Columnas: 
+Index(['PassengerId', 'Survived', 'Pclass', 'Name', 'Sex', 'Age', 'SibSp',
+       'Parch', 'Ticket', 'Fare', 'Cabin', 'Embarked'],
+      dtype='object')
+
+
+Tipos
+PassengerId      int64
+Survived         int64
+Pclass           int64
+Name            object
+Sex             object
+Age            float64
+SibSp            int64
+Parch            int64
+Ticket          object
+Fare           float64
+Cabin           object
+Embarked        object
+dtype: object
+
+
+Nulos
+PassengerId      0
+Survived         0
+Pclass           0
+Name             0
+Sex              0
+Age            177
+SibSp            0
+Parch            0
+Ticket           0
+Fare             0
+Cabin          687
+Embarked         2
+dtype: int64</code></pre>
 </div>
 </div>
 </section>
@@ -1817,22 +1905,43 @@ Cell <span class="ansi-green-fg">In[24], line 2</span>
 </section>
 <section class="slide level2">
 
-<div id="27f4b6dd" class="cell" data-execution_count="30">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb66"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb66-1"><a></a><span class="bu">print</span>(df.describe()) <span class="co"># obtenemos estadísticas sobre todas las columnas numéricas del dataframe</span></span>
-<span id="cb66-2"><a></a><span class="co"># allternativamente, podríamos obtener las estadísticas para una sola columna, por ejemplo la edad</span></span>
-<span id="cb66-3"><a></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n\n</span><span class="st">Stats Age"</span>)</span>
-<span id="cb66-4"><a></a><span class="bu">print</span>(df[<span class="st">'Age'</span>].describe())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-error">
-<div class="ansi-escaped-output">
-<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-Cell <span class="ansi-green-fg">In[25], line 1</span>
-<span class="ansi-green-fg">----&gt; 1</span> <span style="color:rgb(0,135,0)">print</span>(<span class="ansi-yellow-bg">df</span><span style="color:rgb(98,98,98)">.</span>describe()) <span style="font-style:italic;color:rgb(95,135,135)"># obtenemos estadísticas sobre todas las columnas numéricas del dataframe</span>
-<span class="ansi-green-fg ansi-bold">      2</span> <span style="font-style:italic;color:rgb(95,135,135)"># allternativamente, podríamos obtener las estadísticas para una sola columna, por ejemplo la edad</span>
-<span class="ansi-green-fg ansi-bold">      3</span> <span style="color:rgb(0,135,0)">print</span>(<span style="color:rgb(175,0,0)">"</span><span style="font-weight:bold;color:rgb(175,95,0)">\n</span><span style="font-weight:bold;color:rgb(175,95,0)">\n</span><span style="color:rgb(175,0,0)">Stats Age</span><span style="color:rgb(175,0,0)">"</span>)
+<div id="5bb3a470" class="cell" data-execution_count="30">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb67"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb67-1"><a></a><span class="bu">print</span>(df.describe()) <span class="co"># obtenemos estadísticas sobre todas las columnas numéricas del dataframe</span></span>
+<span id="cb67-2"><a></a><span class="co"># allternativamente, podríamos obtener las estadísticas para una sola columna, por ejemplo la edad</span></span>
+<span id="cb67-3"><a></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n\n</span><span class="st">Stats Age"</span>)</span>
+<span id="cb67-4"><a></a><span class="bu">print</span>(df[<span class="st">'Age'</span>].describe())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       PassengerId    Survived      Pclass         Age       SibSp  \
+count   891.000000  891.000000  891.000000  714.000000  891.000000   
+mean    446.000000    0.383838    2.308642   29.699118    0.523008   
+std     257.353842    0.486592    0.836071   14.526497    1.102743   
+min       1.000000    0.000000    1.000000    0.420000    0.000000   
+25%     223.500000    0.000000    2.000000   20.125000    0.000000   
+50%     446.000000    0.000000    3.000000   28.000000    0.000000   
+75%     668.500000    1.000000    3.000000   38.000000    1.000000   
+max     891.000000    1.000000    3.000000   80.000000    8.000000   
 
-<span class="ansi-red-fg">NameError</span>: name 'df' is not defined</pre>
-</div>
+            Parch        Fare  
+count  891.000000  891.000000  
+mean     0.381594   32.204208  
+std      0.806057   49.693429  
+min      0.000000    0.000000  
+25%      0.000000    7.910400  
+50%      0.000000   14.454200  
+75%      0.000000   31.000000  
+max      6.000000  512.329200  
+
+
+Stats Age
+count    714.000000
+mean      29.699118
+std       14.526497
+min        0.420000
+25%       20.125000
+50%       28.000000
+75%       38.000000
+max       80.000000
+Name: Age, dtype: float64</code></pre>
 </div>
 </div>
 <div class="callout callout-note callout-titled callout-style-default">
@@ -1888,29 +1997,24 @@ Cell <span class="ansi-green-fg">In[25], line 1</span>
 </section>
 <section class="slide level2">
 
-<div id="47f68b17" class="cell" data-execution_count="31">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb67"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb67-1"><a></a><span class="bu">print</span>(<span class="st">"Valores únicos: "</span>)</span>
-<span id="cb67-2"><a></a><span class="bu">print</span>(df[<span class="st">'Sex'</span>].unique())</span>
-<span id="cb67-3"><a></a></span>
-<span id="cb67-4"><a></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n\n</span><span class="st">Conteo:"</span>)</span>
-<span id="cb67-5"><a></a><span class="bu">print</span>(df[<span class="st">'Sex'</span>].value_counts())</span>
-<span id="cb67-6"><a></a></span>
-<span id="cb67-7"><a></a><span class="co"># por ejemplo, si viéramos "male", "MALE" y "Male", eso indicaría que hay inconsistencia y sería necesario limpiar.</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="1a39210c" class="cell" data-execution_count="31">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb69"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb69-1"><a></a><span class="bu">print</span>(<span class="st">"Valores únicos: "</span>)</span>
+<span id="cb69-2"><a></a><span class="bu">print</span>(df[<span class="st">'Sex'</span>].unique())</span>
+<span id="cb69-3"><a></a></span>
+<span id="cb69-4"><a></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n\n</span><span class="st">Conteo:"</span>)</span>
+<span id="cb69-5"><a></a><span class="bu">print</span>(df[<span class="st">'Sex'</span>].value_counts())</span>
+<span id="cb69-6"><a></a></span>
+<span id="cb69-7"><a></a><span class="co"># por ejemplo, si viéramos "male", "MALE" y "Male", eso indicaría que hay inconsistencia y sería necesario limpiar.</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Valores únicos: </code></pre>
-</div>
-<div class="cell-output cell-output-error">
-<div class="ansi-escaped-output">
-<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-Cell <span class="ansi-green-fg">In[26], line 2</span>
-<span class="ansi-green-fg ansi-bold">      1</span> <span style="color:rgb(0,135,0)">print</span>(<span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">Valores únicos: </span><span style="color:rgb(175,0,0)">"</span>)
-<span class="ansi-green-fg">----&gt; 2</span> <span style="color:rgb(0,135,0)">print</span>(<span class="ansi-yellow-bg">df</span>[<span style="color:rgb(175,0,0)">'</span><span style="color:rgb(175,0,0)">Sex</span><span style="color:rgb(175,0,0)">'</span>]<span style="color:rgb(98,98,98)">.</span>unique())
-<span class="ansi-green-fg ansi-bold">      4</span> <span style="color:rgb(0,135,0)">print</span>(<span style="color:rgb(175,0,0)">"</span><span style="font-weight:bold;color:rgb(175,95,0)">\n</span><span style="font-weight:bold;color:rgb(175,95,0)">\n</span><span style="color:rgb(175,0,0)">Conteo:</span><span style="color:rgb(175,0,0)">"</span>)
-<span class="ansi-green-fg ansi-bold">      5</span> <span style="color:rgb(0,135,0)">print</span>(df[<span style="color:rgb(175,0,0)">'</span><span style="color:rgb(175,0,0)">Sex</span><span style="color:rgb(175,0,0)">'</span>]<span style="color:rgb(98,98,98)">.</span>value_counts())
+<pre><code>Valores únicos: 
+['male' 'female']
 
-<span class="ansi-red-fg">NameError</span>: name 'df' is not defined</pre>
-</div>
+
+Conteo:
+Sex
+male      577
+female    314
+Name: count, dtype: int64</code></pre>
 </div>
 </div>
 <p>Este comando nos dice cuántas veces aparece cada categoría. Pero la clave es interpretar el resultado:</p>
@@ -1922,56 +2026,49 @@ Cell <span class="ansi-green-fg">In[26], line 2</span>
 <section class="slide level2">
 
 <p>También podríamos querer porcentajes:</p>
-<div id="fbc7a17d" class="cell" data-execution_count="32">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb69"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb69-1"><a></a>df[<span class="st">'Sex'</span>].value_counts(normalize<span class="op">=</span><span class="va">True</span>) <span class="co"># Esto nos da proporciones</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-error">
-<div class="ansi-escaped-output">
-<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-Cell <span class="ansi-green-fg">In[27], line 1</span>
-<span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-yellow-bg">df</span>[<span style="color:rgb(175,0,0)">'</span><span style="color:rgb(175,0,0)">Sex</span><span style="color:rgb(175,0,0)">'</span>]<span style="color:rgb(98,98,98)">.</span>value_counts(normalize<span style="color:rgb(98,98,98)">=</span><span style="font-weight:bold;color:rgb(0,135,0)">True</span>) <span style="font-style:italic;color:rgb(95,135,135)"># Esto nos da proporciones</span>
-
-<span class="ansi-red-fg">NameError</span>: name 'df' is not defined</pre>
-</div>
+<div id="af1e40f0" class="cell" data-execution_count="32">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb71"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb71-1"><a></a>df[<span class="st">'Sex'</span>].value_counts(normalize<span class="op">=</span><span class="va">True</span>) <span class="co"># Esto nos da proporciones</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="27">
+<pre><code>Sex
+male      0.647587
+female    0.352413
+Name: proportion, dtype: float64</code></pre>
 </div>
 </div>
 <p>También es importante considerar que ambas columnas están registradas como tipo <code>object</code>. Convertirlas al tipo <code>category</code> reduce el consumo de memoria y habilita operaciones de agrupación más eficientes.</p>
-<div id="8c2ad1a4" class="cell" data-execution_count="33">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb70"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb70-1"><a></a><span class="bu">print</span>(<span class="st">"Antes — dtype:"</span>, df[<span class="st">'Sex'</span>].dtype)</span>
-<span id="cb70-2"><a></a><span class="bu">print</span>(<span class="ss">f"Memoria: </span><span class="sc">{</span>df[<span class="st">'Sex'</span>]<span class="sc">.</span>memory_usage(deep<span class="op">=</span><span class="va">True</span>)<span class="sc">:,}</span><span class="ss"> bytes"</span>)</span>
-<span id="cb70-3"><a></a></span>
-<span id="cb70-4"><a></a>df[<span class="st">'Sex'</span>] <span class="op">=</span> df[<span class="st">'Sex'</span>].astype(<span class="st">'category'</span>)</span>
-<span id="cb70-5"><a></a></span>
-<span id="cb70-6"><a></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Después — dtype:"</span>, df[<span class="st">'Sex'</span>].dtype)</span>
-<span id="cb70-7"><a></a><span class="bu">print</span>(<span class="ss">f"Memoria: </span><span class="sc">{</span>df[<span class="st">'Sex'</span>]<span class="sc">.</span>memory_usage(deep<span class="op">=</span><span class="va">True</span>)<span class="sc">:,}</span><span class="ss"> bytes"</span>)</span>
-<span id="cb70-8"><a></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Categorías:"</span>, df[<span class="st">'Sex'</span>].cat.categories.tolist())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-error">
-<div class="ansi-escaped-output">
-<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-Cell <span class="ansi-green-fg">In[28], line 1</span>
-<span class="ansi-green-fg">----&gt; 1</span> <span style="color:rgb(0,135,0)">print</span>(<span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">Antes — dtype:</span><span style="color:rgb(175,0,0)">"</span>, <span class="ansi-yellow-bg">df</span>[<span style="color:rgb(175,0,0)">'</span><span style="color:rgb(175,0,0)">Sex</span><span style="color:rgb(175,0,0)">'</span>]<span style="color:rgb(98,98,98)">.</span>dtype)
-<span class="ansi-green-fg ansi-bold">      2</span> <span style="color:rgb(0,135,0)">print</span>(<span style="color:rgb(175,0,0)">f</span><span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">Memoria: </span><span style="font-weight:bold;color:rgb(175,95,135)">{</span>df[<span style="color:rgb(175,0,0)">'</span><span style="color:rgb(175,0,0)">Sex</span><span style="color:rgb(175,0,0)">'</span>]<span style="color:rgb(98,98,98)">.</span>memory_usage(deep<span style="color:rgb(98,98,98)">=</span><span style="font-weight:bold;color:rgb(0,135,0)">True</span>)<span style="font-weight:bold;color:rgb(175,95,135)">:</span><span style="color:rgb(175,0,0)">,</span><span style="font-weight:bold;color:rgb(175,95,135)">}</span><span style="color:rgb(175,0,0)"> bytes</span><span style="color:rgb(175,0,0)">"</span>)
-<span class="ansi-green-fg ansi-bold">      4</span> df[<span style="color:rgb(175,0,0)">'</span><span style="color:rgb(175,0,0)">Sex</span><span style="color:rgb(175,0,0)">'</span>] <span style="color:rgb(98,98,98)">=</span> df[<span style="color:rgb(175,0,0)">'</span><span style="color:rgb(175,0,0)">Sex</span><span style="color:rgb(175,0,0)">'</span>]<span style="color:rgb(98,98,98)">.</span>astype(<span style="color:rgb(175,0,0)">'</span><span style="color:rgb(175,0,0)">category</span><span style="color:rgb(175,0,0)">'</span>)
+<div id="8055ac7e" class="cell" data-execution_count="33">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb73"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb73-1"><a></a><span class="bu">print</span>(<span class="st">"Antes — dtype:"</span>, df[<span class="st">'Sex'</span>].dtype)</span>
+<span id="cb73-2"><a></a><span class="bu">print</span>(<span class="ss">f"Memoria: </span><span class="sc">{</span>df[<span class="st">'Sex'</span>]<span class="sc">.</span>memory_usage(deep<span class="op">=</span><span class="va">True</span>)<span class="sc">:,}</span><span class="ss"> bytes"</span>)</span>
+<span id="cb73-3"><a></a></span>
+<span id="cb73-4"><a></a>df[<span class="st">'Sex'</span>] <span class="op">=</span> df[<span class="st">'Sex'</span>].astype(<span class="st">'category'</span>)</span>
+<span id="cb73-5"><a></a></span>
+<span id="cb73-6"><a></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Después — dtype:"</span>, df[<span class="st">'Sex'</span>].dtype)</span>
+<span id="cb73-7"><a></a><span class="bu">print</span>(<span class="ss">f"Memoria: </span><span class="sc">{</span>df[<span class="st">'Sex'</span>]<span class="sc">.</span>memory_usage(deep<span class="op">=</span><span class="va">True</span>)<span class="sc">:,}</span><span class="ss"> bytes"</span>)</span>
+<span id="cb73-8"><a></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Categorías:"</span>, df[<span class="st">'Sex'</span>].cat.categories.tolist())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Antes — dtype: object
+Memoria: 55,107 bytes
 
-<span class="ansi-red-fg">NameError</span>: name 'df' is not defined</pre>
-</div>
+Después — dtype: category
+Memoria: 1,251 bytes
+
+Categorías: ['female', 'male']</code></pre>
 </div>
 </div>
 </section>
 <section class="slide level2">
 
 <p>Otro proceso común es cuando tenemos columnas que representan fechas. Por lo general, una columna <code>date_time</code> es cargada como <code>object</code> (texto). Para trabajar con ella como marca de tiempo — extraer hora, día de la semana, mes — es necesario convertirla al tipo <code>datetime</code>:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb71"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb71-1"><a></a><span class="co"># Verificar tipo actual</span></span>
-<span id="cb71-2"><a></a><span class="bu">print</span>(<span class="st">"Tipo original:"</span>, df[<span class="st">'date_time'</span>].dtype)</span>
-<span id="cb71-3"><a></a></span>
-<span id="cb71-4"><a></a><span class="co"># Convertir a datetime</span></span>
-<span id="cb71-5"><a></a>df[<span class="st">'date_time'</span>] <span class="op">=</span> pd.to_datetime(df[<span class="st">'date_time'</span>])</span>
-<span id="cb71-6"><a></a><span class="bu">print</span>(<span class="st">"Tipo convertido:"</span>, df[<span class="st">'date_time'</span>].dtype)</span>
-<span id="cb71-7"><a></a></span>
-<span id="cb71-8"><a></a><span class="co"># Una vez convertida, se puede usar el accesor .dt</span></span>
-<span id="cb71-9"><a></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Primeras 5 fechas:"</span>)</span>
-<span id="cb71-10"><a></a><span class="bu">print</span>(df[<span class="st">'date_time'</span>].dt.year.head())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb75"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb75-1"><a></a><span class="co"># Verificar tipo actual</span></span>
+<span id="cb75-2"><a></a><span class="bu">print</span>(<span class="st">"Tipo original:"</span>, df[<span class="st">'date_time'</span>].dtype)</span>
+<span id="cb75-3"><a></a></span>
+<span id="cb75-4"><a></a><span class="co"># Convertir a datetime</span></span>
+<span id="cb75-5"><a></a>df[<span class="st">'date_time'</span>] <span class="op">=</span> pd.to_datetime(df[<span class="st">'date_time'</span>])</span>
+<span id="cb75-6"><a></a><span class="bu">print</span>(<span class="st">"Tipo convertido:"</span>, df[<span class="st">'date_time'</span>].dtype)</span>
+<span id="cb75-7"><a></a></span>
+<span id="cb75-8"><a></a><span class="co"># Una vez convertida, se puede usar el accesor .dt</span></span>
+<span id="cb75-9"><a></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Primeras 5 fechas:"</span>)</span>
+<span id="cb75-10"><a></a><span class="bu">print</span>(df[<span class="st">'date_time'</span>].dt.year.head())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section class="slide level2">
 
@@ -1997,29 +2094,99 @@ Cell <span class="ansi-green-fg">In[28], line 1</span>
 </section>
 <section class="slide level2">
 
-<div id="fd4ddb32" class="cell" data-execution_count="34">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb72"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb72-1"><a></a>pd.crosstab(df[<span class="st">'Sex'</span>], df[<span class="st">'Survived'</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-error">
-<div class="ansi-escaped-output">
-<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-Cell <span class="ansi-green-fg">In[29], line 1</span>
-<span class="ansi-green-fg">----&gt; 1</span> pd<span style="color:rgb(98,98,98)">.</span>crosstab(<span class="ansi-yellow-bg">df</span>[<span style="color:rgb(175,0,0)">'</span><span style="color:rgb(175,0,0)">Sex</span><span style="color:rgb(175,0,0)">'</span>], df[<span style="color:rgb(175,0,0)">'</span><span style="color:rgb(175,0,0)">Survived</span><span style="color:rgb(175,0,0)">'</span>])
+<div id="941f3a85" class="cell" data-execution_count="34">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb76"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb76-1"><a></a>pd.crosstab(df[<span class="st">'Sex'</span>], df[<span class="st">'Survived'</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="29">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ansi-red-fg">NameError</span>: name 'df' is not defined</pre>
-</div>
-</div>
-</div>
-<div id="4f7afe24" class="cell" data-execution_count="35">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb73"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb73-1"><a></a>pd.crosstab(df[<span class="st">'Sex'</span>], df[<span class="st">'Survived'</span>], normalize<span class="op">=</span><span class="st">'index'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-error">
-<div class="ansi-escaped-output">
-<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-Cell <span class="ansi-green-fg">In[30], line 1</span>
-<span class="ansi-green-fg">----&gt; 1</span> pd<span style="color:rgb(98,98,98)">.</span>crosstab(<span class="ansi-yellow-bg">df</span>[<span style="color:rgb(175,0,0)">'</span><span style="color:rgb(175,0,0)">Sex</span><span style="color:rgb(175,0,0)">'</span>], df[<span style="color:rgb(175,0,0)">'</span><span style="color:rgb(175,0,0)">Survived</span><span style="color:rgb(175,0,0)">'</span>], normalize<span style="color:rgb(98,98,98)">=</span><span style="color:rgb(175,0,0)">'</span><span style="color:rgb(175,0,0)">index</span><span style="color:rgb(175,0,0)">'</span>)
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
 
-<span class="ansi-red-fg">NameError</span>: name 'df' is not defined</pre>
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+
+<table class="dataframe caption-top" data-border="1">
+<thead>
+<tr class="header" style="text-align: right;">
+<th data-quarto-table-cell-role="th">Survived</th>
+<th data-quarto-table-cell-role="th">0</th>
+<th data-quarto-table-cell-role="th">1</th>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">Sex</th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">female</th>
+<td>81</td>
+<td>233</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">male</th>
+<td>468</td>
+<td>109</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div id="eb6e99ce" class="cell" data-execution_count="35">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb77"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb77-1"><a></a>pd.crosstab(df[<span class="st">'Sex'</span>], df[<span class="st">'Survived'</span>], normalize<span class="op">=</span><span class="st">'index'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="30">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+
+<table class="dataframe caption-top" data-border="1">
+<thead>
+<tr class="header" style="text-align: right;">
+<th data-quarto-table-cell-role="th">Survived</th>
+<th data-quarto-table-cell-role="th">0</th>
+<th data-quarto-table-cell-role="th">1</th>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">Sex</th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">female</th>
+<td>0.257962</td>
+<td>0.742038</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">male</th>
+<td>0.811092</td>
+<td>0.188908</td>
+</tr>
+</tbody>
+</table>
+
 </div>
 </div>
 </div>
@@ -2039,27 +2206,24 @@ Cell <span class="ansi-green-fg">In[30], line 1</span>
 </section>
 <section class="slide level2">
 
-<div id="e1330e18" class="cell" data-execution_count="36">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb74"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb74-1"><a></a><span class="bu">print</span>(<span class="st">"¿La clase del boleto influye en la tarifa pagada?"</span>)</span>
-<span id="cb74-2"><a></a><span class="bu">print</span>(df.groupby(<span class="st">'Pclass'</span>)[<span class="st">'Fare'</span>].mean())</span>
-<span id="cb74-3"><a></a></span>
-<span id="cb74-4"><a></a><span class="bu">print</span>(<span class="st">"¿Hay relación entre edad y supervivencia?"</span>)</span>
-<span id="cb74-5"><a></a><span class="bu">print</span>(df.groupby(<span class="st">'Survived'</span>)[<span class="st">'Age'</span>].mean())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="f6573c7a" class="cell" data-execution_count="36">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb78"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb78-1"><a></a><span class="bu">print</span>(<span class="st">"¿La clase del boleto influye en la tarifa pagada?"</span>)</span>
+<span id="cb78-2"><a></a><span class="bu">print</span>(df.groupby(<span class="st">'Pclass'</span>)[<span class="st">'Fare'</span>].mean())</span>
+<span id="cb78-3"><a></a></span>
+<span id="cb78-4"><a></a><span class="bu">print</span>(<span class="st">"¿Hay relación entre edad y supervivencia?"</span>)</span>
+<span id="cb78-5"><a></a><span class="bu">print</span>(df.groupby(<span class="st">'Survived'</span>)[<span class="st">'Age'</span>].mean())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>¿La clase del boleto influye en la tarifa pagada?</code></pre>
-</div>
-<div class="cell-output cell-output-error">
-<div class="ansi-escaped-output">
-<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-Cell <span class="ansi-green-fg">In[31], line 2</span>
-<span class="ansi-green-fg ansi-bold">      1</span> <span style="color:rgb(0,135,0)">print</span>(<span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">¿La clase del boleto influye en la tarifa pagada?</span><span style="color:rgb(175,0,0)">"</span>)
-<span class="ansi-green-fg">----&gt; 2</span> <span style="color:rgb(0,135,0)">print</span>(<span class="ansi-yellow-bg">df</span><span style="color:rgb(98,98,98)">.</span>groupby(<span style="color:rgb(175,0,0)">'</span><span style="color:rgb(175,0,0)">Pclass</span><span style="color:rgb(175,0,0)">'</span>)[<span style="color:rgb(175,0,0)">'</span><span style="color:rgb(175,0,0)">Fare</span><span style="color:rgb(175,0,0)">'</span>]<span style="color:rgb(98,98,98)">.</span>mean())
-<span class="ansi-green-fg ansi-bold">      4</span> <span style="color:rgb(0,135,0)">print</span>(<span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">¿Hay relación entre edad y supervivencia?</span><span style="color:rgb(175,0,0)">"</span>)
-<span class="ansi-green-fg ansi-bold">      5</span> <span style="color:rgb(0,135,0)">print</span>(df<span style="color:rgb(98,98,98)">.</span>groupby(<span style="color:rgb(175,0,0)">'</span><span style="color:rgb(175,0,0)">Survived</span><span style="color:rgb(175,0,0)">'</span>)[<span style="color:rgb(175,0,0)">'</span><span style="color:rgb(175,0,0)">Age</span><span style="color:rgb(175,0,0)">'</span>]<span style="color:rgb(98,98,98)">.</span>mean())
-
-<span class="ansi-red-fg">NameError</span>: name 'df' is not defined</pre>
-</div>
+<pre><code>¿La clase del boleto influye en la tarifa pagada?
+Pclass
+1    84.154687
+2    20.662183
+3    13.675550
+Name: Fare, dtype: float64
+¿Hay relación entre edad y supervivencia?
+Survived
+0    30.626179
+1    28.343690
+Name: Age, dtype: float64</code></pre>
 </div>
 </div>
 </section>
@@ -2157,23 +2321,25 @@ Cell <span class="ansi-green-fg">In[31], line 2</span>
 </section>
 <section class="slide level2">
 
-<div id="fc9c53ab" class="cell" data-execution_count="37">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb76"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb76-1"><a></a><span class="co"># opcion 1</span></span>
-<span id="cb76-2"><a></a>df.isna().<span class="bu">sum</span>()</span>
-<span id="cb76-3"><a></a><span class="co"># opcion 2</span></span>
-<span id="cb76-4"><a></a>df.isnull().<span class="bu">sum</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-error">
-<div class="ansi-escaped-output">
-<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-Cell <span class="ansi-green-fg">In[32], line 2</span>
-<span class="ansi-green-fg ansi-bold">      1</span> <span style="font-style:italic;color:rgb(95,135,135)"># opcion 1</span>
-<span class="ansi-green-fg">----&gt; 2</span> <span class="ansi-yellow-bg">df</span><span style="color:rgb(98,98,98)">.</span>isna()<span style="color:rgb(98,98,98)">.</span>sum()
-<span class="ansi-green-fg ansi-bold">      3</span> <span style="font-style:italic;color:rgb(95,135,135)"># opcion 2</span>
-<span class="ansi-green-fg ansi-bold">      4</span> df<span style="color:rgb(98,98,98)">.</span>isnull()<span style="color:rgb(98,98,98)">.</span>sum()
-
-<span class="ansi-red-fg">NameError</span>: name 'df' is not defined</pre>
-</div>
+<div id="9a26aa57" class="cell" data-execution_count="37">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb80"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb80-1"><a></a><span class="co"># opcion 1</span></span>
+<span id="cb80-2"><a></a>df.isna().<span class="bu">sum</span>()</span>
+<span id="cb80-3"><a></a><span class="co"># opcion 2</span></span>
+<span id="cb80-4"><a></a>df.isnull().<span class="bu">sum</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="32">
+<pre><code>PassengerId      0
+Survived         0
+Pclass           0
+Name             0
+Sex              0
+Age            177
+SibSp            0
+Parch            0
+Ticket           0
+Fare             0
+Cabin          687
+Embarked         2
+dtype: int64</code></pre>
 </div>
 </div>
 <ul>
@@ -2191,18 +2357,8 @@ Cell <span class="ansi-green-fg">In[32], line 2</span>
 <li>Solo deberíamos usarla si los faltantes están en muy pocas filas.</li>
 </ul>
 <div class="fragment">
-<div id="20842e9a" class="cell" data-execution_count="38">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb77"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb77-1"><a></a>df_clean <span class="op">=</span> df.dropna()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-error">
-<div class="ansi-escaped-output">
-<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-Cell <span class="ansi-green-fg">In[33], line 1</span>
-<span class="ansi-green-fg">----&gt; 1</span> df_clean <span style="color:rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">df</span><span style="color:rgb(98,98,98)">.</span>dropna()
-
-<span class="ansi-red-fg">NameError</span>: name 'df' is not defined</pre>
-</div>
-</div>
+<div id="2df19458" class="cell" data-execution_count="38">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb82"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb82-1"><a></a>df_clean <span class="op">=</span> df.dropna()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </section>
@@ -2213,18 +2369,8 @@ Cell <span class="ansi-green-fg">In[33], line 1</span>
 <li>Si una columna tiene más del 60-70% de datos faltantes, muchas veces no vale la pena conservarla (a menos que sea <em>muy</em> importante).</li>
 </ul>
 <div class="fragment">
-<div id="275ba68c" class="cell" data-execution_count="39">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb78"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb78-1"><a></a>df_clean <span class="op">=</span> df.drop(columns<span class="op">=</span>[<span class="st">'Cabin'</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-error">
-<div class="ansi-escaped-output">
-<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-Cell <span class="ansi-green-fg">In[34], line 1</span>
-<span class="ansi-green-fg">----&gt; 1</span> df_clean <span style="color:rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">df</span><span style="color:rgb(98,98,98)">.</span>drop(columns<span style="color:rgb(98,98,98)">=</span>[<span style="color:rgb(175,0,0)">'</span><span style="color:rgb(175,0,0)">Cabin</span><span style="color:rgb(175,0,0)">'</span>])
-
-<span class="ansi-red-fg">NameError</span>: name 'df' is not defined</pre>
-</div>
-</div>
+<div id="e5c8b5a6" class="cell" data-execution_count="39">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb83"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb83-1"><a></a>df_clean <span class="op">=</span> df.drop(columns<span class="op">=</span>[<span class="st">'Cabin'</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </section>
@@ -2235,20 +2381,202 @@ Cell <span class="ansi-green-fg">In[34], line 1</span>
 <li>Este método reemplaza los valores nulos por un valor indicado, que suele ser la media o la mediana (ésta última más robusta que el promedio si hay valores extremos).</li>
 </ul>
 <div class="fragment">
-<div id="f0c034ee" class="cell" data-execution_count="40">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb79"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb79-1"><a></a>df_clean.fillna({<span class="st">'Age'</span>: df_clean[<span class="st">'Age'</span>].median(), </span>
-<span id="cb79-2"><a></a>                 <span class="st">'Embarked'</span>: <span class="st">'S'</span>})</span>
-<span id="cb79-3"><a></a><span class="co"># una mejor opción que la anterior sería obtener la moda de Embarked y rellenar </span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-error">
-<div class="ansi-escaped-output">
-<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-Cell <span class="ansi-green-fg">In[35], line 1</span>
-<span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-yellow-bg">df_clean</span><span style="color:rgb(98,98,98)">.</span>fillna({<span style="color:rgb(175,0,0)">'</span><span style="color:rgb(175,0,0)">Age</span><span style="color:rgb(175,0,0)">'</span>: df_clean[<span style="color:rgb(175,0,0)">'</span><span style="color:rgb(175,0,0)">Age</span><span style="color:rgb(175,0,0)">'</span>]<span style="color:rgb(98,98,98)">.</span>median(), 
-<span class="ansi-green-fg ansi-bold">      2</span>                  <span style="color:rgb(175,0,0)">'</span><span style="color:rgb(175,0,0)">Embarked</span><span style="color:rgb(175,0,0)">'</span>: <span style="color:rgb(175,0,0)">'</span><span style="color:rgb(175,0,0)">S</span><span style="color:rgb(175,0,0)">'</span>})
-<span class="ansi-green-fg ansi-bold">      3</span> <span style="font-style:italic;color:rgb(95,135,135)"># una mejor opción que la anterior sería obtener la moda de Embarked y rellenar </span>
+<div id="e0246f04" class="cell" data-execution_count="40">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb84"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb84-1"><a></a>df_clean.fillna({<span class="st">'Age'</span>: df_clean[<span class="st">'Age'</span>].median(), </span>
+<span id="cb84-2"><a></a>                 <span class="st">'Embarked'</span>: <span class="st">'S'</span>})</span>
+<span id="cb84-3"><a></a><span class="co"># una mejor opción que la anterior sería obtener la moda de Embarked y rellenar </span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="35">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ansi-red-fg">NameError</span>: name 'df_clean' is not defined</pre>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+
+<table class="dataframe caption-top" data-border="1">
+<thead>
+<tr class="header" style="text-align: right;">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">PassengerId</th>
+<th data-quarto-table-cell-role="th">Survived</th>
+<th data-quarto-table-cell-role="th">Pclass</th>
+<th data-quarto-table-cell-role="th">Name</th>
+<th data-quarto-table-cell-role="th">Sex</th>
+<th data-quarto-table-cell-role="th">Age</th>
+<th data-quarto-table-cell-role="th">SibSp</th>
+<th data-quarto-table-cell-role="th">Parch</th>
+<th data-quarto-table-cell-role="th">Ticket</th>
+<th data-quarto-table-cell-role="th">Fare</th>
+<th data-quarto-table-cell-role="th">Embarked</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">0</th>
+<td>1</td>
+<td>0</td>
+<td>3</td>
+<td>Braund, Mr. Owen Harris</td>
+<td>male</td>
+<td>22.0</td>
+<td>1</td>
+<td>0</td>
+<td>A/5 21171</td>
+<td>7.2500</td>
+<td>S</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1</th>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+<td>Cumings, Mrs. John Bradley (Florence Briggs Th...</td>
+<td>female</td>
+<td>38.0</td>
+<td>1</td>
+<td>0</td>
+<td>PC 17599</td>
+<td>71.2833</td>
+<td>C</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2</th>
+<td>3</td>
+<td>1</td>
+<td>3</td>
+<td>Heikkinen, Miss. Laina</td>
+<td>female</td>
+<td>26.0</td>
+<td>0</td>
+<td>0</td>
+<td>STON/O2. 3101282</td>
+<td>7.9250</td>
+<td>S</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">3</th>
+<td>4</td>
+<td>1</td>
+<td>1</td>
+<td>Futrelle, Mrs. Jacques Heath (Lily May Peel)</td>
+<td>female</td>
+<td>35.0</td>
+<td>1</td>
+<td>0</td>
+<td>113803</td>
+<td>53.1000</td>
+<td>S</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">4</th>
+<td>5</td>
+<td>0</td>
+<td>3</td>
+<td>Allen, Mr. William Henry</td>
+<td>male</td>
+<td>35.0</td>
+<td>0</td>
+<td>0</td>
+<td>373450</td>
+<td>8.0500</td>
+<td>S</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">...</th>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">886</th>
+<td>887</td>
+<td>0</td>
+<td>2</td>
+<td>Montvila, Rev. Juozas</td>
+<td>male</td>
+<td>27.0</td>
+<td>0</td>
+<td>0</td>
+<td>211536</td>
+<td>13.0000</td>
+<td>S</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">887</th>
+<td>888</td>
+<td>1</td>
+<td>1</td>
+<td>Graham, Miss. Margaret Edith</td>
+<td>female</td>
+<td>19.0</td>
+<td>0</td>
+<td>0</td>
+<td>112053</td>
+<td>30.0000</td>
+<td>S</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">888</th>
+<td>889</td>
+<td>0</td>
+<td>3</td>
+<td>Johnston, Miss. Catherine Helen "Carrie"</td>
+<td>female</td>
+<td>28.0</td>
+<td>1</td>
+<td>2</td>
+<td>W./C. 6607</td>
+<td>23.4500</td>
+<td>S</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">889</th>
+<td>890</td>
+<td>1</td>
+<td>1</td>
+<td>Behr, Mr. Karl Howell</td>
+<td>male</td>
+<td>26.0</td>
+<td>0</td>
+<td>0</td>
+<td>111369</td>
+<td>30.0000</td>
+<td>C</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">890</th>
+<td>891</td>
+<td>0</td>
+<td>3</td>
+<td>Dooley, Mr. Patrick</td>
+<td>male</td>
+<td>32.0</td>
+<td>0</td>
+<td>0</td>
+<td>370376</td>
+<td>7.7500</td>
+<td>Q</td>
+</tr>
+</tbody>
+</table>
+
+<p>891 rows × 11 columns</p>
 </div>
 </div>
 </div>
@@ -2260,50 +2588,23 @@ Cell <span class="ansi-green-fg">In[35], line 1</span>
 <ul>
 <li>Este enfoque es más avanzado pero muy útil. Por ejemplo, podríamos rellenar las edades faltantes con la <strong>mediana por clase</strong> (<code>pclass</code>):</li>
 </ul>
-<div id="71cad5de" class="cell" data-execution_count="41">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb80"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb80-1"><a></a>df_clean[<span class="st">'Age'</span>].fillna(df_clean.groupby([<span class="st">"Sex"</span>,<span class="st">"Pclass"</span>])[<span class="st">'Age'</span>].transform(<span class="st">'median'</span>),inplace<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-error">
-<div class="ansi-escaped-output">
-<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-Cell <span class="ansi-green-fg">In[36], line 1</span>
-<span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-yellow-bg">df_clean</span>[<span style="color:rgb(175,0,0)">'</span><span style="color:rgb(175,0,0)">Age</span><span style="color:rgb(175,0,0)">'</span>]<span style="color:rgb(98,98,98)">.</span>fillna(df_clean<span style="color:rgb(98,98,98)">.</span>groupby([<span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">Sex</span><span style="color:rgb(175,0,0)">"</span>,<span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">Pclass</span><span style="color:rgb(175,0,0)">"</span>])[<span style="color:rgb(175,0,0)">'</span><span style="color:rgb(175,0,0)">Age</span><span style="color:rgb(175,0,0)">'</span>]<span style="color:rgb(98,98,98)">.</span>transform(<span style="color:rgb(175,0,0)">'</span><span style="color:rgb(175,0,0)">median</span><span style="color:rgb(175,0,0)">'</span>),inplace<span style="color:rgb(98,98,98)">=</span><span style="font-weight:bold;color:rgb(0,135,0)">True</span>)
-
-<span class="ansi-red-fg">NameError</span>: name 'df_clean' is not defined</pre>
-</div>
-</div>
+<div id="07bddb17" class="cell" data-execution_count="41">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb85"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb85-1"><a></a>df_clean[<span class="st">'Age'</span>].fillna(df_clean.groupby([<span class="st">"Sex"</span>,<span class="st">"Pclass"</span>])[<span class="st">'Age'</span>].transform(<span class="st">'median'</span>),inplace<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section class="slide level2">
 
 <h4 id="identificación-y-eliminación-de-duplicados">Identificación y eliminación de duplicados</h4>
 <p>A veces los datos tienen filas duplicadas. Para detectarlas:</p>
-<div id="f0b1d7ff" class="cell" data-execution_count="42">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb81"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb81-1"><a></a>df_clean.duplicated().<span class="bu">sum</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-error">
-<div class="ansi-escaped-output">
-<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-Cell <span class="ansi-green-fg">In[37], line 1</span>
-<span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-yellow-bg">df_clean</span><span style="color:rgb(98,98,98)">.</span>duplicated()<span style="color:rgb(98,98,98)">.</span>sum()
-
-<span class="ansi-red-fg">NameError</span>: name 'df_clean' is not defined</pre>
-</div>
+<div id="f21008cb" class="cell" data-execution_count="42">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb86"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb86-1"><a></a>df_clean.duplicated().<span class="bu">sum</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="37">
+<pre><code>np.int64(0)</code></pre>
 </div>
 </div>
 <p>Y si hay duplicados, los eliminamos:</p>
-<div id="e2584828" class="cell" data-execution_count="43">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb82"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb82-1"><a></a>df_clean.drop_duplicates(inplace<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-error">
-<div class="ansi-escaped-output">
-<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-Cell <span class="ansi-green-fg">In[38], line 1</span>
-<span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-yellow-bg">df_clean</span><span style="color:rgb(98,98,98)">.</span>drop_duplicates(inplace<span style="color:rgb(98,98,98)">=</span><span style="font-weight:bold;color:rgb(0,135,0)">True</span>)
-
-<span class="ansi-red-fg">NameError</span>: name 'df_clean' is not defined</pre>
-</div>
-</div>
+<div id="1a15d038" class="cell" data-execution_count="43">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb88"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb88-1"><a></a>df_clean.drop_duplicates(inplace<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section class="slide level2">
@@ -2331,7 +2632,7 @@ Cell <span class="ansi-green-fg">In[38], line 1</span>
 <ol type="1">
 <li>Organiza tu ejercicio con la siguiente estructura:</li>
 </ol>
-<pre><code>E6_TIV2025_ApellidoNombre/
+<pre><code>E16_PA2_ApellidoNombre/
 |
 ├── main.py
 ├── limpieza.py
@@ -2369,28 +2670,23 @@ Cell <span class="ansi-green-fg">In[38], line 1</span>
 </section>
 <section class="slide level2">
 
-<div id="15226642" class="cell" data-execution_count="44">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb84"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb84-1"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb84-2"><a></a></span>
-<span id="cb84-3"><a></a>fechas_embarque <span class="op">=</span> [<span class="st">"1912-04-07"</span>, <span class="st">"1912-04-08"</span>, <span class="st">"1912-04-09"</span>, <span class="st">"1912-04-10"</span>]</span>
-<span id="cb84-4"><a></a>df_clean[<span class="st">'Embarked_Date'</span>] <span class="op">=</span> np.random.choice(fechas_embarque, size<span class="op">=</span><span class="bu">len</span>(df_clean))</span>
-<span id="cb84-5"><a></a></span>
-<span id="cb84-6"><a></a><span class="co"># </span></span>
-<span id="cb84-7"><a></a><span class="bu">print</span>(df_clean[<span class="st">"Embarked_Date"</span>].head())</span>
-<span id="cb84-8"><a></a><span class="bu">print</span>(df_clean[<span class="st">"Embarked_Date"</span>].dtype)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-error">
-<div class="ansi-escaped-output">
-<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-Cell <span class="ansi-green-fg">In[39], line 4</span>
-<span class="ansi-green-fg ansi-bold">      1</span> <span style="font-weight:bold;color:rgb(0,135,0)">import</span><span style="color:rgb(188,188,188)"> </span><span style="font-weight:bold;color:rgb(0,0,255)">numpy</span><span style="color:rgb(188,188,188)"> </span><span style="font-weight:bold;color:rgb(0,135,0)">as</span><span style="color:rgb(188,188,188)"> </span><span style="font-weight:bold;color:rgb(0,0,255)">np</span>
-<span class="ansi-green-fg ansi-bold">      3</span> fechas_embarque <span style="color:rgb(98,98,98)">=</span> [<span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">1912-04-07</span><span style="color:rgb(175,0,0)">"</span>, <span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">1912-04-08</span><span style="color:rgb(175,0,0)">"</span>, <span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">1912-04-09</span><span style="color:rgb(175,0,0)">"</span>, <span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">1912-04-10</span><span style="color:rgb(175,0,0)">"</span>]
-<span class="ansi-green-fg">----&gt; 4</span> df_clean[<span style="color:rgb(175,0,0)">'</span><span style="color:rgb(175,0,0)">Embarked_Date</span><span style="color:rgb(175,0,0)">'</span>] <span style="color:rgb(98,98,98)">=</span> np<span style="color:rgb(98,98,98)">.</span>random<span style="color:rgb(98,98,98)">.</span>choice(fechas_embarque, size<span style="color:rgb(98,98,98)">=</span><span style="color:rgb(0,135,0)">len</span>(<span class="ansi-yellow-bg">df_clean</span>))
-<span class="ansi-green-fg ansi-bold">      6</span> <span style="font-style:italic;color:rgb(95,135,135)"># </span>
-<span class="ansi-green-fg ansi-bold">      7</span> <span style="color:rgb(0,135,0)">print</span>(df_clean[<span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">Embarked_Date</span><span style="color:rgb(175,0,0)">"</span>]<span style="color:rgb(98,98,98)">.</span>head())
-
-<span class="ansi-red-fg">NameError</span>: name 'df_clean' is not defined</pre>
-</div>
+<div id="5bbf34cc" class="cell" data-execution_count="44">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb90"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb90-1"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb90-2"><a></a></span>
+<span id="cb90-3"><a></a>fechas_embarque <span class="op">=</span> [<span class="st">"1912-04-07"</span>, <span class="st">"1912-04-08"</span>, <span class="st">"1912-04-09"</span>, <span class="st">"1912-04-10"</span>]</span>
+<span id="cb90-4"><a></a>df_clean[<span class="st">'Embarked_Date'</span>] <span class="op">=</span> np.random.choice(fechas_embarque, size<span class="op">=</span><span class="bu">len</span>(df_clean))</span>
+<span id="cb90-5"><a></a></span>
+<span id="cb90-6"><a></a><span class="co"># </span></span>
+<span id="cb90-7"><a></a><span class="bu">print</span>(df_clean[<span class="st">"Embarked_Date"</span>].head())</span>
+<span id="cb90-8"><a></a><span class="bu">print</span>(df_clean[<span class="st">"Embarked_Date"</span>].dtype)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>0    1912-04-10
+1    1912-04-08
+2    1912-04-10
+3    1912-04-07
+4    1912-04-09
+Name: Embarked_Date, dtype: object
+object</code></pre>
 </div>
 </div>
 </section>
@@ -2400,47 +2696,23 @@ Cell <span class="ansi-green-fg">In[39], line 4</span>
 <li>Si el resultado del tipo de dato es <code>object</code>, significa que aún <strong>no está en formato de fecha</strong>.</li>
 <li>Usamos <code>pd.to_datetime()</code> para convertirla. Pandas intentará reconocer automáticamente el formato. Si hay formatos específicos (por ejemplo, <code>"dd-mm-yyyy"</code>), podemos usar el parámetro <code>format</code>:</li>
 </ul>
-<div id="62c035c4" class="cell" data-execution_count="45">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb85"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb85-1"><a></a>df_clean[<span class="st">"Embarked_Date"</span>] <span class="op">=</span> pd.to_datetime(df_clean[<span class="st">"Embarked_Date"</span>])</span>
-<span id="cb85-2"><a></a><span class="co">#df_clean["Embarked_Date"] = pd.to_datetime(df_clean["Embarked_Date"], format="%d-%m-%Y")</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-error">
-<div class="ansi-escaped-output">
-<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-Cell <span class="ansi-green-fg">In[40], line 1</span>
-<span class="ansi-green-fg">----&gt; 1</span> df_clean[<span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">Embarked_Date</span><span style="color:rgb(175,0,0)">"</span>] <span style="color:rgb(98,98,98)">=</span> pd<span style="color:rgb(98,98,98)">.</span>to_datetime(<span class="ansi-yellow-bg">df_clean</span>[<span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">Embarked_Date</span><span style="color:rgb(175,0,0)">"</span>])
-<span class="ansi-green-fg ansi-bold">      2</span> <span style="font-style:italic;color:rgb(95,135,135)">#df_clean["Embarked_Date"] = pd.to_datetime(df_clean["Embarked_Date"], format="%d-%m-%Y")</span>
-
-<span class="ansi-red-fg">NameError</span>: name 'df_clean' is not defined</pre>
-</div>
-</div>
+<div id="e1774a1f" class="cell" data-execution_count="45">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb92"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb92-1"><a></a>df_clean[<span class="st">"Embarked_Date"</span>] <span class="op">=</span> pd.to_datetime(df_clean[<span class="st">"Embarked_Date"</span>])</span>
+<span id="cb92-2"><a></a><span class="co">#df_clean["Embarked_Date"] = pd.to_datetime(df_clean["Embarked_Date"], format="%d-%m-%Y")</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section class="slide level2">
 
 <p>Una vez que la columna es de tipo <code>datetime64</code>, podemos usar atributos como:</p>
-<div id="0c8edf5c" class="cell" data-execution_count="46">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb86"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb86-1"><a></a><span class="co"># Extraer año</span></span>
-<span id="cb86-2"><a></a>df_clean[<span class="st">"Año_de_Embarque"</span>] <span class="op">=</span> df_clean[<span class="st">"Embarked_Date"</span>].dt.year</span>
-<span id="cb86-3"><a></a></span>
-<span id="cb86-4"><a></a><span class="co"># Extraer mes</span></span>
-<span id="cb86-5"><a></a>df_clean[<span class="st">"Mes_de_Embarque"</span>] <span class="op">=</span> df_clean[<span class="st">"Embarked_Date"</span>].dt.month</span>
-<span id="cb86-6"><a></a></span>
-<span id="cb86-7"><a></a><span class="co"># Extraer día de la semana</span></span>
-<span id="cb86-8"><a></a>df_clean[<span class="st">"Día_de_la_Semana"</span>] <span class="op">=</span> df_clean[<span class="st">"Embarked_Date"</span>].dt.day_name()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-error">
-<div class="ansi-escaped-output">
-<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-Cell <span class="ansi-green-fg">In[41], line 2</span>
-<span class="ansi-green-fg ansi-bold">      1</span> <span style="font-style:italic;color:rgb(95,135,135)"># Extraer año</span>
-<span class="ansi-green-fg">----&gt; 2</span> df_clean[<span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">Año_de_Embarque</span><span style="color:rgb(175,0,0)">"</span>] <span style="color:rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">df_clean</span>[<span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">Embarked_Date</span><span style="color:rgb(175,0,0)">"</span>]<span style="color:rgb(98,98,98)">.</span>dt<span style="color:rgb(98,98,98)">.</span>year
-<span class="ansi-green-fg ansi-bold">      4</span> <span style="font-style:italic;color:rgb(95,135,135)"># Extraer mes</span>
-<span class="ansi-green-fg ansi-bold">      5</span> df_clean[<span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">Mes_de_Embarque</span><span style="color:rgb(175,0,0)">"</span>] <span style="color:rgb(98,98,98)">=</span> df_clean[<span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">Embarked_Date</span><span style="color:rgb(175,0,0)">"</span>]<span style="color:rgb(98,98,98)">.</span>dt<span style="color:rgb(98,98,98)">.</span>month
-
-<span class="ansi-red-fg">NameError</span>: name 'df_clean' is not defined</pre>
-</div>
-</div>
+<div id="5ae0effc" class="cell" data-execution_count="46">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb93"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb93-1"><a></a><span class="co"># Extraer año</span></span>
+<span id="cb93-2"><a></a>df_clean[<span class="st">"Año_de_Embarque"</span>] <span class="op">=</span> df_clean[<span class="st">"Embarked_Date"</span>].dt.year</span>
+<span id="cb93-3"><a></a></span>
+<span id="cb93-4"><a></a><span class="co"># Extraer mes</span></span>
+<span id="cb93-5"><a></a>df_clean[<span class="st">"Mes_de_Embarque"</span>] <span class="op">=</span> df_clean[<span class="st">"Embarked_Date"</span>].dt.month</span>
+<span id="cb93-6"><a></a></span>
+<span id="cb93-7"><a></a><span class="co"># Extraer día de la semana</span></span>
+<span id="cb93-8"><a></a>df_clean[<span class="st">"Día_de_la_Semana"</span>] <span class="op">=</span> df_clean[<span class="st">"Embarked_Date"</span>].dt.day_name()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li><strong>Fechas mal escritas o con formato inconsistente</strong>: <code>to_datetime</code> puede lanzar errores o devolver <code>Na</code> si no puede interpretar una fecha.</li>
@@ -2454,18 +2726,8 @@ Cell <span class="ansi-green-fg">In[41], line 2</span>
 <li>Antes de crear una nueva variable, es importante saber cómo trabajar con condiciones.</li>
 <li>Por ejemplo, ¿quiénes son menores de edad en el dataset?</li>
 </ul>
-<div id="c82ecb1a" class="cell" data-execution_count="47">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb87"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb87-1"><a></a>df_clean[<span class="st">"Es_Menor"</span>] <span class="op">=</span> df_clean[<span class="st">"Age"</span>] <span class="op">&lt;</span> <span class="dv">18</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-error">
-<div class="ansi-escaped-output">
-<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-Cell <span class="ansi-green-fg">In[42], line 1</span>
-<span class="ansi-green-fg">----&gt; 1</span> df_clean[<span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">Es_Menor</span><span style="color:rgb(175,0,0)">"</span>] <span style="color:rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">df_clean</span>[<span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">Age</span><span style="color:rgb(175,0,0)">"</span>] <span style="color:rgb(98,98,98)">&lt;</span> <span style="color:rgb(98,98,98)">18</span>
-
-<span class="ansi-red-fg">NameError</span>: name 'df_clean' is not defined</pre>
-</div>
-</div>
+<div id="d6136394" class="cell" data-execution_count="47">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb94"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb94-1"><a></a>df_clean[<span class="st">"Es_Menor"</span>] <span class="op">=</span> df_clean[<span class="st">"Age"</span>] <span class="op">&lt;</span> <span class="dv">18</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li><code>titanic["Age"] &lt; 18</code> genera una <strong>serie booleana</strong> (<code>True</code> o <code>False</code>).</li>
@@ -2473,22 +2735,32 @@ Cell <span class="ansi-green-fg">In[42], line 1</span>
 <li>Podemos utilizar <strong>filtrado condicional</strong> para obtener solo los pasajeros menores de edad</li>
 </ul>
 <div class="fragment">
-<div id="bae5a35e" class="cell" data-execution_count="48">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb88"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb88-1"><a></a>menores <span class="op">=</span> df_clean[df_clean[<span class="st">"Es_Menor"</span>] <span class="op">==</span> <span class="va">True</span>]</span>
-<span id="cb88-2"><a></a><span class="co"># o bien, </span></span>
-<span id="cb88-3"><a></a>menores <span class="op">=</span> df_clean[df_clean[<span class="st">"Es_Menor"</span>]]</span>
-<span id="cb88-4"><a></a><span class="bu">print</span>(menores.head())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-error">
-<div class="ansi-escaped-output">
-<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-Cell <span class="ansi-green-fg">In[43], line 1</span>
-<span class="ansi-green-fg">----&gt; 1</span> menores <span style="color:rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">df_clean</span>[df_clean[<span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">Es_Menor</span><span style="color:rgb(175,0,0)">"</span>] <span style="color:rgb(98,98,98)">==</span> <span style="font-weight:bold;color:rgb(0,135,0)">True</span>]
-<span class="ansi-green-fg ansi-bold">      2</span> <span style="font-style:italic;color:rgb(95,135,135)"># o bien, </span>
-<span class="ansi-green-fg ansi-bold">      3</span> menores <span style="color:rgb(98,98,98)">=</span> df_clean[df_clean[<span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">Es_Menor</span><span style="color:rgb(175,0,0)">"</span>]]
+<div id="6be48639" class="cell" data-execution_count="48">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb95"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb95-1"><a></a>menores <span class="op">=</span> df_clean[df_clean[<span class="st">"Es_Menor"</span>] <span class="op">==</span> <span class="va">True</span>]</span>
+<span id="cb95-2"><a></a><span class="co"># o bien, </span></span>
+<span id="cb95-3"><a></a>menores <span class="op">=</span> df_clean[df_clean[<span class="st">"Es_Menor"</span>]]</span>
+<span id="cb95-4"><a></a><span class="bu">print</span>(menores.head())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>    PassengerId  Survived  Pclass                                  Name  \
+7             8         0       3        Palsson, Master. Gosta Leonard   
+9            10         1       2   Nasser, Mrs. Nicholas (Adele Achem)   
+10           11         1       3       Sandstrom, Miss. Marguerite Rut   
+14           15         0       3  Vestrom, Miss. Hulda Amanda Adolfina   
+16           17         0       3                  Rice, Master. Eugene   
 
-<span class="ansi-red-fg">NameError</span>: name 'df_clean' is not defined</pre>
-</div>
+       Sex   Age  SibSp  Parch   Ticket     Fare Embarked Embarked_Date  \
+7     male   2.0      3      1   349909  21.0750        S    1912-04-09   
+9   female  14.0      1      0   237736  30.0708        C    1912-04-09   
+10  female   4.0      1      1  PP 9549  16.7000        S    1912-04-07   
+14  female  14.0      0      0   350406   7.8542        S    1912-04-08   
+16    male   2.0      4      1   382652  29.1250        Q    1912-04-10   
+
+    Año_de_Embarque  Mes_de_Embarque Día_de_la_Semana  Es_Menor  
+7              1912                4          Tuesday      True  
+9              1912                4          Tuesday      True  
+10             1912                4           Sunday      True  
+14             1912                4           Monday      True  
+16             1912                4        Wednesday      True  </code></pre>
 </div>
 </div>
 </div>
@@ -2499,21 +2771,38 @@ Cell <span class="ansi-green-fg">In[43], line 1</span>
 <li>Otro ejemplo: ¿quiénes pagaron más que el promedio?</li>
 </ul>
 <div class="fragment">
-<div id="fe220416" class="cell" data-execution_count="49">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb89"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb89-1"><a></a>fare_media <span class="op">=</span> df_clean[<span class="st">"Fare"</span>].mean()</span>
-<span id="cb89-2"><a></a>df_clean[<span class="st">"Pagó_Alto"</span>] <span class="op">=</span> df_clean[<span class="st">"Fare"</span>] <span class="op">&gt;</span> fare_media</span>
-<span id="cb89-3"><a></a><span class="bu">print</span>(df_clean[df_clean[<span class="st">"Pagó_Alto"</span>]].head())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-error">
-<div class="ansi-escaped-output">
-<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-Cell <span class="ansi-green-fg">In[44], line 1</span>
-<span class="ansi-green-fg">----&gt; 1</span> fare_media <span style="color:rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">df_clean</span>[<span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">Fare</span><span style="color:rgb(175,0,0)">"</span>]<span style="color:rgb(98,98,98)">.</span>mean()
-<span class="ansi-green-fg ansi-bold">      2</span> df_clean[<span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">Pagó_Alto</span><span style="color:rgb(175,0,0)">"</span>] <span style="color:rgb(98,98,98)">=</span> df_clean[<span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">Fare</span><span style="color:rgb(175,0,0)">"</span>] <span style="color:rgb(98,98,98)">&gt;</span> fare_media
-<span class="ansi-green-fg ansi-bold">      3</span> <span style="color:rgb(0,135,0)">print</span>(df_clean[df_clean[<span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">Pagó_Alto</span><span style="color:rgb(175,0,0)">"</span>]]<span style="color:rgb(98,98,98)">.</span>head())
+<div id="7ebe2eef" class="cell" data-execution_count="49">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb97"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb97-1"><a></a>fare_media <span class="op">=</span> df_clean[<span class="st">"Fare"</span>].mean()</span>
+<span id="cb97-2"><a></a>df_clean[<span class="st">"Pagó_Alto"</span>] <span class="op">=</span> df_clean[<span class="st">"Fare"</span>] <span class="op">&gt;</span> fare_media</span>
+<span id="cb97-3"><a></a><span class="bu">print</span>(df_clean[df_clean[<span class="st">"Pagó_Alto"</span>]].head())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>    PassengerId  Survived  Pclass  \
+1             2         1       1   
+3             4         1       1   
+6             7         0       1   
+23           24         1       1   
+27           28         0       1   
 
-<span class="ansi-red-fg">NameError</span>: name 'df_clean' is not defined</pre>
-</div>
+                                                 Name     Sex   Age  SibSp  \
+1   Cumings, Mrs. John Bradley (Florence Briggs Th...  female  38.0      1   
+3        Futrelle, Mrs. Jacques Heath (Lily May Peel)  female  35.0      1   
+6                             McCarthy, Mr. Timothy J    male  54.0      0   
+23                       Sloper, Mr. William Thompson    male  28.0      0   
+27                     Fortune, Mr. Charles Alexander    male  19.0      3   
+
+    Parch    Ticket      Fare Embarked Embarked_Date  Año_de_Embarque  \
+1       0  PC 17599   71.2833        C    1912-04-08             1912   
+3       0    113803   53.1000        S    1912-04-07             1912   
+6       0     17463   51.8625        S    1912-04-09             1912   
+23      0    113788   35.5000        S    1912-04-07             1912   
+27      2     19950  263.0000        S    1912-04-07             1912   
+
+    Mes_de_Embarque Día_de_la_Semana  Es_Menor  Pagó_Alto  
+1                 4           Monday     False       True  
+3                 4           Sunday     False       True  
+6                 4          Tuesday     False       True  
+23                4           Sunday     False       True  
+27                4           Sunday     False       True  </code></pre>
 </div>
 </div>
 </div>
@@ -2525,18 +2814,122 @@ Cell <span class="ansi-green-fg">In[44], line 1</span>
 <li>Por ejemplo, ¿quienes eran menores y pagaron más que el promedio?</li>
 </ul>
 <div class="fragment">
-<div id="42a1f3f2" class="cell" data-execution_count="50">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb90"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb90-1"><a></a>query <span class="op">=</span> df.query(<span class="st">"Age &lt; 18 and Fare &gt; Fare.mean()"</span>)</span>
-<span id="cb90-2"><a></a>query.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-error">
-<div class="ansi-escaped-output">
-<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-Cell <span class="ansi-green-fg">In[45], line 1</span>
-<span class="ansi-green-fg">----&gt; 1</span> query <span style="color:rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">df</span><span style="color:rgb(98,98,98)">.</span>query(<span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">Age &lt; 18 and Fare &gt; Fare.mean()</span><span style="color:rgb(175,0,0)">"</span>)
-<span class="ansi-green-fg ansi-bold">      2</span> query<span style="color:rgb(98,98,98)">.</span>head()
+<div id="3ef1d95a" class="cell" data-execution_count="50">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb99"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb99-1"><a></a>query <span class="op">=</span> df.query(<span class="st">"Age &lt; 18 and Fare &gt; Fare.mean()"</span>)</span>
+<span id="cb99-2"><a></a>query.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="45">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ansi-red-fg">NameError</span>: name 'df' is not defined</pre>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+
+<table class="dataframe caption-top" data-border="1">
+<thead>
+<tr class="header" style="text-align: right;">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">PassengerId</th>
+<th data-quarto-table-cell-role="th">Survived</th>
+<th data-quarto-table-cell-role="th">Pclass</th>
+<th data-quarto-table-cell-role="th">Name</th>
+<th data-quarto-table-cell-role="th">Sex</th>
+<th data-quarto-table-cell-role="th">Age</th>
+<th data-quarto-table-cell-role="th">SibSp</th>
+<th data-quarto-table-cell-role="th">Parch</th>
+<th data-quarto-table-cell-role="th">Ticket</th>
+<th data-quarto-table-cell-role="th">Fare</th>
+<th data-quarto-table-cell-role="th">Cabin</th>
+<th data-quarto-table-cell-role="th">Embarked</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">43</th>
+<td>44</td>
+<td>1</td>
+<td>2</td>
+<td>Laroche, Miss. Simonne Marie Anne Andree</td>
+<td>female</td>
+<td>3.0</td>
+<td>1</td>
+<td>2</td>
+<td>SC/Paris 2123</td>
+<td>41.5792</td>
+<td>NaN</td>
+<td>C</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">50</th>
+<td>51</td>
+<td>0</td>
+<td>3</td>
+<td>Panula, Master. Juha Niilo</td>
+<td>male</td>
+<td>7.0</td>
+<td>4</td>
+<td>1</td>
+<td>3101295</td>
+<td>39.6875</td>
+<td>NaN</td>
+<td>S</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">59</th>
+<td>60</td>
+<td>0</td>
+<td>3</td>
+<td>Goodwin, Master. William Frederick</td>
+<td>male</td>
+<td>11.0</td>
+<td>5</td>
+<td>2</td>
+<td>CA 2144</td>
+<td>46.9000</td>
+<td>NaN</td>
+<td>S</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">71</th>
+<td>72</td>
+<td>0</td>
+<td>3</td>
+<td>Goodwin, Miss. Lillian Amy</td>
+<td>female</td>
+<td>16.0</td>
+<td>5</td>
+<td>2</td>
+<td>CA 2144</td>
+<td>46.9000</td>
+<td>NaN</td>
+<td>S</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">86</th>
+<td>87</td>
+<td>0</td>
+<td>3</td>
+<td>Ford, Mr. William Neal</td>
+<td>male</td>
+<td>16.0</td>
+<td>1</td>
+<td>3</td>
+<td>W./C. 6608</td>
+<td>34.3750</td>
+<td>NaN</td>
+<td>S</td>
+</tr>
+</tbody>
+</table>
+
 </div>
 </div>
 </div>
@@ -2563,31 +2956,26 @@ Cell <span class="ansi-green-fg">In[45], line 1</span>
 </section>
 <section class="slide level2">
 
-<div id="932dca88" class="cell" data-execution_count="51">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb91"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb91-1"><a></a><span class="kw">def</span> clasificar_edad(edad):</span>
-<span id="cb91-2"><a></a>    <span class="cf">if</span> pd.isnull(edad):</span>
-<span id="cb91-3"><a></a>        <span class="cf">return</span> <span class="st">"Desconocido"</span></span>
-<span id="cb91-4"><a></a>    <span class="cf">elif</span> edad <span class="op">&lt;</span> <span class="dv">18</span>:</span>
-<span id="cb91-5"><a></a>        <span class="cf">return</span> <span class="st">"Niño"</span></span>
-<span id="cb91-6"><a></a>    <span class="cf">elif</span> edad <span class="op">&lt;</span> <span class="dv">60</span>:</span>
-<span id="cb91-7"><a></a>        <span class="cf">return</span> <span class="st">"Adulto"</span></span>
-<span id="cb91-8"><a></a>    <span class="cf">else</span>:</span>
-<span id="cb91-9"><a></a>        <span class="cf">return</span> <span class="st">"Adulto mayor"</span></span>
-<span id="cb91-10"><a></a></span>
-<span id="cb91-11"><a></a>df_clean[<span class="st">"Grupo_Edad"</span>] <span class="op">=</span> df_clean[<span class="st">"Age"</span>].<span class="bu">apply</span>(clasificar_edad)</span>
-<span id="cb91-12"><a></a><span class="bu">print</span>(df_clean[<span class="st">"Grupo_Edad"</span>].head())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-error">
-<div class="ansi-escaped-output">
-<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-Cell <span class="ansi-green-fg">In[46], line 11</span>
-<span class="ansi-green-fg ansi-bold">      8</span>     <span style="font-weight:bold;color:rgb(0,135,0)">else</span>:
-<span class="ansi-green-fg ansi-bold">      9</span>         <span style="font-weight:bold;color:rgb(0,135,0)">return</span> <span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">Adulto mayor</span><span style="color:rgb(175,0,0)">"</span>
-<span class="ansi-green-fg">---&gt; 11</span> df_clean[<span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">Grupo_Edad</span><span style="color:rgb(175,0,0)">"</span>] <span style="color:rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">df_clean</span>[<span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">Age</span><span style="color:rgb(175,0,0)">"</span>]<span style="color:rgb(98,98,98)">.</span>apply(clasificar_edad)
-<span class="ansi-green-fg ansi-bold">     12</span> <span style="color:rgb(0,135,0)">print</span>(df_clean[<span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">Grupo_Edad</span><span style="color:rgb(175,0,0)">"</span>]<span style="color:rgb(98,98,98)">.</span>head())
-
-<span class="ansi-red-fg">NameError</span>: name 'df_clean' is not defined</pre>
-</div>
+<div id="c4549487" class="cell" data-execution_count="51">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb100-1"><a></a><span class="kw">def</span> clasificar_edad(edad):</span>
+<span id="cb100-2"><a></a>    <span class="cf">if</span> pd.isnull(edad):</span>
+<span id="cb100-3"><a></a>        <span class="cf">return</span> <span class="st">"Desconocido"</span></span>
+<span id="cb100-4"><a></a>    <span class="cf">elif</span> edad <span class="op">&lt;</span> <span class="dv">18</span>:</span>
+<span id="cb100-5"><a></a>        <span class="cf">return</span> <span class="st">"Niño"</span></span>
+<span id="cb100-6"><a></a>    <span class="cf">elif</span> edad <span class="op">&lt;</span> <span class="dv">60</span>:</span>
+<span id="cb100-7"><a></a>        <span class="cf">return</span> <span class="st">"Adulto"</span></span>
+<span id="cb100-8"><a></a>    <span class="cf">else</span>:</span>
+<span id="cb100-9"><a></a>        <span class="cf">return</span> <span class="st">"Adulto mayor"</span></span>
+<span id="cb100-10"><a></a></span>
+<span id="cb100-11"><a></a>df_clean[<span class="st">"Grupo_Edad"</span>] <span class="op">=</span> df_clean[<span class="st">"Age"</span>].<span class="bu">apply</span>(clasificar_edad)</span>
+<span id="cb100-12"><a></a><span class="bu">print</span>(df_clean[<span class="st">"Grupo_Edad"</span>].head())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>0    Adulto
+1    Adulto
+2    Adulto
+3    Adulto
+4    Adulto
+Name: Grupo_Edad, dtype: object</code></pre>
 </div>
 </div>
 <ul>
@@ -2600,26 +2988,12 @@ Cell <span class="ansi-green-fg">In[46], line 11</span>
 
 <h4 id="alternativa-pd.cut-para-discretizar-variables-numéricas">Alternativa: <code>pd.cut()</code> para discretizar variables numéricas</h4>
 <p>Para crear grupos automáticamente con <strong>rangos definidos</strong>, podemos usar <code>pd.cut()</code>:</p>
-<div id="c7219946" class="cell" data-execution_count="52">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb92"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb92-1"><a></a>df_clean[<span class="st">"Edad_Categoría"</span>] <span class="op">=</span> pd.cut(</span>
-<span id="cb92-2"><a></a>    df_clean[<span class="st">"Age"</span>],</span>
-<span id="cb92-3"><a></a>    bins<span class="op">=</span>[<span class="dv">0</span>, <span class="dv">12</span>, <span class="dv">18</span>, <span class="dv">60</span>, <span class="dv">100</span>],</span>
-<span id="cb92-4"><a></a>    labels<span class="op">=</span>[<span class="st">"Niñez"</span>, <span class="st">"Adolescencia"</span>, <span class="st">"Adultez"</span>, <span class="st">"Vejez"</span>]</span>
-<span id="cb92-5"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-error">
-<div class="ansi-escaped-output">
-<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-Cell <span class="ansi-green-fg">In[47], line 2</span>
-<span class="ansi-green-fg ansi-bold">      1</span> df_clean[<span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">Edad_Categoría</span><span style="color:rgb(175,0,0)">"</span>] <span style="color:rgb(98,98,98)">=</span> pd<span style="color:rgb(98,98,98)">.</span>cut(
-<span class="ansi-green-fg">----&gt; 2</span>     <span class="ansi-yellow-bg">df_clean</span>[<span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">Age</span><span style="color:rgb(175,0,0)">"</span>],
-<span class="ansi-green-fg ansi-bold">      3</span>     bins<span style="color:rgb(98,98,98)">=</span>[<span style="color:rgb(98,98,98)">0</span>, <span style="color:rgb(98,98,98)">12</span>, <span style="color:rgb(98,98,98)">18</span>, <span style="color:rgb(98,98,98)">60</span>, <span style="color:rgb(98,98,98)">100</span>],
-<span class="ansi-green-fg ansi-bold">      4</span>     labels<span style="color:rgb(98,98,98)">=</span>[<span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">Niñez</span><span style="color:rgb(175,0,0)">"</span>, <span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">Adolescencia</span><span style="color:rgb(175,0,0)">"</span>, <span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">Adultez</span><span style="color:rgb(175,0,0)">"</span>, <span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">Vejez</span><span style="color:rgb(175,0,0)">"</span>]
-<span class="ansi-green-fg ansi-bold">      5</span> )
-
-<span class="ansi-red-fg">NameError</span>: name 'df_clean' is not defined</pre>
-</div>
-</div>
+<div id="5709f64c" class="cell" data-execution_count="52">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb102"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb102-1"><a></a>df_clean[<span class="st">"Edad_Categoría"</span>] <span class="op">=</span> pd.cut(</span>
+<span id="cb102-2"><a></a>    df_clean[<span class="st">"Age"</span>],</span>
+<span id="cb102-3"><a></a>    bins<span class="op">=</span>[<span class="dv">0</span>, <span class="dv">12</span>, <span class="dv">18</span>, <span class="dv">60</span>, <span class="dv">100</span>],</span>
+<span id="cb102-4"><a></a>    labels<span class="op">=</span>[<span class="st">"Niñez"</span>, <span class="st">"Adolescencia"</span>, <span class="st">"Adultez"</span>, <span class="st">"Vejez"</span>]</span>
+<span id="cb102-5"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section class="slide level2">
@@ -2681,33 +3055,311 @@ Cell <span class="ansi-green-fg">In[47], line 2</span>
 </ul></li>
 </ul>
 <div class="fragment">
-<div id="89c24d12" class="cell" data-execution_count="53">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb93"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb93-1"><a></a><span class="co"># Por ejemplo, pasajeros con tarifas más altas</span></span>
-<span id="cb93-2"><a></a><span class="bu">print</span>(<span class="st">"Pasajeros con tarifas más altas:"</span>)</span>
-<span id="cb93-3"><a></a>df_clean.sort_values(by<span class="op">=</span><span class="st">"Fare"</span>, ascending<span class="op">=</span><span class="va">False</span>).head(<span class="dv">10</span>)</span>
-<span id="cb93-4"><a></a><span class="co"># Otro ejemplo, ordena por clase y edad: </span></span>
-<span id="cb93-5"><a></a><span class="co"># Ordena primero por clase (de 1 a 3), y dentro de cada clase, muestra primero a los mayores.</span></span>
-<span id="cb93-6"><a></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n\n</span><span class="st">Pasajeros ordenados por clase y edad"</span>)</span>
-<span id="cb93-7"><a></a>df_clean.sort_values(by<span class="op">=</span>[<span class="st">"Pclass"</span>, <span class="st">"Age"</span>], ascending<span class="op">=</span>[<span class="va">True</span>, <span class="va">False</span>])</span>
-<span id="cb93-8"><a></a></span>
-<span id="cb93-9"><a></a><span class="co"># para volver al orden original:</span></span>
-<span id="cb93-10"><a></a><span class="co"># df_clean.sort_index()</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="76cb8bfc" class="cell" data-execution_count="53">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb103"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb103-1"><a></a><span class="co"># Por ejemplo, pasajeros con tarifas más altas</span></span>
+<span id="cb103-2"><a></a><span class="bu">print</span>(<span class="st">"Pasajeros con tarifas más altas:"</span>)</span>
+<span id="cb103-3"><a></a>df_clean.sort_values(by<span class="op">=</span><span class="st">"Fare"</span>, ascending<span class="op">=</span><span class="va">False</span>).head(<span class="dv">10</span>)</span>
+<span id="cb103-4"><a></a><span class="co"># Otro ejemplo, ordena por clase y edad: </span></span>
+<span id="cb103-5"><a></a><span class="co"># Ordena primero por clase (de 1 a 3), y dentro de cada clase, muestra primero a los mayores.</span></span>
+<span id="cb103-6"><a></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n\n</span><span class="st">Pasajeros ordenados por clase y edad"</span>)</span>
+<span id="cb103-7"><a></a>df_clean.sort_values(by<span class="op">=</span>[<span class="st">"Pclass"</span>, <span class="st">"Age"</span>], ascending<span class="op">=</span>[<span class="va">True</span>, <span class="va">False</span>])</span>
+<span id="cb103-8"><a></a></span>
+<span id="cb103-9"><a></a><span class="co"># para volver al orden original:</span></span>
+<span id="cb103-10"><a></a><span class="co"># df_clean.sort_index()</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Pasajeros con tarifas más altas:</code></pre>
-</div>
-<div class="cell-output cell-output-error">
-<div class="ansi-escaped-output">
-<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-Cell <span class="ansi-green-fg">In[48], line 3</span>
-<span class="ansi-green-fg ansi-bold">      1</span> <span style="font-style:italic;color:rgb(95,135,135)"># Por ejemplo, pasajeros con tarifas más altas</span>
-<span class="ansi-green-fg ansi-bold">      2</span> <span style="color:rgb(0,135,0)">print</span>(<span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">Pasajeros con tarifas más altas:</span><span style="color:rgb(175,0,0)">"</span>)
-<span class="ansi-green-fg">----&gt; 3</span> <span class="ansi-yellow-bg">df_clean</span><span style="color:rgb(98,98,98)">.</span>sort_values(by<span style="color:rgb(98,98,98)">=</span><span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">Fare</span><span style="color:rgb(175,0,0)">"</span>, ascending<span style="color:rgb(98,98,98)">=</span><span style="font-weight:bold;color:rgb(0,135,0)">False</span>)<span style="color:rgb(98,98,98)">.</span>head(<span style="color:rgb(98,98,98)">10</span>)
-<span class="ansi-green-fg ansi-bold">      4</span> <span style="font-style:italic;color:rgb(95,135,135)"># Otro ejemplo, ordena por clase y edad: </span>
-<span class="ansi-green-fg ansi-bold">      5</span> <span style="font-style:italic;color:rgb(95,135,135)"># Ordena primero por clase (de 1 a 3), y dentro de cada clase, muestra primero a los mayores.</span>
-<span class="ansi-green-fg ansi-bold">      6</span> <span style="color:rgb(0,135,0)">print</span>(<span style="color:rgb(175,0,0)">"</span><span style="font-weight:bold;color:rgb(175,95,0)">\n</span><span style="font-weight:bold;color:rgb(175,95,0)">\n</span><span style="color:rgb(175,0,0)">Pasajeros ordenados por clase y edad</span><span style="color:rgb(175,0,0)">"</span>)
+<pre><code>Pasajeros con tarifas más altas:
 
-<span class="ansi-red-fg">NameError</span>: name 'df_clean' is not defined</pre>
+
+Pasajeros ordenados por clase y edad</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="48">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+
+<table class="dataframe caption-top" data-border="1">
+<thead>
+<tr class="header" style="text-align: right;">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">PassengerId</th>
+<th data-quarto-table-cell-role="th">Survived</th>
+<th data-quarto-table-cell-role="th">Pclass</th>
+<th data-quarto-table-cell-role="th">Name</th>
+<th data-quarto-table-cell-role="th">Sex</th>
+<th data-quarto-table-cell-role="th">Age</th>
+<th data-quarto-table-cell-role="th">SibSp</th>
+<th data-quarto-table-cell-role="th">Parch</th>
+<th data-quarto-table-cell-role="th">Ticket</th>
+<th data-quarto-table-cell-role="th">Fare</th>
+<th data-quarto-table-cell-role="th">Embarked</th>
+<th data-quarto-table-cell-role="th">Embarked_Date</th>
+<th data-quarto-table-cell-role="th">Año_de_Embarque</th>
+<th data-quarto-table-cell-role="th">Mes_de_Embarque</th>
+<th data-quarto-table-cell-role="th">Día_de_la_Semana</th>
+<th data-quarto-table-cell-role="th">Es_Menor</th>
+<th data-quarto-table-cell-role="th">Pagó_Alto</th>
+<th data-quarto-table-cell-role="th">Grupo_Edad</th>
+<th data-quarto-table-cell-role="th">Edad_Categoría</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">630</th>
+<td>631</td>
+<td>1</td>
+<td>1</td>
+<td>Barkworth, Mr. Algernon Henry Wilson</td>
+<td>male</td>
+<td>80.00</td>
+<td>0</td>
+<td>0</td>
+<td>27042</td>
+<td>30.0000</td>
+<td>S</td>
+<td>1912-04-08</td>
+<td>1912</td>
+<td>4</td>
+<td>Monday</td>
+<td>False</td>
+<td>False</td>
+<td>Adulto mayor</td>
+<td>Vejez</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">96</th>
+<td>97</td>
+<td>0</td>
+<td>1</td>
+<td>Goldschmidt, Mr. George B</td>
+<td>male</td>
+<td>71.00</td>
+<td>0</td>
+<td>0</td>
+<td>PC 17754</td>
+<td>34.6542</td>
+<td>C</td>
+<td>1912-04-08</td>
+<td>1912</td>
+<td>4</td>
+<td>Monday</td>
+<td>False</td>
+<td>True</td>
+<td>Adulto mayor</td>
+<td>Vejez</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">493</th>
+<td>494</td>
+<td>0</td>
+<td>1</td>
+<td>Artagaveytia, Mr. Ramon</td>
+<td>male</td>
+<td>71.00</td>
+<td>0</td>
+<td>0</td>
+<td>PC 17609</td>
+<td>49.5042</td>
+<td>C</td>
+<td>1912-04-07</td>
+<td>1912</td>
+<td>4</td>
+<td>Sunday</td>
+<td>False</td>
+<td>True</td>
+<td>Adulto mayor</td>
+<td>Vejez</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">745</th>
+<td>746</td>
+<td>0</td>
+<td>1</td>
+<td>Crosby, Capt. Edward Gifford</td>
+<td>male</td>
+<td>70.00</td>
+<td>1</td>
+<td>1</td>
+<td>WE/P 5735</td>
+<td>71.0000</td>
+<td>S</td>
+<td>1912-04-08</td>
+<td>1912</td>
+<td>4</td>
+<td>Monday</td>
+<td>False</td>
+<td>True</td>
+<td>Adulto mayor</td>
+<td>Vejez</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">54</th>
+<td>55</td>
+<td>0</td>
+<td>1</td>
+<td>Ostby, Mr. Engelhart Cornelius</td>
+<td>male</td>
+<td>65.00</td>
+<td>0</td>
+<td>1</td>
+<td>113509</td>
+<td>61.9792</td>
+<td>C</td>
+<td>1912-04-09</td>
+<td>1912</td>
+<td>4</td>
+<td>Tuesday</td>
+<td>False</td>
+<td>True</td>
+<td>Adulto mayor</td>
+<td>Vejez</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">...</th>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">386</th>
+<td>387</td>
+<td>0</td>
+<td>3</td>
+<td>Goodwin, Master. Sidney Leonard</td>
+<td>male</td>
+<td>1.00</td>
+<td>5</td>
+<td>2</td>
+<td>CA 2144</td>
+<td>46.9000</td>
+<td>S</td>
+<td>1912-04-08</td>
+<td>1912</td>
+<td>4</td>
+<td>Monday</td>
+<td>True</td>
+<td>True</td>
+<td>Niño</td>
+<td>Niñez</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">788</th>
+<td>789</td>
+<td>1</td>
+<td>3</td>
+<td>Dean, Master. Bertram Vere</td>
+<td>male</td>
+<td>1.00</td>
+<td>1</td>
+<td>2</td>
+<td>C.A. 2315</td>
+<td>20.5750</td>
+<td>S</td>
+<td>1912-04-08</td>
+<td>1912</td>
+<td>4</td>
+<td>Monday</td>
+<td>True</td>
+<td>False</td>
+<td>Niño</td>
+<td>Niñez</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">469</th>
+<td>470</td>
+<td>1</td>
+<td>3</td>
+<td>Baclini, Miss. Helene Barbara</td>
+<td>female</td>
+<td>0.75</td>
+<td>2</td>
+<td>1</td>
+<td>2666</td>
+<td>19.2583</td>
+<td>C</td>
+<td>1912-04-10</td>
+<td>1912</td>
+<td>4</td>
+<td>Wednesday</td>
+<td>True</td>
+<td>False</td>
+<td>Niño</td>
+<td>Niñez</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">644</th>
+<td>645</td>
+<td>1</td>
+<td>3</td>
+<td>Baclini, Miss. Eugenie</td>
+<td>female</td>
+<td>0.75</td>
+<td>2</td>
+<td>1</td>
+<td>2666</td>
+<td>19.2583</td>
+<td>C</td>
+<td>1912-04-08</td>
+<td>1912</td>
+<td>4</td>
+<td>Monday</td>
+<td>True</td>
+<td>False</td>
+<td>Niño</td>
+<td>Niñez</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">803</th>
+<td>804</td>
+<td>1</td>
+<td>3</td>
+<td>Thomas, Master. Assad Alexander</td>
+<td>male</td>
+<td>0.42</td>
+<td>0</td>
+<td>1</td>
+<td>2625</td>
+<td>8.5167</td>
+<td>C</td>
+<td>1912-04-08</td>
+<td>1912</td>
+<td>4</td>
+<td>Monday</td>
+<td>True</td>
+<td>False</td>
+<td>Niño</td>
+<td>Niñez</td>
+</tr>
+</tbody>
+</table>
+
+<p>891 rows × 19 columns</p>
 </div>
 </div>
 </div>
