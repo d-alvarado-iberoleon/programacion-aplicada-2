@@ -1,0 +1,1511 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<link href="../assets/logo.png" rel="icon" type="image/png">
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.27">
+
+  <meta name="author" content="Dra. Dora Alvarado">
+  <meta name="dcterms.date" content="2026-04-26">
+  <title>Programación Aplicada II – Tutorial — Conteo de Vehículos con OpenCV</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-4330aa8f3fbdc9148502f1828ffea511.css">
+  <link rel="stylesheet" href="styles.css">
+  <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+  <script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
+  <script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
+  <link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Tutorial — Conteo de Vehículos con OpenCV</h1>
+  <p class="subtitle">Programación Aplicada II</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Dra. Dora Alvarado 
+</div>
+</div>
+</div>
+
+  <p class="date">2026-04-26</p>
+</section>
+<section>
+<section id="bloque-0-motivación" class="title-slide slide level1 center" data-background-color="#1e1e2e">
+<h1>Bloque 0 — Motivación</h1>
+
+</section>
+<section id="por-qué-contar-vehículos-automáticamente" class="slide level2">
+<h2>¿Por qué contar vehículos automáticamente?</h2>
+<p>Imagina que la ciudad de León quiere saber cuántos autos pasan por el bulevar Campestre en hora pico.<br>
+Las opciones son:</p>
+<div class="columns">
+<div class="column" style="width:48%;">
+<p><strong>Opción A — humano</strong></p>
+<ul>
+<li>Una persona parada con un contador manual</li>
+<li>Solo puede observar un carril a la vez</li>
+<li>Se cansa, se distrae, comete errores</li>
+<li>Costo elevado si se necesita 24/7</li>
+</ul>
+</div><div class="column" style="width:48%;">
+<p><strong>Opción B — visión computacional</strong></p>
+<ul>
+<li>Una cámara fija sobre la vialidad</li>
+<li>Un programa que analiza el video en tiempo real</li>
+<li>Puede cubrir múltiples carriles simultáneamente</li>
+<li>Funciona sin descanso, deja registro digital</li>
+</ul>
+</div></div>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p>Este tipo de sistema se usa en semáforos inteligentes, casetas de peaje automáticas, análisis de movilidad urbana y seguridad vial.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="el-problema-en-una-sola-oración" class="slide level2">
+<h2>El problema en una sola oración</h2>
+<blockquote>
+<p><strong>Dado un video de tráfico, contar cuántos vehículos cruzan una línea virtual en cada carril.</strong></p>
+</blockquote>
+<p>Eso suena sencillo cuando lo dice un humano.<br>
+El reto es traducirlo a instrucciones que una computadora pueda ejecutar.</p>
+<p>Eso es exactamente lo que vamos a hacer en este tutorial.</p>
+</section>
+<section class="slide level2">
+
+</section></section>
+<section>
+<section id="bloque-1-diseño-conceptual" class="title-slide slide level1 center" data-background-color="#1e1e2e">
+<h1>Bloque 1 — Diseño conceptual</h1>
+
+</section>
+<section id="antes-de-escribir-código-cómo-lo-haría-un-humano" class="slide level2 scrollable">
+<h2>Antes de escribir código: ¿cómo lo haría un humano?</h2>
+<p>Antes de abrir el editor, hagamos el ejercicio de describir con palabras lo que haría una persona observando el video:</p>
+<ol type="1">
+<li>Miro un carril específico, no toda la pantalla</li>
+<li>Espero a que aparezca un auto en esa zona</li>
+<li>Observo cómo se mueve el auto frame a frame</li>
+<li>Cuando el frente del auto cruza la línea del centro, cuento uno</li>
+<li>Espero a que ese auto salga antes de contar el siguiente</li>
+</ol>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p>Este proceso mental es el <strong>algoritmo</strong>. Antes de programar, siempre conviene describir la solución en lenguaje natural. Si no puedes explicarlo con palabras, tampoco podrás programarlo.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="descomposición-del-problema" class="slide level2">
+<h2>Descomposición del problema</h2>
+<p>El problema grande se puede dividir en subproblemas más pequeños:</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Subproblema</th>
+<th>Pregunta que responde</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Segmentación de zona</strong></td>
+<td>¿Dónde exactamente estoy mirando?</td>
+</tr>
+<tr class="even">
+<td><strong>Detección de movimiento</strong></td>
+<td>¿Hay algo moviéndose en esa zona?</td>
+</tr>
+<tr class="odd">
+<td><strong>Identificación del vehículo</strong></td>
+<td>¿Cuál es el objeto más relevante?</td>
+</tr>
+<tr class="even">
+<td><strong>Localización</strong></td>
+<td>¿Dónde está ese objeto dentro de la zona?</td>
+</tr>
+<tr class="odd">
+<td><strong>Detección de cruce</strong></td>
+<td>¿Cruzó la línea central?</td>
+</tr>
+<tr class="even">
+<td><strong>Conteo</strong></td>
+<td>¿Ya lo conté o no?</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-warning callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Warning</strong></p>
+</div>
+<div class="callout-content">
+<p>Resolver cada subproblema por separado es mucho más manejable que intentar resolver todo de golpe. Esta estrategia se llama <strong>divide y vencerás</strong>.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="pseudocódigo-del-pipeline" class="slide level2">
+<h2>Pseudocódigo del pipeline</h2>
+<pre><code>INICIO
+  Abrir video
+  Crear lista de contadores (uno por carril)
+
+  PARA CADA frame del video:
+    PARA CADA contador en la lista:
+      1. Aislar la zona del carril en el frame
+      2. Detectar píxeles que se movieron (fondo vs. objeto)
+      3. Identificar el blob más grande como vehículo
+      4. Calcular el bounding box del vehículo
+      5. SI el borde del bounding box cruza la línea central:
+           SI no estaba cruzando antes:
+             incrementar contador
+             marcar como "cruzando"
+         SINO:
+           marcar como "no cruzando"
+      6. Dibujar zona, línea y contador en el frame
+    Mostrar frame anotado
+
+FIN</code></pre>
+</section>
+<section id="diagrama-de-flujo-ciclo-por-frame" class="slide level2">
+<h2>Diagrama de flujo — ciclo por frame</h2>
+<div class="cell" data-reveal="true" data-layout-align="default">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb2-1"><a></a>flowchart TD</span>
+<span id="cb2-2"><a></a>    A([Leer frame]) --&gt; B{¿Frame válido?}</span>
+<span id="cb2-3"><a></a>    B -- No --&gt; Z([Fin])</span>
+<span id="cb2-4"><a></a>    B -- Sí --&gt; C[Aislar zona ROI]</span>
+<span id="cb2-5"><a></a>    C --&gt; D[Aplicar sustractor de fondo]</span>
+<span id="cb2-6"><a></a>    D --&gt; E[Umbralizar máscara]</span>
+<span id="cb2-7"><a></a>    E --&gt; F[Obtener componente conectada mayor]</span>
+<span id="cb2-8"><a></a>    F --&gt; G{¿Área suficiente?}</span>
+<span id="cb2-9"><a></a>    G -- No --&gt; K[Auto = None]</span>
+<span id="cb2-10"><a></a>    G -- Sí --&gt; H[Calcular bounding box]</span>
+<span id="cb2-11"><a></a>    H --&gt; I{¿Borde en zona de cruce?}</span>
+<span id="cb2-12"><a></a>    I -- No --&gt; J[cruzando = False]</span>
+<span id="cb2-13"><a></a>    I -- Sí --&gt; L{¿Ya estaba cruzando?}</span>
+<span id="cb2-14"><a></a>    L -- Sí --&gt; M[No incrementar]</span>
+<span id="cb2-15"><a></a>    L -- No --&gt; N[counter += 1 / cruzando = True]</span>
+<span id="cb2-16"><a></a>    J --&gt; O[Dibujar y mostrar]</span>
+<span id="cb2-17"><a></a>    K --&gt; O</span>
+<span id="cb2-18"><a></a>    M --&gt; O</span>
+<span id="cb2-19"><a></a>    N --&gt; O</span>
+<span id="cb2-20"><a></a>    O --&gt; A</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart TD
+    A([Leer frame]) --&gt; B{¿Frame válido?}
+    B -- No --&gt; Z([Fin])
+    B -- Sí --&gt; C[Aislar zona ROI]
+    C --&gt; D[Aplicar sustractor de fondo]
+    D --&gt; E[Umbralizar máscara]
+    E --&gt; F[Obtener componente conectada mayor]
+    F --&gt; G{¿Área suficiente?}
+    G -- No --&gt; K[Auto = None]
+    G -- Sí --&gt; H[Calcular bounding box]
+    H --&gt; I{¿Borde en zona de cruce?}
+    I -- No --&gt; J[cruzando = False]
+    I -- Sí --&gt; L{¿Ya estaba cruzando?}
+    L -- Sí --&gt; M[No incrementar]
+    L -- No --&gt; N[counter += 1 / cruzando = True]
+    J --&gt; O[Dibujar y mostrar]
+    K --&gt; O
+    M --&gt; O
+    N --&gt; O
+    O --&gt; A
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="las-clases-que-vamos-a-construir" class="slide level2">
+<h2>Las clases que vamos a construir</h2>
+<p>El sistema se organiza en <strong>dos clases</strong> con responsabilidades claras:</p>
+<div class="columns">
+<div class="column" style="width:48%;">
+<h3 id="auto"><code>Auto</code></h3>
+<p>Representa el vehículo detectado en un frame.</p>
+<p><strong>Atributos:</strong> - <code>x1, x2</code> — límites horizontales - <code>y1, y2</code> — límites verticales</p>
+<p><strong>Responsabilidad:</strong> encapsular las coordenadas del bounding box.</p>
+</div><div class="column" style="width:48%;">
+<h3 id="contador"><code>Contador</code></h3>
+<p>Gestiona una zona de carril completa.</p>
+<p><strong>Atributos:</strong> - <code>coords</code>, <code>ancho</code>, <code>alto</code> — geometría de la zona - <code>counter</code> — número de vehículos contados - <code>cruzando</code> — estado del cruce actual - <code>fgbg</code> — sustractor de fondo</p>
+<p><strong>Responsabilidad:</strong> detectar, localizar y contar vehículos en su carril.</p>
+</div></div>
+</section>
+<section class="slide level2">
+
+</section></section>
+<section>
+<section id="bloque-2-herramientas-de-opencv" class="title-slide slide level1 center" data-background-color="#1e1e2e">
+<h1>Bloque 2 — Herramientas de OpenCV</h1>
+
+</section>
+<section id="qué-es-opencv" class="slide level2">
+<h2>¿Qué es OpenCV?</h2>
+<p><strong>OpenCV</strong> (Open Source Computer Vision Library) es la biblioteca de visión computacional más utilizada en el mundo.<br>
+Está disponible para Python, C++ y Java.</p>
+<p>Instalación en el entorno <code>ibero2026</code>:</p>
+<div id="3cd43a21" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a><span class="co"># En terminal, con el entorno activado:</span></span>
+<span id="cb3-2"><a></a><span class="co"># conda activate ibero2026</span></span>
+<span id="cb3-3"><a></a><span class="co"># pip install opencv-python</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Para verificar que funciona:</p>
+<div id="541c4cf3" class="cell" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a><span class="im">import</span> cv2</span>
+<span id="cb4-2"><a></a><span class="bu">print</span>(cv2.__version__)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p>En este tutorial usaremos <strong>solo las funciones que el proyecto necesita</strong>. OpenCV tiene cientos de funciones; no es necesario conocerlas todas para empezar.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="herramienta-1-leer-un-video-frame-a-frame" class="slide level2">
+<h2>Herramienta 1 — Leer un video frame a frame</h2>
+<p>Un video no es más que una secuencia de imágenes (frames) mostradas a cierta velocidad.<br>
+<code>cv2.VideoCapture</code> nos da acceso a esa secuencia:</p>
+<div id="5c749145" class="cell" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a><span class="im">import</span> cv2</span>
+<span id="cb5-2"><a></a><span class="im">import</span> sys</span>
+<span id="cb5-3"><a></a></span>
+<span id="cb5-4"><a></a>cap <span class="op">=</span> cv2.VideoCapture(<span class="st">'coches.mp4'</span>)</span>
+<span id="cb5-5"><a></a></span>
+<span id="cb5-6"><a></a><span class="cf">if</span> <span class="kw">not</span> cap.isOpened():</span>
+<span id="cb5-7"><a></a>    <span class="bu">print</span>(<span class="st">"Error: no se pudo abrir el video."</span>)</span>
+<span id="cb5-8"><a></a>    sys.exit(<span class="dv">1</span>)</span>
+<span id="cb5-9"><a></a></span>
+<span id="cb5-10"><a></a><span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb5-11"><a></a>    ret, frame <span class="op">=</span> cap.read()   <span class="co"># ret = True si el frame se leyó bien</span></span>
+<span id="cb5-12"><a></a>    <span class="cf">if</span> <span class="kw">not</span> ret:</span>
+<span id="cb5-13"><a></a>        <span class="cf">break</span>                  <span class="co"># fin del video</span></span>
+<span id="cb5-14"><a></a></span>
+<span id="cb5-15"><a></a>    cv2.imshow(<span class="st">'Video'</span>, frame)</span>
+<span id="cb5-16"><a></a></span>
+<span id="cb5-17"><a></a>    <span class="cf">if</span> cv2.waitKey(<span class="dv">40</span>) <span class="op">&amp;</span> <span class="bn">0xFF</span> <span class="op">==</span> <span class="bu">ord</span>(<span class="st">'q'</span>):</span>
+<span id="cb5-18"><a></a>        <span class="cf">break</span>                  <span class="co"># salir con tecla 'q'</span></span>
+<span id="cb5-19"><a></a></span>
+<span id="cb5-20"><a></a>cap.release()</span>
+<span id="cb5-21"><a></a>cv2.destroyAllWindows()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p><code>cv2.waitKey(40)</code> pausa 40 ms entre frames, equivalente a ~25 fps.<br>
+<code>cap.release()</code> libera la cámara o archivo al terminar — siempre es necesario.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="herramienta-2-máscaras-y-regiones-de-interés-roi" class="slide level2">
+<h2>Herramienta 2 — Máscaras y regiones de interés (ROI)</h2>
+<p>Una <strong>máscara</strong> es una imagen en escala de grises donde los píxeles blancos (255) indican la zona de interés y los negros (0) el resto.</p>
+<div id="e297576c" class="cell" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb6-2"><a></a></span>
+<span id="cb6-3"><a></a><span class="co"># Crear máscara del mismo tamaño que el frame</span></span>
+<span id="cb6-4"><a></a>mascara <span class="op">=</span> np.zeros(frame.shape[:<span class="dv">2</span>], dtype<span class="op">=</span>np.uint8)</span>
+<span id="cb6-5"><a></a></span>
+<span id="cb6-6"><a></a><span class="co"># Definir un polígono (rectángulo en este caso)</span></span>
+<span id="cb6-7"><a></a>rectangulo <span class="op">=</span> np.array([[<span class="dv">340</span>, <span class="dv">55</span>],</span>
+<span id="cb6-8"><a></a>                        [<span class="dv">540</span>, <span class="dv">55</span>],</span>
+<span id="cb6-9"><a></a>                        [<span class="dv">540</span>, <span class="dv">105</span>],</span>
+<span id="cb6-10"><a></a>                        [<span class="dv">340</span>, <span class="dv">105</span>]])</span>
+<span id="cb6-11"><a></a></span>
+<span id="cb6-12"><a></a><span class="co"># Rellenar el polígono en blanco</span></span>
+<span id="cb6-13"><a></a>cv2.drawContours(mascara, [rectangulo], <span class="op">-</span><span class="dv">1</span>, <span class="dv">255</span>, <span class="op">-</span><span class="dv">1</span>)</span>
+<span id="cb6-14"><a></a></span>
+<span id="cb6-15"><a></a><span class="co"># Aplicar la máscara al frame: solo queda la zona de interés</span></span>
+<span id="cb6-16"><a></a>segmento <span class="op">=</span> cv2.bitwise_and(frame, frame, mask<span class="op">=</span>mascara)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="callout callout-warning callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Warning</strong></p>
+</div>
+<div class="callout-content">
+<p><code>bitwise_and</code> con una máscara pone en negro todo lo que está fuera de la zona. Así el sustractor de fondo solo “ve” el carril que nos importa.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="herramienta-3-sustracción-de-fondo" class="slide level2">
+<h2>Herramienta 3 — Sustracción de fondo</h2>
+<p>La <strong>sustracción de fondo</strong> separa los objetos en movimiento del fondo estático.<br>
+El algoritmo aprende cómo se ve el fondo y marca como “primer plano” lo que se desvía de él.</p>
+<div id="34ffb12f" class="cell" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a><span class="co"># Crear el sustractor (lo hacemos UNA SOLA VEZ, fuera del ciclo)</span></span>
+<span id="cb7-2"><a></a>fgbg <span class="op">=</span> cv2.createBackgroundSubtractorKNN(history<span class="op">=</span><span class="dv">500</span>, dist2Threshold<span class="op">=</span><span class="dv">150</span>)</span>
+<span id="cb7-3"><a></a></span>
+<span id="cb7-4"><a></a><span class="co"># Dentro del ciclo de frames:</span></span>
+<span id="cb7-5"><a></a>fgmask <span class="op">=</span> fgbg.<span class="bu">apply</span>(segmento)   <span class="co"># resultado: imagen en gris</span></span>
+<span id="cb7-6"><a></a>fgmask[fgmask <span class="op">&lt;</span> <span class="dv">255</span>] <span class="op">=</span> <span class="dv">0</span>        <span class="co"># solo nos quedamos con primer plano puro</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><strong>¿Qué devuelve <code>apply()</code>?</strong></p>
+<ul>
+<li><code>255</code> — píxel de primer plano (objeto en movimiento)</li>
+<li><code>127</code> — sombra detectada (la ignoramos con el umbral)</li>
+<li><code>0</code> — fondo</li>
+</ul>
+<p>Al poner en cero todo lo que no es 255, eliminamos las sombras.</p>
+</div><div class="column" style="width:38%;">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p><code>history=500</code> significa que el modelo usa los últimos 500 frames para aprender el fondo.<br>
+<code>dist2Threshold=150</code> controla qué tan diferente debe ser un píxel para considerarse primer plano.</p>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="herramienta-4-componentes-conectadas" class="slide level2">
+<h2>Herramienta 4 — Componentes conectadas</h2>
+<p>Una <strong>componente conectada</strong> es un grupo de píxeles blancos que se tocan entre sí.<br>
+Usamos esto para identificar los “blobs” (manchas) en la máscara.</p>
+<div id="0c7852b0" class="cell" data-execution_count="6">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a></a>num_labels, labels, stats, _ <span class="op">=</span> cv2.connectedComponentsWithStats(fgmask)</span>
+<span id="cb8-2"><a></a></span>
+<span id="cb8-3"><a></a><span class="co"># stats tiene una fila por componente:</span></span>
+<span id="cb8-4"><a></a><span class="co"># [x_inicio, y_inicio, ancho, alto, ÁREA]</span></span>
+<span id="cb8-5"><a></a><span class="co"># La componente 0 es el fondo — empezamos desde 1</span></span>
+<span id="cb8-6"><a></a></span>
+<span id="cb8-7"><a></a>areas <span class="op">=</span> stats[<span class="dv">1</span>:, cv2.CC_STAT_AREA]   <span class="co"># áreas de todos los blobs</span></span>
+<span id="cb8-8"><a></a>mayor_idx <span class="op">=</span> np.argmax(areas) <span class="op">+</span> <span class="dv">1</span>       <span class="co"># índice del blob más grande</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p>Si la máscara tiene ruido (pequeños puntos blancos dispersos), habrá muchas componentes pequeñas.<br>
+Al quedarnos solo con <strong>la más grande</strong>, ignoramos ese ruido automáticamente.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+</section></section>
+<section>
+<section id="bloque-3-construcción-guiada" class="title-slide slide level1 center" data-background-color="#1e1e2e">
+<h1>Bloque 3 — Construcción guiada</h1>
+
+</section>
+<section id="paso-3.1-estructura-base-del-script" class="slide level2">
+<h2>Paso 3.1 — Estructura base del script</h2>
+<p>Empecemos con el esqueleto del programa. Crea un archivo <code>conteo_vehiculos.py</code>:</p>
+<div id="7e9dc5ee" class="cell" data-execution_count="7">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb9-2"><a></a><span class="im">import</span> cv2</span>
+<span id="cb9-3"><a></a><span class="im">import</span> sys</span>
+<span id="cb9-4"><a></a></span>
+<span id="cb9-5"><a></a><span class="co"># ── Constantes ────────────────────────────────────────────────────</span></span>
+<span id="cb9-6"><a></a>KNN_HISTORY      <span class="op">=</span> <span class="dv">500</span></span>
+<span id="cb9-7"><a></a>KNN_DIST2_THRESH <span class="op">=</span> <span class="dv">150</span></span>
+<span id="cb9-8"><a></a>MIN_BLOB_AREA    <span class="op">=</span> <span class="dv">700</span></span>
+<span id="cb9-9"><a></a>TOL_CRUCE        <span class="op">=</span> <span class="dv">20</span></span>
+<span id="cb9-10"><a></a>ANCHO_ZONA       <span class="op">=</span> <span class="dv">200</span></span>
+<span id="cb9-11"><a></a>ALTO_ZONA        <span class="op">=</span> <span class="dv">50</span></span>
+<span id="cb9-12"><a></a>N_CARRILES       <span class="op">=</span> <span class="dv">7</span></span>
+<span id="cb9-13"><a></a>COLOR_ZONA       <span class="op">=</span> (<span class="dv">0</span>, <span class="dv">255</span>, <span class="dv">255</span>)   <span class="co"># amarillo</span></span>
+<span id="cb9-14"><a></a>COLOR_AUTO       <span class="op">=</span> (<span class="dv">255</span>, <span class="dv">0</span>, <span class="dv">255</span>)   <span class="co"># magenta</span></span>
+<span id="cb9-15"><a></a>COLOR_LINEA_OK   <span class="op">=</span> (<span class="dv">0</span>, <span class="dv">255</span>, <span class="dv">0</span>)     <span class="co"># verde</span></span>
+<span id="cb9-16"><a></a>COLOR_LINEA_DEF  <span class="op">=</span> (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">255</span>)     <span class="co"># rojo</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p>Centralizar los parámetros como constantes al inicio es una buena práctica: si quieres ajustar la tolerancia de cruce o el tamaño mínimo del blob, cambias un solo número en lugar de buscarlo dentro del código.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="paso-3.2-la-clase-auto" class="slide level2">
+<h2>Paso 3.2 — La clase <code>Auto</code></h2>
+<p>Esta clase solo necesita saber dónde está el vehículo. La construimos a partir de la máscara del blob:</p>
+<div id="f355bc8b" class="cell" data-execution_count="8">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a></a><span class="kw">class</span> Auto:</span>
+<span id="cb10-2"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, mask):</span>
+<span id="cb10-3"><a></a>        <span class="co"># ¿En qué filas y columnas hay píxeles blancos?</span></span>
+<span id="cb10-4"><a></a>        filas <span class="op">=</span> np.<span class="bu">any</span>(mask, axis<span class="op">=</span><span class="dv">1</span>)   <span class="co"># True si hay algún blanco en esa fila</span></span>
+<span id="cb10-5"><a></a>        cols  <span class="op">=</span> np.<span class="bu">any</span>(mask, axis<span class="op">=</span><span class="dv">0</span>)   <span class="co"># True si hay algún blanco en esa columna</span></span>
+<span id="cb10-6"><a></a></span>
+<span id="cb10-7"><a></a>        <span class="co"># El bounding box son los índices extremos con True</span></span>
+<span id="cb10-8"><a></a>        <span class="va">self</span>.x1, <span class="va">self</span>.x2 <span class="op">=</span> np.where(cols)[<span class="dv">0</span>][[<span class="dv">0</span>, <span class="op">-</span><span class="dv">1</span>]]</span>
+<span id="cb10-9"><a></a>        <span class="va">self</span>.y1, <span class="va">self</span>.y2 <span class="op">=</span> np.where(filas)[<span class="dv">0</span>][[<span class="dv">0</span>, <span class="op">-</span><span class="dv">1</span>]]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p><code>np.any(mask, axis=1)</code> colapsa las columnas: devuelve <code>True</code> en cada fila donde haya al menos un píxel blanco. Con <code>np.where</code> obtenemos los índices de esas filas, y tomamos el primero y el último para obtener el rango.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="paso-3.3-constructor-de-contador" class="slide level2">
+<h2>Paso 3.3 — Constructor de <code>Contador</code></h2>
+<div id="7cdcde1a" class="cell" data-execution_count="9">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a></a><span class="kw">class</span> Contador:</span>
+<span id="cb11-2"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, coords_region, ancho, alto):</span>
+<span id="cb11-3"><a></a>        <span class="va">self</span>.coords   <span class="op">=</span> np.array(coords_region)</span>
+<span id="cb11-4"><a></a>        <span class="va">self</span>.ancho    <span class="op">=</span> ancho</span>
+<span id="cb11-5"><a></a>        <span class="va">self</span>.alto     <span class="op">=</span> alto</span>
+<span id="cb11-6"><a></a>        <span class="va">self</span>.counter  <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb11-7"><a></a>        <span class="va">self</span>.auto     <span class="op">=</span> <span class="va">None</span>      <span class="co"># vehículo detectado en el frame actual</span></span>
+<span id="cb11-8"><a></a>        <span class="va">self</span>.cruzando <span class="op">=</span> <span class="va">False</span>     <span class="co"># ¿el vehículo está cruzando la línea?</span></span>
+<span id="cb11-9"><a></a></span>
+<span id="cb11-10"><a></a>        <span class="co"># Vértices del rectángulo del carril (en orden: TL, TR, BR, BL)</span></span>
+<span id="cb11-11"><a></a>        <span class="va">self</span>.rectangulo <span class="op">=</span> np.array([</span>
+<span id="cb11-12"><a></a>            <span class="va">self</span>.coords,</span>
+<span id="cb11-13"><a></a>            <span class="va">self</span>.coords <span class="op">+</span> [ancho,    <span class="dv">0</span>],</span>
+<span id="cb11-14"><a></a>            <span class="va">self</span>.coords <span class="op">+</span> [ancho, alto],</span>
+<span id="cb11-15"><a></a>            <span class="va">self</span>.coords <span class="op">+</span> [<span class="dv">0</span>,     alto],</span>
+<span id="cb11-16"><a></a>        ])</span>
+<span id="cb11-17"><a></a></span>
+<span id="cb11-18"><a></a>        <span class="co"># Sustractor de fondo — uno por carril para que cada uno aprenda su propio fondo</span></span>
+<span id="cb11-19"><a></a>        <span class="va">self</span>.fgbg <span class="op">=</span> cv2.createBackgroundSubtractorKNN(</span>
+<span id="cb11-20"><a></a>            history<span class="op">=</span>KNN_HISTORY,</span>
+<span id="cb11-21"><a></a>            dist2Threshold<span class="op">=</span>KNN_DIST2_THRESH,</span>
+<span id="cb11-22"><a></a>        )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="callout callout-warning callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Warning</strong></p>
+</div>
+<div class="callout-content">
+<p>Cada <code>Contador</code> tiene <strong>su propio</strong> sustractor de fondo. Esto es importante: si todos compartieran uno, el modelo se confundiría porque cada carril tiene condiciones distintas de iluminación y movimiento.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="paso-3.4-obtener-el-blob-principal" class="slide level2">
+<h2>Paso 3.4 — Obtener el blob principal</h2>
+<p>Agrega este método dentro de la clase <code>Contador</code>:</p>
+<div id="2a02704e" class="cell" data-execution_count="10">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a></a>    <span class="kw">def</span> obtener_componente_mayor(<span class="va">self</span>, fgmask):</span>
+<span id="cb12-2"><a></a>        num_labels, labels, stats, _ <span class="op">=</span> cv2.connectedComponentsWithStats(fgmask)</span>
+<span id="cb12-3"><a></a></span>
+<span id="cb12-4"><a></a>        <span class="co"># Si solo hay fondo (label 0), no hay vehículo</span></span>
+<span id="cb12-5"><a></a>        <span class="cf">if</span> num_labels <span class="op">&lt;</span> <span class="dv">2</span>:</span>
+<span id="cb12-6"><a></a>            <span class="va">self</span>.auto <span class="op">=</span> <span class="va">None</span></span>
+<span id="cb12-7"><a></a>            <span class="cf">return</span> np.zeros_like(fgmask)</span>
+<span id="cb12-8"><a></a></span>
+<span id="cb12-9"><a></a>        areas     <span class="op">=</span> stats[<span class="dv">1</span>:, cv2.CC_STAT_AREA]</span>
+<span id="cb12-10"><a></a>        mayor_idx <span class="op">=</span> np.argmax(areas) <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb12-11"><a></a></span>
+<span id="cb12-12"><a></a>        <span class="co"># Si el blob más grande es muy pequeño, probablemente es ruido</span></span>
+<span id="cb12-13"><a></a>        <span class="cf">if</span> areas[mayor_idx <span class="op">-</span> <span class="dv">1</span>] <span class="op">&lt;</span> MIN_BLOB_AREA:</span>
+<span id="cb12-14"><a></a>            <span class="va">self</span>.auto <span class="op">=</span> <span class="va">None</span></span>
+<span id="cb12-15"><a></a>            <span class="cf">return</span> np.zeros_like(fgmask)</span>
+<span id="cb12-16"><a></a></span>
+<span id="cb12-17"><a></a>        <span class="co"># Construir máscara solo con esa componente</span></span>
+<span id="cb12-18"><a></a>        resultado <span class="op">=</span> np.zeros_like(fgmask)</span>
+<span id="cb12-19"><a></a>        resultado[labels <span class="op">==</span> mayor_idx] <span class="op">=</span> <span class="dv">255</span></span>
+<span id="cb12-20"><a></a>        <span class="va">self</span>.auto <span class="op">=</span> Auto(resultado)   <span class="co"># crear el objeto Auto con la máscara limpia</span></span>
+<span id="cb12-21"><a></a>        <span class="cf">return</span> resultado</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="paso-3.5-el-método-procesar-segmentación-y-detección" class="slide level2">
+<h2>Paso 3.5 — El método <code>procesar</code>: segmentación y detección</h2>
+<p>Agrega el método <code>procesar</code> a la clase <code>Contador</code>. Lo construiremos en tres partes.<br>
+Aquí van las dos primeras:</p>
+<div id="43fb5741" class="cell" data-execution_count="11">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a></a>    <span class="kw">def</span> procesar(<span class="va">self</span>, frame, tol<span class="op">=</span>TOL_CRUCE):</span>
+<span id="cb13-2"><a></a></span>
+<span id="cb13-3"><a></a>        <span class="co"># — Segmentar zona del carril —</span></span>
+<span id="cb13-4"><a></a>        mascara <span class="op">=</span> np.zeros(frame.shape[:<span class="dv">2</span>], dtype<span class="op">=</span>np.uint8)</span>
+<span id="cb13-5"><a></a>        cv2.drawContours(mascara, [<span class="va">self</span>.rectangulo], <span class="op">-</span><span class="dv">1</span>, <span class="dv">255</span>, <span class="op">-</span><span class="dv">1</span>)</span>
+<span id="cb13-6"><a></a>        segmento <span class="op">=</span> cv2.bitwise_and(frame, frame, mask<span class="op">=</span>mascara)</span>
+<span id="cb13-7"><a></a></span>
+<span id="cb13-8"><a></a>        <span class="co"># — Sustracción de fondo —</span></span>
+<span id="cb13-9"><a></a>        fgmask <span class="op">=</span> <span class="va">self</span>.fgbg.<span class="bu">apply</span>(segmento)</span>
+<span id="cb13-10"><a></a>        fgmask[fgmask <span class="op">&lt;</span> <span class="dv">255</span>] <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb13-11"><a></a>        fgmask <span class="op">=</span> <span class="va">self</span>.obtener_componente_mayor(fgmask)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p>Separamos el método en secciones con comentarios para que sea fácil de leer y depurar. Si algo falla, sabes exactamente en qué parte del pipeline está el problema.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="paso-3.6-el-método-procesar-detección-de-cruce" class="slide level2">
+<h2>Paso 3.6 — El método <code>procesar</code>: detección de cruce</h2>
+<p>Continuación del método <code>procesar</code>, dentro del mismo bloque <code>def</code>:</p>
+<div id="e565499e" class="cell" data-execution_count="12">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a></a>        <span class="co"># — Detección de cruce —</span></span>
+<span id="cb14-2"><a></a>        color_linea <span class="op">=</span> COLOR_LINEA_DEF</span>
+<span id="cb14-3"><a></a>        cx <span class="op">=</span> <span class="va">self</span>.coords[<span class="dv">0</span>] <span class="op">+</span> <span class="va">self</span>.ancho <span class="op">//</span> <span class="dv">2</span>   <span class="co"># x de la línea central</span></span>
+<span id="cb14-4"><a></a></span>
+<span id="cb14-5"><a></a>        <span class="cf">if</span> <span class="va">self</span>.auto <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>:</span>
+<span id="cb14-6"><a></a>            <span class="co"># ¿El borde derecho del auto está dentro de la zona de tolerancia?</span></span>
+<span id="cb14-7"><a></a>            en_zona <span class="op">=</span> (cx <span class="op">-</span> tol <span class="op">//</span> <span class="dv">2</span>) <span class="op">&lt;=</span> <span class="va">self</span>.auto.x2 <span class="op">&lt;=</span> (cx <span class="op">+</span> tol <span class="op">//</span> <span class="dv">2</span>)</span>
+<span id="cb14-8"><a></a></span>
+<span id="cb14-9"><a></a>            <span class="cf">if</span> en_zona <span class="kw">and</span> <span class="kw">not</span> <span class="va">self</span>.cruzando:</span>
+<span id="cb14-10"><a></a>                <span class="va">self</span>.counter  <span class="op">+=</span> <span class="dv">1</span>       <span class="co"># primer frame del cruce → contar</span></span>
+<span id="cb14-11"><a></a>                <span class="va">self</span>.cruzando  <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb14-12"><a></a>            <span class="cf">elif</span> <span class="kw">not</span> en_zona:</span>
+<span id="cb14-13"><a></a>                <span class="va">self</span>.cruzando <span class="op">=</span> <span class="va">False</span>    <span class="co"># el auto salió → listo para el siguiente</span></span>
+<span id="cb14-14"><a></a></span>
+<span id="cb14-15"><a></a>            color_linea <span class="op">=</span> COLOR_LINEA_OK <span class="cf">if</span> en_zona <span class="cf">else</span> COLOR_LINEA_DEF</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="callout callout-warning callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Warning</strong></p>
+</div>
+<div class="callout-content">
+<p>Sin el flag <code>self.cruzando</code>, el contador incrementaría en <strong>cada frame</strong> que el auto esté sobre la línea (típicamente 5–15 frames), dando conteos incorrectos. El flag asegura que solo se cuente <strong>la primera vez</strong>.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="paso-3.7-el-método-procesar-dibujo-y-retorno" class="slide level2">
+<h2>Paso 3.7 — El método <code>procesar</code>: dibujo y retorno</h2>
+<p>Última parte del método <code>procesar</code>. Dibujamos todo sobre el frame original:</p>
+<div id="c73fcc0a" class="cell" data-execution_count="13">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a></a>            <span class="co"># Bounding box del vehículo detectado</span></span>
+<span id="cb15-2"><a></a>            cv2.rectangle(frame,</span>
+<span id="cb15-3"><a></a>                          (<span class="va">self</span>.auto.x1, <span class="va">self</span>.auto.y1),</span>
+<span id="cb15-4"><a></a>                          (<span class="va">self</span>.auto.x2, <span class="va">self</span>.auto.y2),</span>
+<span id="cb15-5"><a></a>                          COLOR_AUTO, <span class="dv">2</span>)</span>
+<span id="cb15-6"><a></a></span>
+<span id="cb15-7"><a></a>        <span class="co"># — Dibujo de la zona, línea y contador —</span></span>
+<span id="cb15-8"><a></a>        cv2.rectangle(frame,</span>
+<span id="cb15-9"><a></a>                      <span class="bu">tuple</span>(<span class="va">self</span>.coords),</span>
+<span id="cb15-10"><a></a>                      <span class="bu">tuple</span>(<span class="va">self</span>.coords <span class="op">+</span> [<span class="va">self</span>.ancho, <span class="va">self</span>.alto]),</span>
+<span id="cb15-11"><a></a>                      COLOR_ZONA, <span class="dv">2</span>)</span>
+<span id="cb15-12"><a></a>        cv2.line(frame,</span>
+<span id="cb15-13"><a></a>                 <span class="bu">tuple</span>(<span class="va">self</span>.coords <span class="op">+</span> [<span class="va">self</span>.ancho <span class="op">//</span> <span class="dv">2</span>, <span class="dv">0</span>]),</span>
+<span id="cb15-14"><a></a>                 <span class="bu">tuple</span>(<span class="va">self</span>.coords <span class="op">+</span> [<span class="va">self</span>.ancho <span class="op">//</span> <span class="dv">2</span>, <span class="va">self</span>.alto]),</span>
+<span id="cb15-15"><a></a>                 color_linea, <span class="dv">2</span>)</span>
+<span id="cb15-16"><a></a>        cv2.putText(frame, <span class="bu">str</span>(<span class="va">self</span>.counter),</span>
+<span id="cb15-17"><a></a>                    <span class="bu">tuple</span>(<span class="va">self</span>.coords <span class="op">+</span> [<span class="va">self</span>.ancho, <span class="va">self</span>.alto <span class="op">//</span> <span class="dv">2</span>]),</span>
+<span id="cb15-18"><a></a>                    cv2.FONT_HERSHEY_SIMPLEX, <span class="dv">1</span>, COLOR_ZONA, <span class="dv">2</span>, cv2.LINE_AA)</span>
+<span id="cb15-19"><a></a></span>
+<span id="cb15-20"><a></a>        <span class="cf">return</span> frame, fgmask</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="paso-3.8-el-programa-principal" class="slide level2">
+<h2>Paso 3.8 — El programa principal</h2>
+<p>Fuera de las clases, al final del archivo:</p>
+<div id="53ea7036" class="cell" data-execution_count="14">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">'__main__'</span>:</span>
+<span id="cb16-2"><a></a>    cap <span class="op">=</span> cv2.VideoCapture(<span class="st">'coches.mp4'</span>)</span>
+<span id="cb16-3"><a></a>    <span class="cf">if</span> <span class="kw">not</span> cap.isOpened():</span>
+<span id="cb16-4"><a></a>        <span class="bu">print</span>(<span class="st">"Error: no se pudo abrir el video."</span>)</span>
+<span id="cb16-5"><a></a>        sys.exit(<span class="dv">1</span>)</span>
+<span id="cb16-6"><a></a></span>
+<span id="cb16-7"><a></a>    <span class="co"># Crear un contador por carril, apilados verticalmente</span></span>
+<span id="cb16-8"><a></a>    counters <span class="op">=</span> [</span>
+<span id="cb16-9"><a></a>        Contador([<span class="dv">340</span>, ALTO_ZONA <span class="op">*</span> i], ANCHO_ZONA, ALTO_ZONA)</span>
+<span id="cb16-10"><a></a>        <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(N_CARRILES)</span>
+<span id="cb16-11"><a></a>    ]</span>
+<span id="cb16-12"><a></a></span>
+<span id="cb16-13"><a></a>    <span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb16-14"><a></a>        ret, frame <span class="op">=</span> cap.read()</span>
+<span id="cb16-15"><a></a>        <span class="cf">if</span> <span class="kw">not</span> ret:</span>
+<span id="cb16-16"><a></a>            <span class="bu">print</span>(<span class="st">"Fin del video."</span>)</span>
+<span id="cb16-17"><a></a>            <span class="cf">break</span></span>
+<span id="cb16-18"><a></a></span>
+<span id="cb16-19"><a></a>        <span class="cf">for</span> counter <span class="kw">in</span> counters:</span>
+<span id="cb16-20"><a></a>            frame, _ <span class="op">=</span> counter.procesar(frame)</span>
+<span id="cb16-21"><a></a></span>
+<span id="cb16-22"><a></a>        cv2.imshow(<span class="st">'Conteo de vehículos'</span>, frame)</span>
+<span id="cb16-23"><a></a>        <span class="cf">if</span> cv2.waitKey(<span class="dv">40</span>) <span class="op">&amp;</span> <span class="bn">0xFF</span> <span class="op">==</span> <span class="bu">ord</span>(<span class="st">'q'</span>):</span>
+<span id="cb16-24"><a></a>            <span class="cf">break</span></span>
+<span id="cb16-25"><a></a></span>
+<span id="cb16-26"><a></a>    cap.release()</span>
+<span id="cb16-27"><a></a>    cv2.destroyAllWindows()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="paso-3.9-ejecutar-el-proyecto" class="slide level2">
+<h2>Paso 3.9 — Ejecutar el proyecto</h2>
+<p>Desde la terminal, con el entorno activado:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a></a><span class="ex">conda</span> activate ibero2026</span>
+<span id="cb17-2"><a></a><span class="ex">python</span> conteo_vehiculos.py</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Deberías ver una ventana con el video anotado:</p>
+<ul>
+<li><strong>Rectángulos amarillos</strong> → zonas de cada carril</li>
+<li><strong>Línea roja/verde</strong> → línea de conteo (verde cuando un auto la cruza)</li>
+<li><strong>Rectángulo magenta</strong> → bounding box del vehículo detectado</li>
+<li><strong>Número amarillo</strong> → contador acumulado del carril</li>
+</ul>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p>Presiona <code>q</code> para cerrar la ventana. Si el video termina, el programa también cierra automáticamente.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="el-código-completo" class="slide level2">
+<h2>El código completo</h2>
+<p>Para referencia, aquí está todo junto en el orden correcto:</p>
+<div id="fe03e904" class="cell" data-execution_count="15">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb18-2"><a></a><span class="im">import</span> cv2</span>
+<span id="cb18-3"><a></a><span class="im">import</span> sys</span>
+<span id="cb18-4"><a></a></span>
+<span id="cb18-5"><a></a>KNN_HISTORY<span class="op">=</span><span class="dv">500</span><span class="op">;</span> KNN_DIST2_THRESH<span class="op">=</span><span class="dv">150</span><span class="op">;</span> MIN_BLOB_AREA<span class="op">=</span><span class="dv">700</span><span class="op">;</span> TOL_CRUCE<span class="op">=</span><span class="dv">20</span></span>
+<span id="cb18-6"><a></a>ANCHO_ZONA<span class="op">=</span><span class="dv">200</span><span class="op">;</span> ALTO_ZONA<span class="op">=</span><span class="dv">50</span><span class="op">;</span> N_CARRILES<span class="op">=</span><span class="dv">7</span></span>
+<span id="cb18-7"><a></a>COLOR_ZONA<span class="op">=</span>(<span class="dv">0</span>,<span class="dv">255</span>,<span class="dv">255</span>)<span class="op">;</span> COLOR_AUTO<span class="op">=</span>(<span class="dv">255</span>,<span class="dv">0</span>,<span class="dv">255</span>)</span>
+<span id="cb18-8"><a></a>COLOR_LINEA_OK<span class="op">=</span>(<span class="dv">0</span>,<span class="dv">255</span>,<span class="dv">0</span>)<span class="op">;</span> COLOR_LINEA_DEF<span class="op">=</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">255</span>)</span>
+<span id="cb18-9"><a></a></span>
+<span id="cb18-10"><a></a><span class="kw">class</span> Auto:</span>
+<span id="cb18-11"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, mask):</span>
+<span id="cb18-12"><a></a>        filas<span class="op">=</span>np.<span class="bu">any</span>(mask,axis<span class="op">=</span><span class="dv">1</span>)<span class="op">;</span> cols<span class="op">=</span>np.<span class="bu">any</span>(mask,axis<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb18-13"><a></a>        <span class="va">self</span>.x1,<span class="va">self</span>.x2<span class="op">=</span>np.where(cols)[<span class="dv">0</span>][[<span class="dv">0</span>,<span class="op">-</span><span class="dv">1</span>]]</span>
+<span id="cb18-14"><a></a>        <span class="va">self</span>.y1,<span class="va">self</span>.y2<span class="op">=</span>np.where(filas)[<span class="dv">0</span>][[<span class="dv">0</span>,<span class="op">-</span><span class="dv">1</span>]]</span>
+<span id="cb18-15"><a></a></span>
+<span id="cb18-16"><a></a><span class="kw">class</span> Contador:</span>
+<span id="cb18-17"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, coords_region, ancho, alto):</span>
+<span id="cb18-18"><a></a>        <span class="va">self</span>.coords<span class="op">=</span>np.array(coords_region)<span class="op">;</span> <span class="va">self</span>.ancho<span class="op">=</span>ancho<span class="op">;</span> <span class="va">self</span>.alto<span class="op">=</span>alto</span>
+<span id="cb18-19"><a></a>        <span class="va">self</span>.counter<span class="op">=</span><span class="dv">0</span><span class="op">;</span> <span class="va">self</span>.auto<span class="op">=</span><span class="va">None</span><span class="op">;</span> <span class="va">self</span>.cruzando<span class="op">=</span><span class="va">False</span></span>
+<span id="cb18-20"><a></a>        <span class="va">self</span>.rectangulo<span class="op">=</span>np.array([<span class="va">self</span>.coords, <span class="va">self</span>.coords<span class="op">+</span>[ancho,<span class="dv">0</span>],</span>
+<span id="cb18-21"><a></a>                                   <span class="va">self</span>.coords<span class="op">+</span>[ancho,alto], <span class="va">self</span>.coords<span class="op">+</span>[<span class="dv">0</span>,alto]])</span>
+<span id="cb18-22"><a></a>        <span class="va">self</span>.fgbg<span class="op">=</span>cv2.createBackgroundSubtractorKNN(history<span class="op">=</span>KNN_HISTORY,</span>
+<span id="cb18-23"><a></a>                                                     dist2Threshold<span class="op">=</span>KNN_DIST2_THRESH)</span>
+<span id="cb18-24"><a></a>    <span class="kw">def</span> obtener_componente_mayor(<span class="va">self</span>, fgmask):</span>
+<span id="cb18-25"><a></a>        num_labels,labels,stats,_<span class="op">=</span>cv2.connectedComponentsWithStats(fgmask)</span>
+<span id="cb18-26"><a></a>        <span class="cf">if</span> num_labels<span class="op">&lt;</span><span class="dv">2</span>: <span class="va">self</span>.auto<span class="op">=</span><span class="va">None</span><span class="op">;</span> <span class="cf">return</span> np.zeros_like(fgmask)</span>
+<span id="cb18-27"><a></a>        areas<span class="op">=</span>stats[<span class="dv">1</span>:,cv2.CC_STAT_AREA]<span class="op">;</span> mayor_idx<span class="op">=</span>np.argmax(areas)<span class="op">+</span><span class="dv">1</span></span>
+<span id="cb18-28"><a></a>        <span class="cf">if</span> areas[mayor_idx<span class="op">-</span><span class="dv">1</span>]<span class="op">&lt;</span>MIN_BLOB_AREA: <span class="va">self</span>.auto<span class="op">=</span><span class="va">None</span><span class="op">;</span> <span class="cf">return</span> np.zeros_like(fgmask)</span>
+<span id="cb18-29"><a></a>        resultado<span class="op">=</span>np.zeros_like(fgmask)<span class="op">;</span> resultado[labels<span class="op">==</span>mayor_idx]<span class="op">=</span><span class="dv">255</span></span>
+<span id="cb18-30"><a></a>        <span class="va">self</span>.auto<span class="op">=</span>Auto(resultado)<span class="op">;</span> <span class="cf">return</span> resultado</span>
+<span id="cb18-31"><a></a>    <span class="kw">def</span> procesar(<span class="va">self</span>, frame, tol<span class="op">=</span>TOL_CRUCE):</span>
+<span id="cb18-32"><a></a>        mascara<span class="op">=</span>np.zeros(frame.shape[:<span class="dv">2</span>],dtype<span class="op">=</span>np.uint8)</span>
+<span id="cb18-33"><a></a>        cv2.drawContours(mascara,[<span class="va">self</span>.rectangulo],<span class="op">-</span><span class="dv">1</span>,<span class="dv">255</span>,<span class="op">-</span><span class="dv">1</span>)</span>
+<span id="cb18-34"><a></a>        segmento<span class="op">=</span>cv2.bitwise_and(frame,frame,mask<span class="op">=</span>mascara)</span>
+<span id="cb18-35"><a></a>        fgmask<span class="op">=</span><span class="va">self</span>.fgbg.<span class="bu">apply</span>(segmento)<span class="op">;</span> fgmask[fgmask<span class="op">&lt;</span><span class="dv">255</span>]<span class="op">=</span><span class="dv">0</span></span>
+<span id="cb18-36"><a></a>        fgmask<span class="op">=</span><span class="va">self</span>.obtener_componente_mayor(fgmask)</span>
+<span id="cb18-37"><a></a>        color_linea<span class="op">=</span>COLOR_LINEA_DEF<span class="op">;</span> cx<span class="op">=</span><span class="va">self</span>.coords[<span class="dv">0</span>]<span class="op">+</span><span class="va">self</span>.ancho<span class="op">//</span><span class="dv">2</span></span>
+<span id="cb18-38"><a></a>        <span class="cf">if</span> <span class="va">self</span>.auto <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>:</span>
+<span id="cb18-39"><a></a>            en_zona<span class="op">=</span>(cx<span class="op">-</span>tol<span class="op">//</span><span class="dv">2</span>)<span class="op">&lt;=</span><span class="va">self</span>.auto.x2<span class="op">&lt;=</span>(cx<span class="op">+</span>tol<span class="op">//</span><span class="dv">2</span>)</span>
+<span id="cb18-40"><a></a>            <span class="cf">if</span> en_zona <span class="kw">and</span> <span class="kw">not</span> <span class="va">self</span>.cruzando: <span class="va">self</span>.counter<span class="op">+=</span><span class="dv">1</span><span class="op">;</span> <span class="va">self</span>.cruzando<span class="op">=</span><span class="va">True</span></span>
+<span id="cb18-41"><a></a>            <span class="cf">elif</span> <span class="kw">not</span> en_zona: <span class="va">self</span>.cruzando<span class="op">=</span><span class="va">False</span></span>
+<span id="cb18-42"><a></a>            color_linea<span class="op">=</span>COLOR_LINEA_OK <span class="cf">if</span> en_zona <span class="cf">else</span> COLOR_LINEA_DEF</span>
+<span id="cb18-43"><a></a>            cv2.rectangle(frame,(<span class="va">self</span>.auto.x1,<span class="va">self</span>.auto.y1),(<span class="va">self</span>.auto.x2,<span class="va">self</span>.auto.y2),COLOR_AUTO,<span class="dv">2</span>)</span>
+<span id="cb18-44"><a></a>        cv2.rectangle(frame,<span class="bu">tuple</span>(<span class="va">self</span>.coords),<span class="bu">tuple</span>(<span class="va">self</span>.coords<span class="op">+</span>[<span class="va">self</span>.ancho,<span class="va">self</span>.alto]),COLOR_ZONA,<span class="dv">2</span>)</span>
+<span id="cb18-45"><a></a>        cv2.line(frame,<span class="bu">tuple</span>(<span class="va">self</span>.coords<span class="op">+</span>[<span class="va">self</span>.ancho<span class="op">//</span><span class="dv">2</span>,<span class="dv">0</span>]),<span class="bu">tuple</span>(<span class="va">self</span>.coords<span class="op">+</span>[<span class="va">self</span>.ancho<span class="op">//</span><span class="dv">2</span>,<span class="va">self</span>.alto]),color_linea,<span class="dv">2</span>)</span>
+<span id="cb18-46"><a></a>        cv2.putText(frame,<span class="bu">str</span>(<span class="va">self</span>.counter),<span class="bu">tuple</span>(<span class="va">self</span>.coords<span class="op">+</span>[<span class="va">self</span>.ancho,<span class="va">self</span>.alto<span class="op">//</span><span class="dv">2</span>]),</span>
+<span id="cb18-47"><a></a>                    cv2.FONT_HERSHEY_SIMPLEX,<span class="dv">1</span>,COLOR_ZONA,<span class="dv">2</span>,cv2.LINE_AA)</span>
+<span id="cb18-48"><a></a>        <span class="cf">return</span> frame, fgmask</span>
+<span id="cb18-49"><a></a></span>
+<span id="cb18-50"><a></a><span class="cf">if</span> <span class="va">__name__</span><span class="op">==</span><span class="st">'__main__'</span>:</span>
+<span id="cb18-51"><a></a>    cap<span class="op">=</span>cv2.VideoCapture(<span class="st">'coches.mp4'</span>)</span>
+<span id="cb18-52"><a></a>    <span class="cf">if</span> <span class="kw">not</span> cap.isOpened(): <span class="bu">print</span>(<span class="st">"Error al abrir video."</span>)<span class="op">;</span> sys.exit(<span class="dv">1</span>)</span>
+<span id="cb18-53"><a></a>    counters<span class="op">=</span>[Contador([<span class="dv">340</span>,ALTO_ZONA<span class="op">*</span>i],ANCHO_ZONA,ALTO_ZONA) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(N_CARRILES)]</span>
+<span id="cb18-54"><a></a>    <span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb18-55"><a></a>        ret,frame<span class="op">=</span>cap.read()</span>
+<span id="cb18-56"><a></a>        <span class="cf">if</span> <span class="kw">not</span> ret: <span class="cf">break</span></span>
+<span id="cb18-57"><a></a>        <span class="cf">for</span> c <span class="kw">in</span> counters: frame,_<span class="op">=</span>c.procesar(frame)</span>
+<span id="cb18-58"><a></a>        cv2.imshow(<span class="st">'Conteo de vehículos'</span>,frame)</span>
+<span id="cb18-59"><a></a>        <span class="cf">if</span> cv2.waitKey(<span class="dv">40</span>)<span class="op">&amp;</span><span class="bn">0xFF</span><span class="op">==</span><span class="bu">ord</span>(<span class="st">'q'</span>): <span class="cf">break</span></span>
+<span id="cb18-60"><a></a>    cap.release()<span class="op">;</span> cv2.destroyAllWindows()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section class="slide level2">
+
+</section></section>
+<section>
+<section id="bloque-4-reflexión-y-extensiones" class="title-slide slide level1 center" data-background-color="#1e1e2e">
+<h1>Bloque 4 — Reflexión y extensiones</h1>
+
+</section>
+<section id="qué-puede-fallar-y-por-qué" class="slide level2">
+<h2>¿Qué puede fallar y por qué?</h2>
+<p>Este sistema funciona bien en condiciones ideales, pero tiene limitaciones reales:</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Problema</th>
+<th>Causa</th>
+<th>¿Qué se podría hacer?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Dos autos juntos se detectan como uno</td>
+<td>Sus blobs se fusionan en la máscara</td>
+<td>Usar tracking en lugar de solo detección</td>
+</tr>
+<tr class="even">
+<td>Un auto lento infla el conteo</td>
+<td>El sustractor tarda en aprender el nuevo fondo</td>
+<td>Ajustar <code>history</code> y <code>dist2Threshold</code></td>
+</tr>
+<tr class="odd">
+<td>Las sombras generan falsos positivos</td>
+<td>El umbral de 255 no siempre elimina todo</td>
+<td>Convertir a espacio HSV antes de umbralizar</td>
+</tr>
+<tr class="even">
+<td>La cámara se mueve</td>
+<td>El “fondo” cambia constantemente</td>
+<td>Estabilización de video antes de procesar</td>
+</tr>
+<tr class="odd">
+<td>Carriles con diferentes velocidades</td>
+<td>Un parámetro global no aplica igual a todos</td>
+<td>Parámetros independientes por carril</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="qué-sigue-más-allá-de-este-proyecto" class="slide level2">
+<h2>¿Qué sigue más allá de este proyecto?</h2>
+<p>Este proyecto usa técnicas clásicas de visión computacional.<br>
+Las alternativas modernas basadas en Deep Learning son más robustas:</p>
+<div class="columns">
+<div class="column" style="width:48%;">
+<p><strong>Detección de objetos</strong></p>
+<ul>
+<li>YOLO (You Only Look Once)</li>
+<li>Detecta y clasifica vehículos en una sola pasada</li>
+<li>Funciona en tiempo real incluso con oclusiones</li>
+</ul>
+</div><div class="column" style="width:48%;">
+<p><strong>Seguimiento (tracking)</strong></p>
+<ul>
+<li>SORT, DeepSORT, ByteTrack</li>
+<li>Asigna un ID único a cada vehículo</li>
+<li>Permite contar cruzando cualquier línea, no solo la del centro</li>
+</ul>
+</div></div>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p>Lo que aprendiste aquí — pipeline de procesamiento, clases, detección de eventos con flags de estado — son los <strong>fundamentos</strong> que aplican también en los sistemas modernos. La lógica del conteo es exactamente la misma; solo cambia cómo se detecta el vehículo.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="para-reflexionar" class="slide level2 scrollable">
+<h2>Para reflexionar</h2>
+<p>Antes de cerrar, piensa en estas preguntas:</p>
+<ol type="1">
+<li><p><strong>¿Por qué es importante el flag <code>cruzando</code>?</strong> ¿Qué pasaría si el auto tarda 10 frames en cruzar la línea y no usáramos ese flag?</p></li>
+<li><p><strong>¿Por qué cada <code>Contador</code> tiene su propio sustractor de fondo?</strong> ¿Qué problema causaría compartir uno solo?</p></li>
+<li><p><strong>Si quisieras contar en dirección contraria</strong> (de derecha a izquierda), ¿qué cambiarías en el código?</p></li>
+<li><p><strong>¿Cómo adaptarías este sistema a una intersección con 4 carriles en dos direcciones?</strong></p></li>
+</ol>
+<div class="callout callout-warning callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Warning</strong></p>
+</div>
+<div class="callout-content">
+<p>Estas preguntas no tienen una sola respuesta correcta. El objetivo es que puedas razonar sobre el sistema que acabas de construir.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="resumen-del-proyecto" class="slide level2">
+<h2>Resumen del proyecto</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><strong>Lo que construiste</strong></p>
+<ul>
+<li>Un pipeline de visión computacional funcional</li>
+<li>Dos clases con responsabilidades bien definidas</li>
+<li>Un sistema multicarril escalable</li>
+<li>Lógica de conteo robusta con flag de estado</li>
+</ul>
+</div><div class="column" style="width:43%;">
+<p><strong>Conceptos clave aplicados</strong></p>
+<ul>
+<li>Descomposición de problemas</li>
+<li>Sustracción de fondo (KNN)</li>
+<li>Componentes conectadas</li>
+<li>Bounding box</li>
+<li>Máquina de estados simple (<code>cruzando</code>)</li>
+<li>POO aplicada a CV</li>
+</ul>
+</div></div>
+<blockquote>
+<p>El pensamiento computacional no es saber programar.<br>
+Es saber <strong>cómo pensar</strong> antes de programar.</p>
+</blockquote>
+
+
+</section></section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<p><img src="imgs/logo.png" class="slide-logo"></p>
+<div class="footer footer-default">
+
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': false,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1600,
+
+        height: 900,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 5.0e-2,
+
+        // Bounds for smallest/largest possible scale to apply to content
+        minScale: 0.2,
+
+        maxScale: 3,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>
