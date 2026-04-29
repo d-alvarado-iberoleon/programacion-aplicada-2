@@ -454,13 +454,13 @@ FIN</code></pre>
 <p><strong>OpenCV</strong> (Open Source Computer Vision Library) es la biblioteca de visión computacional más utilizada en el mundo.<br>
 Está disponible para Python, C++ y Java.</p>
 <p>Instalación en el entorno <code>ibero2026</code>:</p>
-<div id="3cd43a21" class="cell" data-execution_count="1">
+<div id="afe7d618" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a><span class="co"># En terminal, con el entorno activado:</span></span>
 <span id="cb3-2"><a></a><span class="co"># conda activate ibero2026</span></span>
 <span id="cb3-3"><a></a><span class="co"># pip install opencv-python</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Para verificar que funciona:</p>
-<div id="541c4cf3" class="cell" data-execution_count="2">
+<div id="92996314" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a><span class="im">import</span> cv2</span>
 <span id="cb4-2"><a></a><span class="bu">print</span>(cv2.__version__)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -482,7 +482,7 @@ Está disponible para Python, C++ y Java.</p>
 <h2>Herramienta 1 — Leer un video frame a frame</h2>
 <p>Un video no es más que una secuencia de imágenes (frames) mostradas a cierta velocidad.<br>
 <code>cv2.VideoCapture</code> nos da acceso a esa secuencia:</p>
-<div id="5c749145" class="cell" data-execution_count="3">
+<div id="c5f7cf89" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a><span class="im">import</span> cv2</span>
 <span id="cb5-2"><a></a><span class="im">import</span> sys</span>
 <span id="cb5-3"><a></a></span>
@@ -523,7 +523,7 @@ Está disponible para Python, C++ y Java.</p>
 <section id="herramienta-2-máscaras-y-regiones-de-interés-roi" class="slide level2">
 <h2>Herramienta 2 — Máscaras y regiones de interés (ROI)</h2>
 <p>Una <strong>máscara</strong> es una imagen en escala de grises donde los píxeles blancos (255) indican la zona de interés y los negros (0) el resto.</p>
-<div id="e297576c" class="cell" data-execution_count="4">
+<div id="e9ca3b4c" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb6-2"><a></a></span>
 <span id="cb6-3"><a></a><span class="co"># Crear máscara del mismo tamaño que el frame</span></span>
@@ -559,7 +559,7 @@ Está disponible para Python, C++ y Java.</p>
 <h2>Herramienta 3 — Sustracción de fondo</h2>
 <p>La <strong>sustracción de fondo</strong> separa los objetos en movimiento del fondo estático.<br>
 El algoritmo aprende cómo se ve el fondo y marca como “primer plano” lo que se desvía de él.</p>
-<div id="34ffb12f" class="cell" data-execution_count="5">
+<div id="ed2c88e2" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a><span class="co"># Crear el sustractor (lo hacemos UNA SOLA VEZ, fuera del ciclo)</span></span>
 <span id="cb7-2"><a></a>fgbg <span class="op">=</span> cv2.createBackgroundSubtractorKNN(history<span class="op">=</span><span class="dv">500</span>, dist2Threshold<span class="op">=</span><span class="dv">150</span>)</span>
 <span id="cb7-3"><a></a></span>
@@ -597,7 +597,7 @@ El algoritmo aprende cómo se ve el fondo y marca como “primer plano” lo que
 <h2>Herramienta 4 — Componentes conectadas</h2>
 <p>Una <strong>componente conectada</strong> es un grupo de píxeles blancos que se tocan entre sí.<br>
 Usamos esto para identificar los “blobs” (manchas) en la máscara.</p>
-<div id="0c7852b0" class="cell" data-execution_count="6">
+<div id="2e93e690" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a></a>num_labels, labels, stats, _ <span class="op">=</span> cv2.connectedComponentsWithStats(fgmask)</span>
 <span id="cb8-2"><a></a></span>
 <span id="cb8-3"><a></a><span class="co"># stats tiene una fila por componente:</span></span>
@@ -633,7 +633,7 @@ Al quedarnos solo con <strong>la más grande</strong>, ignoramos ese ruido autom
 <section id="paso-3.1-estructura-base-del-script" class="slide level2">
 <h2>Paso 3.1 — Estructura base del script</h2>
 <p>Empecemos con el esqueleto del programa. Crea un archivo <code>conteo_vehiculos.py</code>:</p>
-<div id="7e9dc5ee" class="cell" data-execution_count="7">
+<div id="7960dc41" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb9-2"><a></a><span class="im">import</span> cv2</span>
 <span id="cb9-3"><a></a><span class="im">import</span> sys</span>
@@ -668,7 +668,7 @@ Al quedarnos solo con <strong>la más grande</strong>, ignoramos ese ruido autom
 <section id="paso-3.2-la-clase-auto" class="slide level2">
 <h2>Paso 3.2 — La clase <code>Auto</code></h2>
 <p>Esta clase solo necesita saber dónde está el vehículo. La construimos a partir de la máscara del blob:</p>
-<div id="f355bc8b" class="cell" data-execution_count="8">
+<div id="0f030921" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a></a><span class="kw">class</span> Auto:</span>
 <span id="cb10-2"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, mask):</span>
 <span id="cb10-3"><a></a>        <span class="co"># ¿En qué filas y columnas hay píxeles blancos?</span></span>
@@ -695,7 +695,7 @@ Al quedarnos solo con <strong>la más grande</strong>, ignoramos ese ruido autom
 </section>
 <section id="paso-3.3-constructor-de-contador" class="slide level2">
 <h2>Paso 3.3 — Constructor de <code>Contador</code></h2>
-<div id="7cdcde1a" class="cell" data-execution_count="9">
+<div id="40429691" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a></a><span class="kw">class</span> Contador:</span>
 <span id="cb11-2"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, coords_region, ancho, alto):</span>
 <span id="cb11-3"><a></a>        <span class="va">self</span>.coords   <span class="op">=</span> np.array(coords_region)</span>
@@ -736,7 +736,7 @@ Al quedarnos solo con <strong>la más grande</strong>, ignoramos ese ruido autom
 <section id="paso-3.4-obtener-el-blob-principal" class="slide level2">
 <h2>Paso 3.4 — Obtener el blob principal</h2>
 <p>Agrega este método dentro de la clase <code>Contador</code>:</p>
-<div id="2a02704e" class="cell" data-execution_count="10">
+<div id="e46237e3" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a></a>    <span class="kw">def</span> obtener_componente_mayor(<span class="va">self</span>, fgmask):</span>
 <span id="cb12-2"><a></a>        num_labels, labels, stats, _ <span class="op">=</span> cv2.connectedComponentsWithStats(fgmask)</span>
 <span id="cb12-3"><a></a></span>
@@ -764,7 +764,7 @@ Al quedarnos solo con <strong>la más grande</strong>, ignoramos ese ruido autom
 <h2>Paso 3.5 — El método <code>procesar</code>: segmentación y detección</h2>
 <p>Agrega el método <code>procesar</code> a la clase <code>Contador</code>. Lo construiremos en tres partes.<br>
 Aquí van las dos primeras:</p>
-<div id="43fb5741" class="cell" data-execution_count="11">
+<div id="b2f5ccb0" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a></a>    <span class="kw">def</span> procesar(<span class="va">self</span>, frame, tol<span class="op">=</span>TOL_CRUCE):</span>
 <span id="cb13-2"><a></a></span>
 <span id="cb13-3"><a></a>        <span class="co"># — Segmentar zona del carril —</span></span>
@@ -794,7 +794,7 @@ Aquí van las dos primeras:</p>
 <section id="paso-3.6-el-método-procesar-detección-de-cruce" class="slide level2">
 <h2>Paso 3.6 — El método <code>procesar</code>: detección de cruce</h2>
 <p>Continuación del método <code>procesar</code>, dentro del mismo bloque <code>def</code>:</p>
-<div id="e565499e" class="cell" data-execution_count="12">
+<div id="b971c1f6" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a></a>        <span class="co"># — Detección de cruce —</span></span>
 <span id="cb14-2"><a></a>        color_linea <span class="op">=</span> COLOR_LINEA_DEF</span>
 <span id="cb14-3"><a></a>        cx <span class="op">=</span> <span class="va">self</span>.coords[<span class="dv">0</span>] <span class="op">+</span> <span class="va">self</span>.ancho <span class="op">//</span> <span class="dv">2</span>   <span class="co"># x de la línea central</span></span>
@@ -828,7 +828,7 @@ Aquí van las dos primeras:</p>
 <section id="paso-3.7-el-método-procesar-dibujo-y-retorno" class="slide level2">
 <h2>Paso 3.7 — El método <code>procesar</code>: dibujo y retorno</h2>
 <p>Última parte del método <code>procesar</code>. Dibujamos todo sobre el frame original:</p>
-<div id="c73fcc0a" class="cell" data-execution_count="13">
+<div id="c4c1e4a4" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a></a>            <span class="co"># Bounding box del vehículo detectado</span></span>
 <span id="cb15-2"><a></a>            cv2.rectangle(frame,</span>
 <span id="cb15-3"><a></a>                          (<span class="va">self</span>.auto.x1, <span class="va">self</span>.auto.y1),</span>
@@ -854,7 +854,7 @@ Aquí van las dos primeras:</p>
 <section id="paso-3.8-el-programa-principal" class="slide level2">
 <h2>Paso 3.8 — El programa principal</h2>
 <p>Fuera de las clases, al final del archivo:</p>
-<div id="53ea7036" class="cell" data-execution_count="14">
+<div id="618144dc" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">'__main__'</span>:</span>
 <span id="cb16-2"><a></a>    cap <span class="op">=</span> cv2.VideoCapture(<span class="st">'coches.mp4'</span>)</span>
 <span id="cb16-3"><a></a>    <span class="cf">if</span> <span class="kw">not</span> cap.isOpened():</span>
@@ -913,7 +913,7 @@ Aquí van las dos primeras:</p>
 <section id="el-código-completo" class="slide level2">
 <h2>El código completo</h2>
 <p>Para referencia, aquí está todo junto en el orden correcto:</p>
-<div id="fe03e904" class="cell" data-execution_count="15">
+<div id="5db6f099" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb18-2"><a></a><span class="im">import</span> cv2</span>
 <span id="cb18-3"><a></a><span class="im">import</span> sys</span>

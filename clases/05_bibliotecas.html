@@ -473,7 +473,7 @@ externo/
 <section class="slide level2">
 
 <p>Por ejemplo, supongamos que necesitamos duplicar el valor de cada elemento en una lista de números. ¿Funcionaría el siguiente código para nuestro propósito?</p>
-<div id="bc42f571" class="cell" data-execution_count="1">
+<div id="5e14528a" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a></a>lista <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>]</span>
 <span id="cb11-2"><a></a><span class="bu">print</span>(lista <span class="op">*</span> <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -481,7 +481,7 @@ externo/
 <section class="slide level2">
 
 <p>El resultado anterior concatena la lista consigo misma, no es la operación deseada. Si en cambio utilizamos un <code>ndarray</code> de NumPy:</p>
-<div id="ffe5e5cb" class="cell" data-execution_count="2">
+<div id="4555d67c" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb12-2"><a></a>arreglo <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>])</span>
 <span id="cb12-3"><a></a><span class="bu">print</span>(arreglo <span class="op">*</span> <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -577,7 +577,7 @@ externo/
 <section class="slide level2">
 
 <p><strong>Veamos algunos ejemplos:</strong></p>
-<div id="455acc4e" class="cell" data-execution_count="3">
+<div id="1d54a530" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a></a><span class="co"># Convertir una lista en un arreglo 1D</span></span>
 <span id="cb14-2"><a></a></span>
 <span id="cb14-3"><a></a><span class="co"># Crear un array de ceros con cinco elementos.</span></span>
@@ -635,7 +635,7 @@ externo/
 <span id="cb15-12"><a></a><span class="co">    ndarray 1D de shape (24,) con dtype int.</span></span>
 <span id="cb15-13"><a></a><span class="co">    """</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Utiliza <code>np.arange</code>, <code>np.exp</code>, <code>np.random.normal</code> y <code>np.clip</code>.</p>
-<div id="2cd9152b" class="cell" data-execution_count="4">
+<div id="f7b509b2" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a></a><span class="co">"""</span></span>
 <span id="cb16-2"><a></a><span class="co">1. Generar un arreglo hrs de 1 a 24.</span></span>
 <span id="cb16-3"><a></a><span class="co">2. Generar una func distribucion de coches bimodal, con picos en 8 y 17</span></span>
@@ -653,7 +653,7 @@ externo/
 
 <h3 id="propsndarray">Propiedades de un ndarray</h3>
 <p>Cuando creas un <code>ndarray</code>, puedes consultar sus características más importantes:</p>
-<div id="419bc8a7" class="cell" data-execution_count="5">
+<div id="5b7b2733" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a></a>a <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>]])</span>
 <span id="cb18-2"><a></a></span>
 <span id="cb18-3"><a></a><span class="bu">print</span>(<span class="st">"Forma:"</span>, a.shape)     <span class="co"># (2, 3) – dos filas, tres columnas</span></span>
@@ -672,7 +672,7 @@ Tipo de datos: int64</code></pre>
 
 <h3 id="propiedades">Propiedades de un <code>ndarray</code></h3>
 <p>Cuando se crea un <code>ndarray</code>, es posible consultar sus características a través de sus atributos:</p>
-<div id="2316e686" class="cell" data-execution_count="6">
+<div id="49b9bbda" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a></a>a <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>],</span>
 <span id="cb20-2"><a></a>              [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>]])</span>
 <span id="cb20-3"><a></a></span>
@@ -709,7 +709,7 @@ Memoria total:          48 bytes</code></pre>
 
 <h3 id="reshape">Redimensionar arreglos</h3>
 <p>Es posible reestructurar un arreglo sin modificar sus datos, siempre que el número total de elementos se conserve. Esto se realiza con <code>reshape</code>:</p>
-<div id="660441a2" class="cell" data-execution_count="7">
+<div id="9849d82f" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a></a>arr1d <span class="op">=</span> np.arange(<span class="dv">1</span>, <span class="dv">25</span>)</span>
 <span id="cb22-2"><a></a><span class="bu">print</span>(<span class="st">"Original:"</span>, arr1d.shape)</span>
 <span id="cb22-3"><a></a></span>
@@ -742,7 +742,7 @@ Remodelado a (4, 6):
 <section class="slide level2">
 
 <p>De forma inversa, <code>ravel()</code> aplana cualquier arreglo a una única dimensión:</p>
-<div id="4b7789c1" class="cell" data-execution_count="8">
+<div id="2041ec0a" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a></a>plano <span class="op">=</span> arr2d.ravel()</span>
 <span id="cb24-2"><a></a><span class="bu">print</span>(<span class="st">"Aplanado:"</span>, plano)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -766,7 +766,7 @@ Remodelado a (4, 6):
 <li>Al igual que en Python, los índices pueden ser negativos.</li>
 <li>El slicing permite obtener subarreglos con la notación <code>[inicio:fin:paso]</code>. El índice final <strong>no se incluye</strong>.</li>
 </ul>
-<div id="978b4956" class="cell" data-execution_count="9">
+<div id="e2494e98" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a></a>a <span class="op">=</span> np.array([<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">50</span>])</span>
 <span id="cb26-2"><a></a><span class="bu">print</span>(a[<span class="dv">0</span>])     <span class="co"># </span></span>
 <span id="cb26-3"><a></a><span class="bu">print</span>(a[<span class="op">-</span><span class="dv">1</span>])    <span class="co"># </span></span>
@@ -781,7 +781,7 @@ Remodelado a (4, 6):
 <ul>
 <li>Al indexar matrices en Python, normalmente hacemos lo siguiente para una matriz <span class="math inline">\(3 \times 3\)</span>:</li>
 </ul>
-<div id="c1dd9731" class="cell" data-execution_count="10">
+<div id="bb17c2de" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a></a>matriz <span class="op">=</span> [[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], </span>
 <span id="cb27-2"><a></a>          [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>], </span>
 <span id="cb27-3"><a></a>          [<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>]]</span>
@@ -795,7 +795,7 @@ Remodelado a (4, 6):
 <section class="slide level2">
 
 <p>En arreglos bidimensionales de numpy se usan <strong>dos índices separados por coma</strong>: <code>arreglo[fila, columna]</code>. El slicing se aplica de forma independiente en cada dimensión.</p>
-<div id="5aedde11" class="cell" data-execution_count="11">
+<div id="5d20364f" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a></a>array2d <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>],</span>
 <span id="cb29-2"><a></a>                    [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>],</span>
 <span id="cb29-3"><a></a>                    [<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>]])</span>
@@ -816,7 +816,7 @@ Remodelado a (4, 6):
 <li>Para un array multidimensional <code>a</code>, <code>a[0]</code> se interpreta tomando todos los elementos en las dimensiones no especificadas.</li>
 </ul></li>
 </ul>
-<div id="46aa5891" class="cell" data-execution_count="12">
+<div id="22956eac" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a></a><span class="co"># Acceso a filas y columnas</span></span>
 <span id="cb31-2"><a></a><span class="bu">print</span>(array2d[<span class="dv">0</span>])       <span class="co"># </span></span>
 <span id="cb31-3"><a></a><span class="bu">print</span>(array2d[:, <span class="dv">1</span>])    <span class="co"># </span></span>
@@ -871,7 +871,7 @@ Remodelado a (4, 6):
 
 <h3 id="indexación-booleana">Indexación booleana</h3>
 <p>NumPy permite filtrar elementos mediante <strong>máscaras booleanas</strong>: arreglos de valores <code>True</code>/<code>False</code> del mismo tamaño que el arreglo original.</p>
-<div id="15b03014" class="cell" data-execution_count="13">
+<div id="28bbb658" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a></a>conteos <span class="op">=</span> np.array([<span class="dv">120</span>, <span class="dv">450</span>, <span class="dv">80</span>, <span class="dv">620</span>, <span class="dv">310</span>, <span class="dv">95</span>, <span class="dv">540</span>, <span class="dv">200</span>])</span>
 <span id="cb32-2"><a></a></span>
 <span id="cb32-3"><a></a>mascara <span class="op">=</span> conteos <span class="op">&gt;</span> <span class="dv">300</span></span>
@@ -940,7 +940,7 @@ Número de horas con &gt;300:  4</code></pre>
 <li>Las operaciones aritméticas entre arreglos de NumPy se aplican <strong>elemento por elemento</strong>.</li>
 <li>Las funciones estadísticas operan sobre la totalidad del arreglo o por <strong>eje</strong> (<code>axis</code>):</li>
 </ul>
-<div id="9b4ddde1" class="cell" data-execution_count="14">
+<div id="f3a5eba9" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a></a>m <span class="op">=</span> np.array([[<span class="dv">120</span>, <span class="dv">340</span>, <span class="dv">510</span>, <span class="dv">289</span>],</span>
 <span id="cb35-2"><a></a>              [<span class="dv">402</span>, <span class="dv">178</span>, <span class="dv">633</span>, <span class="dv">415</span>],</span>
 <span id="cb35-3"><a></a>              [ <span class="dv">95</span>, <span class="dv">220</span>, <span class="dv">480</span>, <span class="dv">371</span>]])</span>
@@ -989,7 +989,7 @@ Suma por fila     (axis=1): [1259 1628 1166]</code></pre>
 <li>NumPy incluye funciones optimizadas llamadas <strong>ufuncs</strong> (universal functions), que son más rápidas que usar funciones de Python como <code>math.sqrt()</code>.</li>
 <li>Estas funciones operan <strong>elemento a elemento</strong> y son muy eficientes.</li>
 </ul>
-<div id="3b203a43" class="cell" data-execution_count="15">
+<div id="5df34ca2" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a></a>x <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">9</span>, <span class="dv">16</span>])</span>
 <span id="cb37-2"><a></a></span>
 <span id="cb37-3"><a></a>np.sqrt(x)     <span class="co"># [1. 2. 3. 4.]</span></span>
@@ -1004,7 +1004,7 @@ Suma por fila     (axis=1): [1259 1628 1166]</code></pre>
 <ul>
 <li>NumPy permite aplicar operaciones estadísticas <strong>a nivel global</strong> o <strong>por eje</strong>.</li>
 </ul>
-<div id="8fd13350" class="cell" data-execution_count="16">
+<div id="aa5df9ac" class="cell" data-execution_count="16">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a></a>m <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>],</span>
 <span id="cb39-2"><a></a>              [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>]])</span>
 <span id="cb39-3"><a></a></span>
@@ -1028,7 +1028,7 @@ Suma por fila     (axis=1): [1259 1628 1166]</code></pre>
 <ul>
 <li>Muy útiles para filtrar datos.</li>
 </ul>
-<div id="193b734d" class="cell" data-execution_count="17">
+<div id="8cd8aa99" class="cell" data-execution_count="17">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a></a>a <span class="op">=</span> np.array([<span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">7</span>, <span class="dv">22</span>])</span>
 <span id="cb40-2"><a></a>cond <span class="op">=</span> a <span class="op">&gt;</span> <span class="dv">10</span></span>
 <span id="cb40-3"><a></a><span class="bu">print</span>(cond)           <span class="co"># </span></span>
@@ -1104,7 +1104,7 @@ Suma por fila     (axis=1): [1259 1628 1166]</code></pre>
 4.0 5.0 6.0
 7.0 8.0 9.0</code></pre></li>
 </ol>
-<div id="14cef896" class="cell" data-execution_count="18">
+<div id="1bb38ad9" class="cell" data-execution_count="18">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a></a><span class="co"># Ejemplo 1: Archivo de texto con valores separados por espacios</span></span>
 <span id="cb43-2"><a></a>datos1 <span class="op">=</span> np.loadtxt(<span class="st">'datos/archivo1.txt'</span>)</span>
 <span id="cb43-3"><a></a><span class="bu">print</span>(<span class="st">"Datos del archivo 1:"</span>)</span>
@@ -1125,7 +1125,7 @@ Suma por fila     (axis=1): [1259 1628 1166]</code></pre>
 4.0,5.0,6.0
 7.0,8.0,9.0</code></pre></li>
 </ol>
-<div id="7018daba" class="cell" data-execution_count="19">
+<div id="95f4b73d" class="cell" data-execution_count="19">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a></a><span class="co"># Ejemplo 2: Archivo de texto con valores separados por comas (CSV)</span></span>
 <span id="cb46-2"><a></a>datos2 <span class="op">=</span> np.loadtxt(<span class="st">'datos/archivo2.csv'</span>, delimiter<span class="op">=</span><span class="st">','</span>)</span>
 <span id="cb46-3"><a></a><span class="bu">print</span>(<span class="st">"Datos del archivo 2:"</span>)</span>
@@ -1148,7 +1148,7 @@ Suma por fila     (axis=1): [1259 1628 1166]</code></pre>
 1.0            21.5
 2.0            22.7</code></pre></li>
 </ol>
-<div id="8a19d6de" class="cell" data-execution_count="20">
+<div id="bdc6488a" class="cell" data-execution_count="20">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a></a><span class="co"># Ejemplo 3: Archivo de texto con encabezado y comentarios</span></span>
 <span id="cb49-2"><a></a>datos3 <span class="op">=</span> np.loadtxt(<span class="st">'datos/archivo3.txt'</span>, skiprows<span class="op">=</span><span class="dv">2</span>)  <span class="co"># Saltamos 2 filas para ignorar los comentarios y el encabezado</span></span>
 <span id="cb49-3"><a></a><span class="bu">print</span>(<span class="st">"Datos del archivo 3:"</span>)</span>
@@ -1165,7 +1165,7 @@ Suma por fila     (axis=1): [1259 1628 1166]</code></pre>
 
 <h3 id="savetxt">Escribir arreglos a un archivo</h3>
 <p>Podemos guardar los datos de un arreglo de numpy con la función <code>np.savetxt</code></p>
-<div id="1aa82dc3" class="cell" data-execution_count="21">
+<div id="8e799ffc" class="cell" data-execution_count="21">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a></a><span class="co"># Supongamos que tenemos un arreglo de datos</span></span>
 <span id="cb51-2"><a></a>datos <span class="op">=</span> np.arange(<span class="dv">1</span>,<span class="dv">10</span>).reshape((<span class="dv">3</span>,<span class="dv">3</span>))</span>
 <span id="cb51-3"><a></a></span>
@@ -1324,7 +1324,7 @@ Suma por fila     (axis=1): [1259 1628 1166]</code></pre>
 </section>
 <section class="slide level2">
 
-<div id="40aa74bb" class="cell" data-execution_count="22">
+<div id="fe2856b0" class="cell" data-execution_count="22">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb52-2"><a></a></span>
 <span id="cb52-3"><a></a><span class="co"># aqui creamos una Serie con valores y etiquetas (índice) </span></span>
@@ -1349,7 +1349,7 @@ dtype: int64</code></pre>
 
 <h3 id="acceso-a-datos-en-una-serie">Acceso a datos en una Serie</h3>
 <p>El acceso a los elementos de una Serie puede realizarse por <strong>etiqueta</strong> (<code>.loc</code>) o por <strong>posición</strong> (<code>.iloc</code>). Las operaciones aritméticas son vectorizadas, al igual que en NumPy:</p>
-<div id="efb40d24" class="cell" data-execution_count="23">
+<div id="582c198f" class="cell" data-execution_count="23">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a></a><span class="co"># Acceso por etiqueta</span></span>
 <span id="cb54-2"><a></a><span class="bu">print</span>(<span class="st">"Volumen a las 08:00:"</span>, trafico_h[<span class="st">'08:00'</span>])</span>
 <span id="cb54-3"><a></a></span>
@@ -1460,7 +1460,7 @@ dtype: float64</code></pre>
 </section>
 <section class="slide level2">
 
-<div id="d2960a7e" class="cell" data-execution_count="24">
+<div id="ef5a303a" class="cell" data-execution_count="24">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb56-2"><a></a></span>
 <span id="cb56-3"><a></a><span class="co"># DataFrame construido desde un arreglo NumPy</span></span>
@@ -1492,7 +1492,7 @@ dtype: float64</code></pre>
 </section>
 <section class="slide level2">
 
-<div id="975736ee" class="cell" data-execution_count="25">
+<div id="facf4e3c" class="cell" data-execution_count="25">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a></a><span class="co"># Acceso a una columna (devuelve Serie)</span></span>
 <span id="cb58-2"><a></a><span class="bu">print</span>(<span class="st">"Columna trafico:</span><span class="ch">\n</span><span class="st">"</span>, df_ej[<span class="st">'trafico'</span>])</span>
 <span id="cb58-3"><a></a></span>
@@ -1531,7 +1531,7 @@ Trafico y temp, horas 06:00-07:00:
 07:00    489.0    18.2</code></pre>
 </div>
 </div>
-<div id="a934c665" class="cell" data-execution_count="26">
+<div id="fb6e46f3" class="cell" data-execution_count="26">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb60"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a></a><span class="bu">print</span>(df_ej.at[<span class="st">'07:00'</span>, <span class="st">'lluvia'</span>])     <span class="co"># usando etiquetas de fila y columna</span></span>
 <span id="cb60-2"><a></a><span class="bu">print</span>(df_ej.iloc[<span class="dv">1</span>, <span class="dv">2</span>]) <span class="co"># usando posiciones, estilo numpy</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -1659,7 +1659,7 @@ Trafico y temp, horas 06:00-07:00:
 </section>
 <section class="slide level2">
 
-<div id="f8ea12e6" class="cell" data-execution_count="27">
+<div id="e218c242" class="cell" data-execution_count="27">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb62"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb62-2"><a></a></span>
 <span id="cb62-3"><a></a>df <span class="op">=</span> pd.read_csv(<span class="st">"datos/titanic_train.csv"</span>)</span>
@@ -1799,7 +1799,7 @@ Trafico y temp, horas 06:00-07:00:
 </section>
 <section class="slide level2">
 
-<div id="34becd12" class="cell" data-execution_count="28">
+<div id="9840377a" class="cell" data-execution_count="28">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb63"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb63-1"><a></a><span class="bu">print</span>(df.info())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
@@ -1837,7 +1837,7 @@ None</code></pre>
 </section>
 <section class="slide level2">
 
-<div id="dbe1d2b3" class="cell" data-execution_count="29">
+<div id="b77e344c" class="cell" data-execution_count="29">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb65"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb65-1"><a></a><span class="bu">print</span>(<span class="st">"Dimensiones del dataset:"</span>)</span>
 <span id="cb65-2"><a></a><span class="bu">print</span>(df.shape)</span>
 <span id="cb65-3"><a></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n\n</span><span class="st">Columnas: "</span>)</span>
@@ -1905,7 +1905,7 @@ dtype: int64</code></pre>
 </section>
 <section class="slide level2">
 
-<div id="865a4a57" class="cell" data-execution_count="30">
+<div id="64021c79" class="cell" data-execution_count="30">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb67"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb67-1"><a></a><span class="bu">print</span>(df.describe()) <span class="co"># obtenemos estadísticas sobre todas las columnas numéricas del dataframe</span></span>
 <span id="cb67-2"><a></a><span class="co"># allternativamente, podríamos obtener las estadísticas para una sola columna, por ejemplo la edad</span></span>
 <span id="cb67-3"><a></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n\n</span><span class="st">Stats Age"</span>)</span>
@@ -1997,7 +1997,7 @@ Name: Age, dtype: float64</code></pre>
 </section>
 <section class="slide level2">
 
-<div id="e684072f" class="cell" data-execution_count="31">
+<div id="1f702d42" class="cell" data-execution_count="31">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb69"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb69-1"><a></a><span class="bu">print</span>(<span class="st">"Valores únicos: "</span>)</span>
 <span id="cb69-2"><a></a><span class="bu">print</span>(df[<span class="st">'Sex'</span>].unique())</span>
 <span id="cb69-3"><a></a></span>
@@ -2026,7 +2026,7 @@ Name: count, dtype: int64</code></pre>
 <section class="slide level2">
 
 <p>También podríamos querer porcentajes:</p>
-<div id="b6042893" class="cell" data-execution_count="32">
+<div id="5aaa86a3" class="cell" data-execution_count="32">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb71"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb71-1"><a></a>df[<span class="st">'Sex'</span>].value_counts(normalize<span class="op">=</span><span class="va">True</span>) <span class="co"># Esto nos da proporciones</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="27">
 <pre><code>Sex
@@ -2036,7 +2036,7 @@ Name: proportion, dtype: float64</code></pre>
 </div>
 </div>
 <p>También es importante considerar que ambas columnas están registradas como tipo <code>object</code>. Convertirlas al tipo <code>category</code> reduce el consumo de memoria y habilita operaciones de agrupación más eficientes.</p>
-<div id="c33ce5cf" class="cell" data-execution_count="33">
+<div id="a9cdd4f0" class="cell" data-execution_count="33">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb73"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb73-1"><a></a><span class="bu">print</span>(<span class="st">"Antes — dtype:"</span>, df[<span class="st">'Sex'</span>].dtype)</span>
 <span id="cb73-2"><a></a><span class="bu">print</span>(<span class="ss">f"Memoria: </span><span class="sc">{</span>df[<span class="st">'Sex'</span>]<span class="sc">.</span>memory_usage(deep<span class="op">=</span><span class="va">True</span>)<span class="sc">:,}</span><span class="ss"> bytes"</span>)</span>
 <span id="cb73-3"><a></a></span>
@@ -2094,7 +2094,7 @@ Categorías: ['female', 'male']</code></pre>
 </section>
 <section class="slide level2">
 
-<div id="16a3eef6" class="cell" data-execution_count="34">
+<div id="5192bc96" class="cell" data-execution_count="34">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb76"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb76-1"><a></a>pd.crosstab(df[<span class="st">'Sex'</span>], df[<span class="st">'Survived'</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="29">
 <div>
@@ -2142,7 +2142,7 @@ Categorías: ['female', 'male']</code></pre>
 </div>
 </div>
 </div>
-<div id="b0cb1264" class="cell" data-execution_count="35">
+<div id="ad0a92d3" class="cell" data-execution_count="35">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb77"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb77-1"><a></a>pd.crosstab(df[<span class="st">'Sex'</span>], df[<span class="st">'Survived'</span>], normalize<span class="op">=</span><span class="st">'index'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="30">
 <div>
@@ -2206,7 +2206,7 @@ Categorías: ['female', 'male']</code></pre>
 </section>
 <section class="slide level2">
 
-<div id="1ec925a1" class="cell" data-execution_count="36">
+<div id="f9869cac" class="cell" data-execution_count="36">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb78"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb78-1"><a></a><span class="bu">print</span>(<span class="st">"¿La clase del boleto influye en la tarifa pagada?"</span>)</span>
 <span id="cb78-2"><a></a><span class="bu">print</span>(df.groupby(<span class="st">'Pclass'</span>)[<span class="st">'Fare'</span>].mean())</span>
 <span id="cb78-3"><a></a></span>
@@ -2321,7 +2321,7 @@ Name: Age, dtype: float64</code></pre>
 </section>
 <section class="slide level2">
 
-<div id="22e4d6fa" class="cell" data-execution_count="37">
+<div id="fc7d7321" class="cell" data-execution_count="37">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb80"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb80-1"><a></a><span class="co"># opcion 1</span></span>
 <span id="cb80-2"><a></a>df.isna().<span class="bu">sum</span>()</span>
 <span id="cb80-3"><a></a><span class="co"># opcion 2</span></span>
@@ -2357,7 +2357,7 @@ dtype: int64</code></pre>
 <li>Solo deberíamos usarla si los faltantes están en muy pocas filas.</li>
 </ul>
 <div class="fragment">
-<div id="53672d55" class="cell" data-execution_count="38">
+<div id="c5d6ce95" class="cell" data-execution_count="38">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb82"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb82-1"><a></a>df_clean <span class="op">=</span> df.dropna()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
@@ -2369,7 +2369,7 @@ dtype: int64</code></pre>
 <li>Si una columna tiene más del 60-70% de datos faltantes, muchas veces no vale la pena conservarla (a menos que sea <em>muy</em> importante).</li>
 </ul>
 <div class="fragment">
-<div id="47d78121" class="cell" data-execution_count="39">
+<div id="481a6e0a" class="cell" data-execution_count="39">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb83"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb83-1"><a></a>df_clean <span class="op">=</span> df.drop(columns<span class="op">=</span>[<span class="st">'Cabin'</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
@@ -2381,7 +2381,7 @@ dtype: int64</code></pre>
 <li>Este método reemplaza los valores nulos por un valor indicado, que suele ser la media o la mediana (ésta última más robusta que el promedio si hay valores extremos).</li>
 </ul>
 <div class="fragment">
-<div id="e918c7a1" class="cell" data-execution_count="40">
+<div id="d3ddfc51" class="cell" data-execution_count="40">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb84"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb84-1"><a></a>df_clean.fillna({<span class="st">'Age'</span>: df_clean[<span class="st">'Age'</span>].median(), </span>
 <span id="cb84-2"><a></a>                 <span class="st">'Embarked'</span>: <span class="st">'S'</span>})</span>
 <span id="cb84-3"><a></a><span class="co"># una mejor opción que la anterior sería obtener la moda de Embarked y rellenar </span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -2588,7 +2588,7 @@ dtype: int64</code></pre>
 <ul>
 <li>Este enfoque es más avanzado pero muy útil. Por ejemplo, podríamos rellenar las edades faltantes con la <strong>mediana por clase</strong> (<code>pclass</code>):</li>
 </ul>
-<div id="be801142" class="cell" data-execution_count="41">
+<div id="efdccb16" class="cell" data-execution_count="41">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb85"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb85-1"><a></a>df_clean[<span class="st">'Age'</span>].fillna(df_clean.groupby([<span class="st">"Sex"</span>,<span class="st">"Pclass"</span>])[<span class="st">'Age'</span>].transform(<span class="st">'median'</span>),inplace<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
@@ -2596,14 +2596,14 @@ dtype: int64</code></pre>
 
 <h4 id="identificación-y-eliminación-de-duplicados">Identificación y eliminación de duplicados</h4>
 <p>A veces los datos tienen filas duplicadas. Para detectarlas:</p>
-<div id="81fa4d13" class="cell" data-execution_count="42">
+<div id="362d1eef" class="cell" data-execution_count="42">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb86"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb86-1"><a></a>df_clean.duplicated().<span class="bu">sum</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="37">
 <pre><code>0</code></pre>
 </div>
 </div>
 <p>Y si hay duplicados, los eliminamos:</p>
-<div id="936f29c0" class="cell" data-execution_count="43">
+<div id="3efb8f72" class="cell" data-execution_count="43">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb88"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb88-1"><a></a>df_clean.drop_duplicates(inplace<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
@@ -2670,7 +2670,7 @@ dtype: int64</code></pre>
 </section>
 <section class="slide level2">
 
-<div id="16fb6f62" class="cell" data-execution_count="44">
+<div id="060a964a" class="cell" data-execution_count="44">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb90"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb90-1"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb90-2"><a></a></span>
 <span id="cb90-3"><a></a>fechas_embarque <span class="op">=</span> [<span class="st">"1912-04-07"</span>, <span class="st">"1912-04-08"</span>, <span class="st">"1912-04-09"</span>, <span class="st">"1912-04-10"</span>]</span>
@@ -2680,10 +2680,10 @@ dtype: int64</code></pre>
 <span id="cb90-7"><a></a><span class="bu">print</span>(df_clean[<span class="st">"Embarked_Date"</span>].head())</span>
 <span id="cb90-8"><a></a><span class="bu">print</span>(df_clean[<span class="st">"Embarked_Date"</span>].dtype)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>0    1912-04-08
-1    1912-04-07
-2    1912-04-07
-3    1912-04-09
+<pre><code>0    1912-04-09
+1    1912-04-09
+2    1912-04-10
+3    1912-04-07
 4    1912-04-09
 Name: Embarked_Date, dtype: object
 object</code></pre>
@@ -2696,7 +2696,7 @@ object</code></pre>
 <li>Si el resultado del tipo de dato es <code>object</code>, significa que aún <strong>no está en formato de fecha</strong>.</li>
 <li>Usamos <code>pd.to_datetime()</code> para convertirla. Pandas intentará reconocer automáticamente el formato. Si hay formatos específicos (por ejemplo, <code>"dd-mm-yyyy"</code>), podemos usar el parámetro <code>format</code>:</li>
 </ul>
-<div id="91a12e96" class="cell" data-execution_count="45">
+<div id="b0770e80" class="cell" data-execution_count="45">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb92"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb92-1"><a></a>df_clean[<span class="st">"Embarked_Date"</span>] <span class="op">=</span> pd.to_datetime(df_clean[<span class="st">"Embarked_Date"</span>])</span>
 <span id="cb92-2"><a></a><span class="co">#df_clean["Embarked_Date"] = pd.to_datetime(df_clean["Embarked_Date"], format="%d-%m-%Y")</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -2704,7 +2704,7 @@ object</code></pre>
 <section class="slide level2">
 
 <p>Una vez que la columna es de tipo <code>datetime64</code>, podemos usar atributos como:</p>
-<div id="564e9367" class="cell" data-execution_count="46">
+<div id="a2dec1fd" class="cell" data-execution_count="46">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb93"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb93-1"><a></a><span class="co"># Extraer año</span></span>
 <span id="cb93-2"><a></a>df_clean[<span class="st">"Año_de_Embarque"</span>] <span class="op">=</span> df_clean[<span class="st">"Embarked_Date"</span>].dt.year</span>
 <span id="cb93-3"><a></a></span>
@@ -2726,7 +2726,7 @@ object</code></pre>
 <li>Antes de crear una nueva variable, es importante saber cómo trabajar con condiciones.</li>
 <li>Por ejemplo, ¿quiénes son menores de edad en el dataset?</li>
 </ul>
-<div id="83d01f00" class="cell" data-execution_count="47">
+<div id="b19e4ad7" class="cell" data-execution_count="47">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb94"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb94-1"><a></a>df_clean[<span class="st">"Es_Menor"</span>] <span class="op">=</span> df_clean[<span class="st">"Age"</span>] <span class="op">&lt;</span> <span class="dv">18</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
@@ -2735,7 +2735,7 @@ object</code></pre>
 <li>Podemos utilizar <strong>filtrado condicional</strong> para obtener solo los pasajeros menores de edad</li>
 </ul>
 <div class="fragment">
-<div id="52ada07b" class="cell" data-execution_count="48">
+<div id="918e7d3a" class="cell" data-execution_count="48">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb95"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb95-1"><a></a>menores <span class="op">=</span> df_clean[df_clean[<span class="st">"Es_Menor"</span>] <span class="op">==</span> <span class="va">True</span>]</span>
 <span id="cb95-2"><a></a><span class="co"># o bien, </span></span>
 <span id="cb95-3"><a></a>menores <span class="op">=</span> df_clean[df_clean[<span class="st">"Es_Menor"</span>]]</span>
@@ -2750,17 +2750,17 @@ object</code></pre>
 
        Sex   Age  SibSp  Parch   Ticket     Fare Embarked Embarked_Date  \
 7     male   2.0      3      1   349909  21.0750        S    1912-04-10   
-9   female  14.0      1      0   237736  30.0708        C    1912-04-08   
-10  female   4.0      1      1  PP 9549  16.7000        S    1912-04-10   
-14  female  14.0      0      0   350406   7.8542        S    1912-04-09   
-16    male   2.0      4      1   382652  29.1250        Q    1912-04-07   
+9   female  14.0      1      0   237736  30.0708        C    1912-04-09   
+10  female   4.0      1      1  PP 9549  16.7000        S    1912-04-08   
+14  female  14.0      0      0   350406   7.8542        S    1912-04-08   
+16    male   2.0      4      1   382652  29.1250        Q    1912-04-09   
 
     Año_de_Embarque  Mes_de_Embarque Día_de_la_Semana  Es_Menor  
 7              1912                4        Wednesday      True  
-9              1912                4           Monday      True  
-10             1912                4        Wednesday      True  
-14             1912                4          Tuesday      True  
-16             1912                4           Sunday      True  </code></pre>
+9              1912                4          Tuesday      True  
+10             1912                4           Monday      True  
+14             1912                4           Monday      True  
+16             1912                4          Tuesday      True  </code></pre>
 </div>
 </div>
 </div>
@@ -2771,7 +2771,7 @@ object</code></pre>
 <li>Otro ejemplo: ¿quiénes pagaron más que el promedio?</li>
 </ul>
 <div class="fragment">
-<div id="b3cb170a" class="cell" data-execution_count="49">
+<div id="5904c3b1" class="cell" data-execution_count="49">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb97"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb97-1"><a></a>fare_media <span class="op">=</span> df_clean[<span class="st">"Fare"</span>].mean()</span>
 <span id="cb97-2"><a></a>df_clean[<span class="st">"Pagó_Alto"</span>] <span class="op">=</span> df_clean[<span class="st">"Fare"</span>] <span class="op">&gt;</span> fare_media</span>
 <span id="cb97-3"><a></a><span class="bu">print</span>(df_clean[df_clean[<span class="st">"Pagó_Alto"</span>]].head())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -2791,15 +2791,15 @@ object</code></pre>
 27                     Fortune, Mr. Charles Alexander    male  19.0      3   
 
     Parch    Ticket      Fare Embarked Embarked_Date  Año_de_Embarque  \
-1       0  PC 17599   71.2833        C    1912-04-07             1912   
-3       0    113803   53.1000        S    1912-04-09             1912   
+1       0  PC 17599   71.2833        C    1912-04-09             1912   
+3       0    113803   53.1000        S    1912-04-07             1912   
 6       0     17463   51.8625        S    1912-04-10             1912   
 23      0    113788   35.5000        S    1912-04-07             1912   
 27      2     19950  263.0000        S    1912-04-10             1912   
 
     Mes_de_Embarque Día_de_la_Semana  Es_Menor  Pagó_Alto  
-1                 4           Sunday     False       True  
-3                 4          Tuesday     False       True  
+1                 4          Tuesday     False       True  
+3                 4           Sunday     False       True  
 6                 4        Wednesday     False       True  
 23                4           Sunday     False       True  
 27                4        Wednesday     False       True  </code></pre>
@@ -2814,7 +2814,7 @@ object</code></pre>
 <li>Por ejemplo, ¿quienes eran menores y pagaron más que el promedio?</li>
 </ul>
 <div class="fragment">
-<div id="2c892d7e" class="cell" data-execution_count="50">
+<div id="e003a7fe" class="cell" data-execution_count="50">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb99"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb99-1"><a></a>query <span class="op">=</span> df.query(<span class="st">"Age &lt; 18 and Fare &gt; Fare.mean()"</span>)</span>
 <span id="cb99-2"><a></a>query.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="45">
@@ -2956,7 +2956,7 @@ object</code></pre>
 </section>
 <section class="slide level2">
 
-<div id="8f31f4cb" class="cell" data-execution_count="51">
+<div id="e939db60" class="cell" data-execution_count="51">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb100-1"><a></a><span class="kw">def</span> clasificar_edad(edad):</span>
 <span id="cb100-2"><a></a>    <span class="cf">if</span> pd.isnull(edad):</span>
 <span id="cb100-3"><a></a>        <span class="cf">return</span> <span class="st">"Desconocido"</span></span>
@@ -2988,7 +2988,7 @@ Name: Grupo_Edad, dtype: object</code></pre>
 
 <h4 id="alternativa-pd.cut-para-discretizar-variables-numéricas">Alternativa: <code>pd.cut()</code> para discretizar variables numéricas</h4>
 <p>Para crear grupos automáticamente con <strong>rangos definidos</strong>, podemos usar <code>pd.cut()</code>:</p>
-<div id="056fcb37" class="cell" data-execution_count="52">
+<div id="3e2d76d1" class="cell" data-execution_count="52">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb102"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb102-1"><a></a>df_clean[<span class="st">"Edad_Categoría"</span>] <span class="op">=</span> pd.cut(</span>
 <span id="cb102-2"><a></a>    df_clean[<span class="st">"Age"</span>],</span>
 <span id="cb102-3"><a></a>    bins<span class="op">=</span>[<span class="dv">0</span>, <span class="dv">12</span>, <span class="dv">18</span>, <span class="dv">60</span>, <span class="dv">100</span>],</span>
@@ -3055,7 +3055,7 @@ Name: Grupo_Edad, dtype: object</code></pre>
 </ul></li>
 </ul>
 <div class="fragment">
-<div id="903c4fe2" class="cell" data-execution_count="53">
+<div id="31dbb7cc" class="cell" data-execution_count="53">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb103"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb103-1"><a></a><span class="co"># Por ejemplo, pasajeros con tarifas más altas</span></span>
 <span id="cb103-2"><a></a><span class="bu">print</span>(<span class="st">"Pasajeros con tarifas más altas:"</span>)</span>
 <span id="cb103-3"><a></a>df_clean.sort_values(by<span class="op">=</span><span class="st">"Fare"</span>, ascending<span class="op">=</span><span class="va">False</span>).head(<span class="dv">10</span>)</span>
@@ -3149,10 +3149,10 @@ Pasajeros ordenados por clase y edad</code></pre>
 <td>PC 17754</td>
 <td>34.6542</td>
 <td>C</td>
-<td>1912-04-10</td>
+<td>1912-04-08</td>
 <td>1912</td>
 <td>4</td>
-<td>Wednesday</td>
+<td>Monday</td>
 <td>False</td>
 <td>True</td>
 <td>Adulto mayor</td>
@@ -3193,10 +3193,10 @@ Pasajeros ordenados por clase y edad</code></pre>
 <td>WE/P 5735</td>
 <td>71.0000</td>
 <td>S</td>
-<td>1912-04-07</td>
+<td>1912-04-10</td>
 <td>1912</td>
 <td>4</td>
-<td>Sunday</td>
+<td>Wednesday</td>
 <td>False</td>
 <td>True</td>
 <td>Adulto mayor</td>
@@ -3215,10 +3215,10 @@ Pasajeros ordenados por clase y edad</code></pre>
 <td>113509</td>
 <td>61.9792</td>
 <td>C</td>
-<td>1912-04-10</td>
+<td>1912-04-07</td>
 <td>1912</td>
 <td>4</td>
-<td>Wednesday</td>
+<td>Sunday</td>
 <td>False</td>
 <td>True</td>
 <td>Adulto mayor</td>
@@ -3303,10 +3303,10 @@ Pasajeros ordenados por clase y edad</code></pre>
 <td>2666</td>
 <td>19.2583</td>
 <td>C</td>
-<td>1912-04-10</td>
+<td>1912-04-09</td>
 <td>1912</td>
 <td>4</td>
-<td>Wednesday</td>
+<td>Tuesday</td>
 <td>True</td>
 <td>False</td>
 <td>Niño</td>
@@ -3325,10 +3325,10 @@ Pasajeros ordenados por clase y edad</code></pre>
 <td>2666</td>
 <td>19.2583</td>
 <td>C</td>
-<td>1912-04-10</td>
+<td>1912-04-08</td>
 <td>1912</td>
 <td>4</td>
-<td>Wednesday</td>
+<td>Monday</td>
 <td>True</td>
 <td>False</td>
 <td>Niño</td>
@@ -3347,10 +3347,10 @@ Pasajeros ordenados por clase y edad</code></pre>
 <td>2625</td>
 <td>8.5167</td>
 <td>C</td>
-<td>1912-04-07</td>
+<td>1912-04-10</td>
 <td>1912</td>
 <td>4</td>
-<td>Sunday</td>
+<td>Wednesday</td>
 <td>True</td>
 <td>False</td>
 <td>Niño</td>
